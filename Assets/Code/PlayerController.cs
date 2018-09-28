@@ -25,8 +25,15 @@ public class PlayerController : MonoBehaviour {
     }
 
     public FloatVariable speed;
-    public MoveAxis Horizontal = new MoveAxis(KeyCode.D, KeyCode.A);
-    public MoveAxis Vertical = new MoveAxis(KeyCode.W, KeyCode.S);
+    public KeycodesReference controls;
+    public MoveAxis Horizontal;
+    public MoveAxis Vertical;
+
+    private void Start()
+    {
+        Horizontal = new MoveAxis(controls.right, controls.left);
+        Vertical = new MoveAxis(controls.up, controls.down);
+    }
 
     private void Update()
     {
