@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Food : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    protected List<Ingredient> ingredients;
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void AddIngredient(Ingredient newi)
+    {
+        ingredients.Add(newi);
+    }
+
 }

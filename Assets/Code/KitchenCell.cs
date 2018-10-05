@@ -7,6 +7,13 @@ public abstract class KitchenCell : MonoBehaviour {
     public Food placed;
 
     public abstract void AlterFood();
-    public abstract void AlterFood();
-    public abstract void AlterFood();
+    public void SetFood(Food newfood)
+    {
+        placed = newfood;
+    }
+    
+    public  void SumFood(Food newfood)
+    {
+
+    }
 }

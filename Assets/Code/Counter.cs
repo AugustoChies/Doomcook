@@ -6,8 +6,7 @@ public class Counter : KitchenCell {
 
     public override void AlterFood()
     {
-        this.gameObject.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0);
-    }   
-
+        this.gameObject.GetComponent<MeshRenderer>().material.color *= -1;
+    }
 
 }
