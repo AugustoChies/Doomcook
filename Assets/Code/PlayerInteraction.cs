@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour {
     public KeycodesReference controls;
-    public BoolReference carrying;
-
+    public bool carrying;
+    public Food carried;
+    GameObject carryobj;
     public float raycastLenght = 1;
 
     // Use this for initialization
     void Start () {
-		
+        carryobj = transform.Find("CarriedFood").gameObject;
 	}
 	
 	// Update is called once per frame
@@ -22,12 +23,51 @@ public class PlayerInteraction : MonoBehaviour {
             {               
                 GameObject hitcell = hit.transform.gameObject;
                 if(hitcell.GetComponent<KitchenCell>())
-                {                   
-                        //hitcell.GetComponent<KitchenCell>().AlterFood();
-                        if(carrying)
-                        {
-                            
+                {                    
+                    if (carrying)
+                    {
+                        if (!hitcell.GetComponent<Dispenser>())
+                        {                            
+                            if (hitcell.GetComponent<KitchenCell>().placed.ingredients.Count < 3)
+                            {                               
+                                bool done = true;
+
+                                if (hitcell.GetComponent<KitchenCell>().placed.ingredients.Count > 0)
+                                {
+                                    for (int i = 0; i < carried.ingredients.Count; i++)
+                                    {
+                                        if (!carried.ingredients[i].IsPrepared())
+                                        {
+                                            done = false;
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (done)
+                                {
+                                    hitcell.GetComponent<KitchenCell>().SumFood(carried);
+                                    carrying = false;
+                                    carried = null;
+                                    carryobj.SetActive(false);
+                                }
+                            }                             
                         }
+                    }
+                    else
+                    {
+                        if (hitcell.GetComponent<KitchenCell>().placed.ingredients.Count > 0)
+                        {                            
+                            carried = hitcell.GetComponent<KitchenCell>().TakeFood();
+                            carrying = true;
+                            carryobj.SetActive(true);
+                            if (!hitcell.GetComponent<Dispenser>())
+                            {
+                                hitcell.GetComponent<KitchenCell>().SetFood(null);
+                            }
+                        }
+                    }
+
                 }
             }    
                         

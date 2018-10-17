@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Food : MonoBehaviour {
-    protected List<Ingredient> ingredients;
-	
+[System.Serializable]
+public class Food{
+    public List<Ingredient> ingredients;
+    public Food(Ingredient initialingredient)
+    {
+        ingredients = new List<Ingredient>
+        {
+            initialingredient
+        };
+    }
 
     public void AddIngredient(Ingredient newi)
     {

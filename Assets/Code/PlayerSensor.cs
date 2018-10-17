@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSensor : MonoBehaviour {
     public bool isinside;
-
+    
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")

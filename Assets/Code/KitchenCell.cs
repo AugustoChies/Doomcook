@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class KitchenCell : MonoBehaviour {
-    public GameObject interactionzone;
     public Food placed;
 
     public abstract void AlterFood();
@@ -11,9 +10,18 @@ public abstract class KitchenCell : MonoBehaviour {
     {
         placed = newfood;
     }
-    
-    public  void SumFood(Food newfood)
-    {
 
+    public Food TakeFood()
+    {
+        AlterFood();
+        return placed;
+    }
+
+    public void SumFood(Food newfood)
+    {     
+        for (int i=0; i< newfood.ingredients.Count; i++)
+        {
+            placed.ingredients.Add(newfood.ingredients[i]);
+        }     
     }
 }

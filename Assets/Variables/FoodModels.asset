@@ -8,8 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f423f7a7378e97943a8dd8b85e8b91d9, type: 3}
-  m_Name: CarryingFood
+  m_Script: {fileID: 11500000, guid: 43f293f5030593e4a916a35f63e2e8bc, type: 3}
+  m_Name: FoodModels
   m_EditorClassIdentifier: 
-  DeveloperDescription: If player is carrying food or not
-  Value: 0
+  DeveloperDescription: List containing different models used to represent food
+  list:
+  - {fileID: 1067201021930494, guid: 097013ceeb8052648be3891c0984df9a, type: 2}
