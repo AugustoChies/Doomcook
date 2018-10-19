@@ -13,6 +13,17 @@ public class Food{
         };
     }
 
+    public Food(List<Ingredient> initialingredients)
+    {
+        ingredients = new List<Ingredient>();
+
+        for(int i = 0; i < initialingredients.Count; i++)
+        {
+            ingredients.Add(initialingredients[i]);
+        }
+        
+    }
+
     public void AddIngredient(Ingredient newi)
     {
         ingredients.Add(newi);

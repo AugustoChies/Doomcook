@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Counter : KitchenCell {
 
-    public override void AlterFood()
+    void Start()
     {
-        this.gameObject.GetComponent<MeshRenderer>().material.color *= -1;
+        carryobj = transform.Find("CarriedFood").gameObject;
+    }    
+
+    public override Food TakeFood()
+    {
+        Food returnedfood = new Food(placed.ingredients);
+
+        placed.ingredients = new List<Ingredient>();
+        return returnedfood;
     }
 
 }

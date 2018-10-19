@@ -9,5 +9,5 @@ public class ListObject : ScriptableObject
     [Multiline]
     public string DeveloperDescription = "";
 #endif
-    public List<GameObject> list;   
+    public List<Mesh> list;   
 }

@@ -4,24 +4,33 @@ using UnityEngine;
 
 public abstract class KitchenCell : MonoBehaviour {
     public Food placed;
+    protected GameObject carryobj;
+    public bool preparing;
 
-    public abstract void AlterFood();
     public void SetFood(Food newfood)
     {
+        preparing = true;
         placed = newfood;
     }
 
-    public Food TakeFood()
+    public void ShowCarriedMesh(bool yes)
     {
-        AlterFood();
-        return placed;
+        if (carryobj != null)
+        {
+            carryobj.SetActive(yes);
+        }
     }
 
+    public abstract Food TakeFood();
+   
+
     public void SumFood(Food newfood)
-    {     
-        for (int i=0; i< newfood.ingredients.Count; i++)
+    {
+        Food summed = new Food(newfood.ingredients);
+
+        for (int i=0; i< summed.ingredients.Count; i++)
         {
-            placed.ingredients.Add(newfood.ingredients[i]);
+            placed.ingredients.Add(summed.ingredients[i]);
         }     
     }
 }
