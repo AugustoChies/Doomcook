@@ -30,6 +30,37 @@ public class Preparer : KitchenCell {
         }
 	}
 
+    public bool CheckCompatibility(Food food)
+    {
+        bool compatible = false;
+
+        switch (pe.myprep)
+        {            
+            case Preparation.chopped:
+                if(food.ingredients[0].type.IsChoppable)
+                {
+                    compatible = true;
+                }
+                break;
+            case Preparation.mashed:
+                if (food.ingredients[0].type.IsMashable)
+                {
+                    compatible = true;
+                }
+                break;
+            case Preparation.grated:
+                if (food.ingredients[0].type.IsGratable)
+                {
+                    compatible = true;
+                }
+                break;
+            default:
+                break;
+        }
+
+        return compatible;
+    }
+
     public override Food TakeFood()
     {        
         Food returnedfood = new Food(placed.ingredients);

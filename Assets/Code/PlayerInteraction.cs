@@ -57,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour {
                             }
                             else if(hitcell.GetComponent<Preparer>())
                             {
-                                if(carried.ingredients.Count > 1 || carried.ingredients[0].IsPrepared())
+                                if(carried.ingredients.Count > 1 || carried.ingredients[0].IsPrepared() || !hitcell.GetComponent<Preparer>().CheckCompatibility(carried))
                                 {
                                     done = false;
                                 }
