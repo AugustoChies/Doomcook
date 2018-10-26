@@ -24,6 +24,10 @@ public class Oven : KitchenCell{
         for(int i = 0; i < placed.ingredients.Count; i++)
         {
             placed.ingredients[i].point = (CookPoint)((timer/prepTime) * 4);
+            if(timer/prepTime * 4 > 4)
+            {
+                placed.ingredients[i].point = CookPoint.burned;
+            }
         }
         
         preparing = false;

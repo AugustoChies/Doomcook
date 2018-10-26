@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
+        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         Vector3 moveNormal = new Vector3(Horizontal, 0.0f, Vertical).normalized;
 
         this.transform.LookAt(transform.position + moveNormal);

@@ -19,4 +19,8 @@ public class Ingredient{
     {
         return (preparation != Preparation.unprepared);
     }
+    public bool IsCooked()
+    {
+        return (point != CookPoint.raw);
+    }
 }

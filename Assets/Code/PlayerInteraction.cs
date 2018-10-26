@@ -55,17 +55,32 @@ public class PlayerInteraction : MonoBehaviour {
                                     done = false;
                                 }
                             }
-                            else if(hitcell.GetComponent<Preparer>())
+                            else if(hitcell.GetComponent<Preparer>() )
                             {
                                 if(carried.ingredients.Count > 1 || carried.ingredients[0].IsPrepared() || !hitcell.GetComponent<Preparer>().CheckCompatibility(carried))
                                 {
                                     done = false;
                                 }
                             }
+                            else if (hitcell.GetComponent<Oven>())
+                            {
+                                if (!carried.ingredients[0].IsPrepared())
+                                {
+                                    done = false;
+                                }
+                                for (int i = 0; i < carried.ingredients.Count; i++)
+                                {
+                                    if (carried.ingredients[i].IsCooked())
+                                    {
+                                        done = false;
+                                        break;
+                                    }
+                                }
+                            }
 
                             if (done)
                             {
-                                if (hitcell.GetComponent<Preparer>())
+                                if (hitcell.GetComponent<Preparer>() || hitcell.GetComponent<Oven>())
                                 {
                                     hitcell.GetComponent<KitchenCell>().preparing = true;
                                 }
@@ -88,10 +103,10 @@ public class PlayerInteraction : MonoBehaviour {
                             }
                             if(done)
                             {
+                                hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(false);
                                 carried = hitcell.GetComponent<KitchenCell>().TakeFood();
                                 carrying = true;
-                                carryobj.SetActive(true);
-                                hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(false);
+                                carryobj.SetActive(true);                                
                             }
                         }
                     }
