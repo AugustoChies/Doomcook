@@ -29,8 +29,16 @@ public class PlayerController : MonoBehaviour {
     public MoveAxis Horizontal;
     public MoveAxis Vertical;
 
+
+    [SerializeField]
+    private Vector3 angles;
+    private Quaternion rotation;
+    public Transform iconMaster;
+
     private void Start()
     {
+        iconMaster = this.gameObject.GetComponent<PlayerIcons>().iconmaster;
+        rotation = Quaternion.Euler(angles);
         Horizontal = new MoveAxis(controls.right, controls.left);
         Vertical = new MoveAxis(controls.up, controls.down);
     }
@@ -41,6 +49,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 moveNormal = new Vector3(Horizontal, 0.0f, Vertical).normalized;
 
         this.transform.LookAt(transform.position + moveNormal);
+        iconMaster.rotation = rotation;
         gameObject.GetComponent<Rigidbody>().MovePosition(this.transform.position + moveNormal * Time.deltaTime * speed.Value);
     }
 }

@@ -87,6 +87,7 @@ public class PlayerInteraction : MonoBehaviour {
                                 hitcell.GetComponent<KitchenCell>().SumFood(carried);
                                 hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(true);
                                 carrying = false;
+                                this.gameObject.GetComponent<PlayerIcons>().ShowIcons(false, carried);
                                 carried.ingredients = new List<Ingredient>();
                                 carryobj.SetActive(false);
 
@@ -106,7 +107,8 @@ public class PlayerInteraction : MonoBehaviour {
                                 hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(false);
                                 carried = hitcell.GetComponent<KitchenCell>().TakeFood();
                                 carrying = true;
-                                carryobj.SetActive(true);                                
+                                carryobj.SetActive(true);
+                                this.gameObject.GetComponent<PlayerIcons>().ShowIcons(true, carried);
                             }
                         }
                     }
