@@ -62,6 +62,7 @@ public class Oven : KitchenCell{
         
         preparing = false;
         timer = 0;
+        pointer.transform.eulerAngles = new Vector3(60,0,0);
         meter.SetActive(false);
         pointer.SetActive(false);
         Food returnedfood = new Food(placed.ingredients);

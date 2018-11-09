@@ -50,7 +50,7 @@ public abstract class KitchenCell : MonoBehaviour {
             else
                 ing5.SetActive(false);
 
-            if (placed.ingredients[0].IsCooked())
+            if (placed.ingredients[1].IsCooked())
             {
                 ing8.GetComponent<SpriteRenderer>().sprite = cic.pairs[placed.ingredients[1].point];
                 ing8.SetActive(yes);
@@ -71,7 +71,7 @@ public abstract class KitchenCell : MonoBehaviour {
             else
                 ing6.SetActive(false);
 
-            if (placed.ingredients[0].IsCooked())
+            if (placed.ingredients[2].IsCooked())
             {
                 ing9.GetComponent<SpriteRenderer>().sprite = cic.pairs[placed.ingredients[2].point];
                 ing9.SetActive(yes);

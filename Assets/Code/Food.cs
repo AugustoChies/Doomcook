@@ -29,4 +29,30 @@ public class Food{
         ingredients.Add(newi);
     }
 
+    private bool Equals(Food f2)
+    {
+        if(this.ingredients.Count == f2.ingredients.Count)
+        {
+            bool equal = true;
+            
+            for (int i = 0; i < ingredients.Count; i++)
+            {
+                if(ingredients[i].type != f2.ingredients[i].type
+                    || ingredients[i].preparation != f2.ingredients[i].preparation
+                    || ingredients[i].point != f2.ingredients[i].point)
+                {
+                    equal = false;
+                    break;
+                }
+                
+            }
+
+            return equal;
+        }
+        else
+        {
+            return false;
+        }
+    }   
+
 }
