@@ -11,6 +11,12 @@ public class Counter : KitchenCell {
         ing1 = transform.Find("Ing1").gameObject;
         ing2 = transform.Find("Ing2").gameObject;
         ing3 = transform.Find("Ing3").gameObject;
+        ing4 = transform.Find("Ing4").gameObject;
+        ing5 = transform.Find("Ing5").gameObject;
+        ing6 = transform.Find("Ing6").gameObject;
+        ing7 = transform.Find("Ing7").gameObject;
+        ing8 = transform.Find("Ing8").gameObject;
+        ing9 = transform.Find("Ing9").gameObject;
     }    
 
     public override Food TakeFood()

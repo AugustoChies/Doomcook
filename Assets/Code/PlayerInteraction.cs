@@ -83,6 +83,10 @@ public class PlayerInteraction : MonoBehaviour {
                                 if (hitcell.GetComponent<Preparer>() || hitcell.GetComponent<Oven>())
                                 {
                                     hitcell.GetComponent<KitchenCell>().preparing = true;
+                                    if(hitcell.GetComponent<Oven>())
+                                    {
+                                        hitcell.GetComponent<Oven>().ShowMeter();
+                                    }
                                 }
                                 hitcell.GetComponent<KitchenCell>().SumFood(carried);
                                 hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(true);
