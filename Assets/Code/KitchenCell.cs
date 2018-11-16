@@ -82,15 +82,7 @@ public abstract class KitchenCell : MonoBehaviour {
     }
 
     public abstract Food TakeFood();
-   
 
-    public void SumFood(Food newfood)
-    {
-        Food summed = new Food(newfood.ingredients);
 
-        for (int i=0; i< summed.ingredients.Count; i++)
-        {
-            placed.ingredients.Add(summed.ingredients[i]);
-        }     
-    }
+    public abstract void SumFood(Food newfood);    
 }

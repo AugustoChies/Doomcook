@@ -21,5 +21,10 @@ public class Dispenser : KitchenCell {
         return returnedfood;
     }
 
-    
+    public override void SumFood(Food newfood)
+    {
+        //nothing
+    }
+
+
 }

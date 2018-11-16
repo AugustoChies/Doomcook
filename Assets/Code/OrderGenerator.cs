@@ -9,7 +9,7 @@ public enum Dificulty
 
 
 public class OrderGenerator : MonoBehaviour {
-    Food myOrder;
+    public Food myOrder;
     public float remainingTime,time;
     public IngredientType[] possibleingredients;
     public Preparation[] possiblePreparations;
@@ -42,8 +42,7 @@ public class OrderGenerator : MonoBehaviour {
         remainingTime -= Time.deltaTime;
         if(remainingTime < 0)
         {
-            Generate();
-            remainingTime = time;              
+            Generate();                         
         }
 
         fillbar.GetComponent<Image>().fillAmount = remainingTime / time;
@@ -130,6 +129,7 @@ public class OrderGenerator : MonoBehaviour {
             ShowIcons(false, myOrder);
         myOrder = new Food(ingredientsgen);
         ShowIcons(true,myOrder);
+        remainingTime = time;
     }
 
     public void ShowIcons(bool yes, Food placed)

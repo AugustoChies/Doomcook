@@ -70,4 +70,14 @@ public class Oven : KitchenCell{
 
         return returnedfood;
     }
+
+    public override void SumFood(Food newfood)
+    {
+        Food summed = new Food(newfood.ingredients);
+
+        for (int i = 0; i < summed.ingredients.Count; i++)
+        {
+            placed.ingredients.Add(summed.ingredients[i]);
+        }
+    }
 }

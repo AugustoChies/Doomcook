@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trashbin : KitchenCell {
+public class Receptor : KitchenCell {
+    public OrderGenerator og;
+
 
 	// Use this for initialization
 	void Start () {
@@ -11,10 +13,7 @@ public class Trashbin : KitchenCell {
 	
 	// Update is called once per frame
 	void Update () {
-		if(placed.ingredients.Count > 0)
-        {
-            placed.ingredients.Clear();
-        }
+		
 	}
 
     public override Food TakeFood()
@@ -25,11 +24,13 @@ public class Trashbin : KitchenCell {
 
     public override void SumFood(Food newfood)
     {
-        Food summed = new Food(newfood.ingredients);
+        placed = new Food(newfood.ingredients);
 
-        for (int i = 0; i < summed.ingredients.Count; i++)
-        {
-            placed.ingredients.Add(summed.ingredients[i]);
+        if(placed.Equals(og.myOrder))
+        {           
+            this.GetComponent<AudioSource>().Play();
+            og.Generate();
         }
+                
     }
 }

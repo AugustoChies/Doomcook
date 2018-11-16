@@ -29,7 +29,7 @@ public class Food{
         ingredients.Add(newi);
     }
 
-    private bool Equals(Food f2)
+    public bool Equals(Food f2)
     {
         if(this.ingredients.Count == f2.ingredients.Count)
         {
