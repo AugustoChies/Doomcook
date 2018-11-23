@@ -6,6 +6,7 @@ public class PlayerInteraction : MonoBehaviour {
     public KeycodesReference controls;
     public bool carrying;
     public Food carried;
+    public ModelReferenceList modelReferences;
     GameObject carryobj;
     public float raycastLenght = 1;
 
@@ -111,6 +112,14 @@ public class PlayerInteraction : MonoBehaviour {
                                 hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(false);
                                 carried = hitcell.GetComponent<KitchenCell>().TakeFood();
                                 carrying = true;
+                                for(int i=0;i < modelReferences.fms.Count;i++)
+                                {
+                                    if(modelReferences.fms[i].Check(carried))
+                                    {                                        
+                                        carryobj.GetComponent<MeshFilter>().mesh = modelReferences.fms[i].GetMesh(carried);
+                                        break;
+                                    }
+                                }
                                 carryobj.SetActive(true);
                                 this.gameObject.GetComponent<PlayerIcons>().ShowIcons(true, carried);
                             }

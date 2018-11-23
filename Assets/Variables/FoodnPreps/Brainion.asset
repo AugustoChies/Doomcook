@@ -15,3 +15,5 @@ MonoBehaviour:
   IsChoppable: 1
   IsMashable: 0
   IsGratable: 1
+  isVegetable: 1
+  isMeat: 0

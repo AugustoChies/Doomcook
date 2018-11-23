@@ -8,9 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f293f5030593e4a916a35f63e2e8bc, type: 3}
-  m_Name: FoodModels
+  m_Script: {fileID: 11500000, guid: 0b65cd21760ec994b9e17b8dcdf994de, type: 3}
+  m_Name: Single Ing Models List
   m_EditorClassIdentifier: 
-  DeveloperDescription: List containing different models used to represent food
   list:
-  - {fileID: 4300002, guid: 56be052822e0d8d459a1d331a09d5f8a, type: 3}
+  - {fileID: 11400000, guid: 0565ec59cfb6af440bc039c496a625ba, type: 2}

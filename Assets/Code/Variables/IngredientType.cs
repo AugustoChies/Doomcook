@@ -9,5 +9,5 @@ public class IngredientType : ScriptableObject
     [Multiline]
     public string DeveloperDescription = "";
 #endif
-    public bool IsChoppable, IsMashable, IsGratable;
+    public bool IsChoppable, IsMashable, IsGratable, isVegetable, isMeat;
 }
