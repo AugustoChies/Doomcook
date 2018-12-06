@@ -6,6 +6,7 @@ public abstract class KitchenCell : MonoBehaviour {
     public Food placed;
     protected GameObject carryobj,ing1,ing2,ing3,ing4,ing5,ing6,ing7,ing8,ing9;
     public bool preparing;
+    public ModelReferenceList modelReferences;
     public IngredientIconMap iic;
     public IngredientPrepMap pic;
     public IngredientCookMap cic;
@@ -13,10 +14,21 @@ public abstract class KitchenCell : MonoBehaviour {
     
 
     public void ShowCarriedMesh(bool yes)
-    {
+    {        
         if (carryobj != null)
         {
             carryobj.SetActive(yes);
+            if(yes)
+            {
+                for (int i = 0; i < modelReferences.fms.Count; i++)
+                {
+                    if (modelReferences.fms[i].Check(placed))
+                    {
+                        carryobj.GetComponent<MeshFilter>().mesh = modelReferences.fms[i].GetMesh(placed);
+                        break;
+                    }
+                }
+            }
         }
         if (ing1 != null && placed.ingredients.Count > 0)
         {

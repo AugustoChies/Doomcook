@@ -19,15 +19,13 @@ public class FoodModel : ScriptableObject {
         }
         if(maxIngcount < f.ingredients.Count)
         {
-            Debug.Log("Failed at count");
             return false;
         }
 
         for (int i = 0; i < f.ingredients.Count; i++)
         {
             if (highestPoint < f.ingredients[i].point)
-            {
-                Debug.Log("Failed at point");
+            {                
                 return false;
             }
         }
@@ -47,15 +45,13 @@ public class FoodModel : ScriptableObject {
             else
             {
                 if (f.ingredients[i].type.isVegetable)
-                {
-                    Debug.Log("Failed at no veg");
+                {                   
                     return false;
                 }
             }            
         }
         if(!yes)
-        {
-            Debug.Log("Failed at veg");
+        {            
             return false;
         }
 
@@ -75,15 +71,13 @@ public class FoodModel : ScriptableObject {
             {
                 yes = true;
                 if (f.ingredients[i].type.isMeat)
-                {
-                    Debug.Log("Failed at no meat");
+                {                   
                     return false;
                 }
             }
         }
         if (!yes)
-        {
-            Debug.Log("Failed at meat");
+        {            
             return false;
         }
         
