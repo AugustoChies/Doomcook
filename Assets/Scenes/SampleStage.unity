@@ -1151,7 +1151,7 @@ MonoBehaviour:
   myOrder:
     ingredients: []
   remainingTime: 0
-  time: 30
+  time: 40
   possibleingredients:
   - {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
   possiblePreparations: 0100000003000000
