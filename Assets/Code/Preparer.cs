@@ -6,9 +6,10 @@ public class Preparer : KitchenCell {
     public PreparationEffect pe;
     public float timer;
     public FloatReference prepTime;
+    public GameObject meter, pointer;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         carryobj = transform.Find("CarriedFood").gameObject;
         timer = 0;
 	}
@@ -18,7 +19,8 @@ public class Preparer : KitchenCell {
 		if(preparing)
         {            
             timer += Time.deltaTime;
-            if(timer >= prepTime.Value)
+            pointer.transform.Rotate(0, 0, -360 / prepTime.Value * Time.deltaTime);
+            if (timer >= prepTime.Value)
             {
                 timer = 0;
                 preparing = false;
@@ -29,6 +31,12 @@ public class Preparer : KitchenCell {
             }
         }
 	}
+
+    public void ShowMeter()
+    {
+        meter.SetActive(true);
+        pointer.SetActive(true);
+    }
 
     public bool CheckCompatibility(Food food)
     {
@@ -62,7 +70,9 @@ public class Preparer : KitchenCell {
     }
 
     public override Food TakeFood()
-    {        
+    {
+        meter.SetActive(false);
+        pointer.SetActive(false);
         Food returnedfood = new Food(placed.ingredients);
         placed.ingredients = new List<Ingredient>();
 

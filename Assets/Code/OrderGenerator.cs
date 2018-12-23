@@ -46,6 +46,7 @@ public class OrderGenerator : MonoBehaviour {
         }
 
         fillbar.GetComponent<Image>().fillAmount = remainingTime / time;
+        fillbar.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, remainingTime / time);
 	}
 
     public void Generate()
