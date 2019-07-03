@@ -5,7 +5,8 @@ using UnityEngine;
 public class Counter : KitchenCell {
 
     void Start()
-    {    
+    {
+        playerChar = GameObject.Find("Player");
             
         carryobj = transform.Find("CarriedFood").gameObject;
         ing1 = transform.Find("Ing1").gameObject;
@@ -37,4 +38,33 @@ public class Counter : KitchenCell {
         }
     }
 
+    public override bool CanbeTaken()
+    {        
+        return true;
+    }
+    public override bool CanbePlaced()
+    {
+        if (placed.ingredients.Count + playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count < 4)
+        {
+            if (placed.ingredients.Count > 0)
+            {
+                for (int i = 0; i < playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count; i++)
+                {
+                    if (!playerChar.GetComponent<PlayerInteraction>().carried.ingredients[i].IsPrepared())
+                    {
+                        return false;
+                    }
+                }
+                if (!placed.ingredients[0].IsPrepared())
+                {
+                    return false;
+                }
+            }
+        }
+        else
+        {
+            return false;
+        }
+        return true;
+    }
 }

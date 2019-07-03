@@ -24,95 +24,26 @@ public class PlayerInteraction : MonoBehaviour {
             {               
                 GameObject hitcell = hit.transform.gameObject;
                 if(hitcell.GetComponent<KitchenCell>())
-                {
-                    bool done = true;
+                {                    
                     if (carrying)
-                    {
-                        if (!hitcell.GetComponent<Dispenser>())
-                        {
-                            
-                            if (hitcell.GetComponent<Counter>())
-                            {                               
-                                if (hitcell.GetComponent<KitchenCell>().placed.ingredients.Count + carried.ingredients.Count < 4)
-                                { 
-                                    if (hitcell.GetComponent<KitchenCell>().placed.ingredients.Count > 0)
-                                    {
-                                        for (int i = 0; i < carried.ingredients.Count; i++)
-                                        {
-                                            if (!carried.ingredients[i].IsPrepared())
-                                            {
-                                                done = false;
-                                                break;
-                                            }
-                                        }
-                                        if (!hitcell.GetComponent<KitchenCell>().placed.ingredients[0].IsPrepared())
-                                        {
-                                            done = false;
-                                        }
-                                    }                                                          
-                                }
-                                else
-                                {
-                                    done = false;
-                                }
-                            }
-                            else if(hitcell.GetComponent<Preparer>() )
-                            {
-                                if(carried.ingredients.Count > 1 || carried.ingredients[0].IsPrepared() || !hitcell.GetComponent<Preparer>().CheckCompatibility(carried))
-                                {
-                                    done = false;
-                                }
-                            }
-                            else if (hitcell.GetComponent<Oven>())
-                            {
-                                if (!carried.ingredients[0].IsPrepared())
-                                {
-                                    done = false;
-                                }
-                                for (int i = 0; i < carried.ingredients.Count; i++)
-                                {
-                                    if (carried.ingredients[i].IsCooked())
-                                    {
-                                        done = false;
-                                        break;
-                                    }
-                                }
-                            }
+                    {                       
+                        if (hitcell.GetComponent<KitchenCell>().CanbePlaced())
+                        {                                
+                            hitcell.GetComponent<KitchenCell>().SumFood(carried);
+                            hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(true);
+                            carrying = false;
+                            this.gameObject.GetComponent<PlayerIcons>().ShowIcons(false, carried);
+                            carried.ingredients = new List<Ingredient>();
+                            carryobj.SetActive(false);
 
-                            if (done)
-                            {
-                                if (hitcell.GetComponent<Preparer>() || hitcell.GetComponent<Oven>())
-                                {
-                                    hitcell.GetComponent<KitchenCell>().preparing = true;
-                                    if(hitcell.GetComponent<Oven>())
-                                    {
-                                        hitcell.GetComponent<Oven>().ShowMeter();
-                                    }
-                                    else
-                                    {
-                                        hitcell.GetComponent<Preparer>().ShowMeter();
-                                    }
-
-                                }
-                                hitcell.GetComponent<KitchenCell>().SumFood(carried);
-                                hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(true);
-                                carrying = false;
-                                this.gameObject.GetComponent<PlayerIcons>().ShowIcons(false, carried);
-                                carried.ingredients = new List<Ingredient>();
-                                carryobj.SetActive(false);
-
-                            }
                         }
+                        
                     }
                     else
                     {
                         if (hitcell.GetComponent<KitchenCell>().placed.ingredients.Count > 0)
-                        {
-                            if (hitcell.GetComponent<Preparer>() && hitcell.GetComponent<Preparer>().preparing)
-                            {
-                                done = false;
-                            }
-                            if(done)
+                        {                            
+                            if(hitcell.GetComponent<KitchenCell>().CanbeTaken())
                             {
                                 hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(false);
                                 carried = hitcell.GetComponent<KitchenCell>().TakeFood();

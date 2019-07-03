@@ -10,6 +10,7 @@ public class Preparer : KitchenCell {
 
     // Use this for initialization
     void Start () {
+        playerChar = GameObject.Find("Player");
         carryobj = transform.Find("CarriedFood").gameObject;
         timer = 0;
 	}
@@ -81,11 +82,28 @@ public class Preparer : KitchenCell {
 
     public override void SumFood(Food newfood)
     {
+        preparing = true;
+        ShowMeter();
         Food summed = new Food(newfood.ingredients);
 
         for (int i = 0; i < summed.ingredients.Count; i++)
         {
             placed.ingredients.Add(summed.ingredients[i]);
         }
+    }
+
+    public override bool CanbeTaken()
+    {        
+        return !preparing;
+    }
+    public override bool CanbePlaced()
+    {
+        if (playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count > 1 
+            || playerChar.GetComponent<PlayerInteraction>().carried.ingredients[0].IsPrepared() 
+            || !CheckCompatibility(playerChar.GetComponent<PlayerInteraction>().carried))
+        {
+            return false;
+        }
+        return true;
     }
 }

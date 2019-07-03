@@ -32,4 +32,13 @@ public class Trashbin : KitchenCell {
             placed.ingredients.Add(summed.ingredients[i]);
         }
     }
+
+    public override bool CanbeTaken()
+    {
+        return true;
+    }
+    public override bool CanbePlaced()
+    {
+        return true;
+    }
 }

@@ -9,6 +9,7 @@ public class Oven : KitchenCell{
 
     // Use this for initialization
     void Start () {
+        playerChar = GameObject.Find("Player");
         timer = 0;
     }
 	
@@ -73,6 +74,8 @@ public class Oven : KitchenCell{
 
     public override void SumFood(Food newfood)
     {
+        preparing = true;
+        ShowMeter();
         Food summed = new Food(newfood.ingredients);
 
         for (int i = 0; i < summed.ingredients.Count; i++)
@@ -80,4 +83,25 @@ public class Oven : KitchenCell{
             placed.ingredients.Add(summed.ingredients[i]);
         }
     }
+
+    public override bool CanbeTaken()
+    {
+        return true;
+    }
+    public override bool CanbePlaced()
+    {
+        if (!playerChar.GetComponent<PlayerInteraction>().carried.ingredients[0].IsPrepared())
+        {
+            return false;
+        }
+        for (int i = 0; i < playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count; i++)
+        {
+            if (playerChar.GetComponent<PlayerInteraction>().carried.ingredients[i].IsCooked())
+            {
+                return false;               
+            }
+        }
+        return true;
+    }
+
 }

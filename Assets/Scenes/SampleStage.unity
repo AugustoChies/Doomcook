@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
   possiblePreparations: 0100000003000000
   possibleCooking: 00000000010000000200000003000000
-  dificulty: 1
+  dificulty: 2
   iic: {fileID: 11400000, guid: 55466b61026f0d8438b089635e4261ef, type: 2}
   pic: {fileID: 11400000, guid: 9d5b6bb5e4e680745b1f426c3ce8976e, type: 2}
   cic: {fileID: 11400000, guid: db400c1d3640e0e4da4a273b66fb1826, type: 2}

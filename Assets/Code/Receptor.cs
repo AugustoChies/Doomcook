@@ -33,4 +33,13 @@ public class Receptor : KitchenCell {
         }
                 
     }
+
+    public override bool CanbeTaken()
+    {
+        return true;
+    }
+    public override bool CanbePlaced()
+    {
+        return true;
+    }
 }

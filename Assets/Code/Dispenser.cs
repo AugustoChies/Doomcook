@@ -26,5 +26,13 @@ public class Dispenser : KitchenCell {
         //nothing
     }
 
+    public override bool CanbeTaken()
+    {
+        return true;
+    }
+    public override bool CanbePlaced()
+    {
+        return false;
+    }
 
 }

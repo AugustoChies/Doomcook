@@ -10,6 +10,7 @@ public abstract class KitchenCell : MonoBehaviour {
     public IngredientIconMap iic;
     public IngredientPrepMap pic;
     public IngredientCookMap cic;
+    public GameObject playerChar;
 
     
 
@@ -96,5 +97,8 @@ public abstract class KitchenCell : MonoBehaviour {
     public abstract Food TakeFood();
 
 
-    public abstract void SumFood(Food newfood);    
+    public abstract void SumFood(Food newfood);
+
+    public abstract bool CanbeTaken();
+    public abstract bool CanbePlaced();
 }
