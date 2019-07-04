@@ -13,6 +13,11 @@ public class Food{
         };
     }
 
+    public Food()
+    {
+        ingredients = new List<Ingredient>();        
+    }
+
     public Food(List<Ingredient> initialingredients)
     {
         ingredients = new List<Ingredient>();

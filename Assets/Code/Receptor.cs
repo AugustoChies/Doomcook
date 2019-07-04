@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Receptor : KitchenCell {
     public OrderGenerator og;
-
+    public Table myTable;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +25,15 @@ public class Receptor : KitchenCell {
     public override void SumFood(Food newfood)
     {
         placed = new Food(newfood.ingredients);
+        for (int i = 0; i < myTable.placed.Count; i++)
+        {
+            if (myTable.placed[i].ingredients.Count == 0)
+            {
+                myTable.SumFood(placed, i);
+                break;
+            }
+        }
+        myTable.ShowCarriedMesh();
 
         if(placed.Equals(og.myOrder))
         {           
@@ -36,10 +45,19 @@ public class Receptor : KitchenCell {
 
     public override bool CanbeTaken()
     {
-        return true;
+        return false;
     }
     public override bool CanbePlaced()
     {
-        return true;
+        bool free = false;
+        for (int i = 0; i < myTable.placed.Count; i++)
+        {
+            if(myTable.placed[i].ingredients.Count == 0)
+            {
+                free = true;
+                break;
+            }
+        }
+        return free;
     }
 }
