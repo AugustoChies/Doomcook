@@ -129,52 +129,6 @@ public class Table : MonoBehaviour {
             {
                 carryobjs[k].SetActive(false);
             }
-        }
-       
-            
-        
-        
-      
-       // if (ing2 != null && placed.ingredients.Count > 1)
-       // {
-       //     ing2.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[1].type];
-       //     ing2.SetActive(yes);
-       //     if (placed.ingredients[1].IsPrepared())
-       //     {
-       //         ing5.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[1].preparation];
-       //         ing5.SetActive(yes);
-       //     }
-       //     else
-       //         ing5.SetActive(false);
-       //
-       //     if (placed.ingredients[1].IsCooked())
-       //     {
-       //         ing8.GetComponent<SpriteRenderer>().sprite = cic.pairs[placed.ingredients[1].point];
-       //         ing8.SetActive(yes);
-       //     }
-       //     else
-       //         ing8.SetActive(false);
-       // }
-       // if (ing3 != null && placed.ingredients.Count > 2)
-       // {
-       //     ing3.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[2].type];
-       //     ing3.SetActive(yes);
-       //
-       //     if (placed.ingredients[2].IsPrepared())
-       //     {
-       //         ing6.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[2].preparation];
-       //         ing6.SetActive(yes);
-       //     }
-       //     else
-       //         ing6.SetActive(false);
-       //
-       //     if (placed.ingredients[2].IsCooked())
-       //     {
-       //         ing9.GetComponent<SpriteRenderer>().sprite = cic.pairs[placed.ingredients[2].point];
-       //         ing9.SetActive(yes);
-       //     }
-       //     else
-       //         ing9.SetActive(false);
-       // }
+        }  
     }
 }

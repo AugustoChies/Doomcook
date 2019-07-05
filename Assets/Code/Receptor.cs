@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Receptor : KitchenCell {
-    public OrderGenerator og;
+    //public OrderGenerator og;
     public Table myTable;
 
 	// Use this for initialization
@@ -35,11 +35,11 @@ public class Receptor : KitchenCell {
         }
         myTable.ShowCarriedMesh();
 
-        if(placed.Equals(og.myOrder))
-        {           
-            this.GetComponent<AudioSource>().Play();
-            og.Generate();
-        }
+        //if(placed.Equals(og.myOrder))
+        //{           
+        //    this.GetComponent<AudioSource>().Play();
+        //    og.Generate();
+        //}
                 
     }
 

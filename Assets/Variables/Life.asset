@@ -8,12 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e712f791a662104eb5c32ccc6f7b6dc, type: 3}
-  m_Name: Brainion
+  m_Script: {fileID: 11500000, guid: 4ead04fb00557ae41a3d8450c59a98f4, type: 3}
+  m_Name: Life
   m_EditorClassIdentifier: 
-  DeveloperDescription: An onion shaped like a brain
-  IsChoppable: 1
-  IsMashable: 1
-  IsGratable: 1
-  isVegetable: 1
-  isMeat: 0
+  DeveloperDescription: 
+  Value: 95
