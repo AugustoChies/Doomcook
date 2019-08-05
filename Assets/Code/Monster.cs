@@ -110,5 +110,13 @@ public abstract class Monster : MonoBehaviour {
 
     public abstract void Attack();
 
-   
+    IEnumerator Sink()
+    {
+        for (float i = 0; i < 3; i += Time.deltaTime)
+        {
+            this.transform.position -= transform.up * 2 * Time.deltaTime;
+            yield return null;
+        }
+        Destroy(this.gameObject);
+    }
 }
