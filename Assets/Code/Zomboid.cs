@@ -21,6 +21,7 @@ public class Zomboid : Monster {
                     order = new Food();
                     myTable.GetComponent<Table>().ShowCarriedMesh();
                     ShowCarriedMesh();
+                    StartCoroutine("Sink");
                     break;
                 }
             }
@@ -33,10 +34,6 @@ public class Zomboid : Monster {
                     Attack();
                 }
             }
-        }
-        else
-        {
-            this.transform.position -= transform.up * 2 * Time.deltaTime;
         }
     }
 
