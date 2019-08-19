@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1241,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1060181728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1773,8 +1773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f73c21140dd1142856b5e214f88c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameOn: 0
-  inputMap: {fileID: 0}
+  gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
+  inputMap: {fileID: 11400000, guid: ac37631f1a793f645b000ae460263326, type: 2}
   cutTime: 10
   mashTime: 10
   grateTime: 10
@@ -1786,6 +1786,8 @@ MonoBehaviour:
   grateMinigame: {fileID: 0}
   barSpeed: 0.75
   middleTolerance: 0.125
+  timeReduction: 2.5
+  additionalSpeed: 0.1
 --- !u!1 &1430643990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,6 +1929,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114222691630446220, guid: b83caaa53bee1664493bd0ca2e97140a,
+        type: 3}
+      propertyPath: minigames
+      value: 
+      objectReference: {fileID: 1395057898}
+    - target: {fileID: 114222691630446220, guid: b83caaa53bee1664493bd0ca2e97140a,
+        type: 3}
+      propertyPath: gs
+      value: 
+      objectReference: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd,
+        type: 2}
+    - target: {fileID: 114824713751320160, guid: b83caaa53bee1664493bd0ca2e97140a,
+        type: 3}
+      propertyPath: minigames
+      value: 
+      objectReference: {fileID: 1395057898}
+    - target: {fileID: 114824713751320160, guid: b83caaa53bee1664493bd0ca2e97140a,
+        type: 3}
+      propertyPath: gs
+      value: 
+      objectReference: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
 --- !u!1 &1639705125

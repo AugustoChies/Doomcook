@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour {
     private Quaternion rotation;
     public Transform iconMaster;
 
+    public GameState gs;
+
+
     private void Start()
     {
         iconMaster = this.gameObject.GetComponent<PlayerIcons>().iconmaster;
@@ -45,11 +48,14 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
-        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-        Vector3 moveNormal = new Vector3(Horizontal, 0.0f, Vertical).normalized;
+        if (!gs.minigame)
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            Vector3 moveNormal = new Vector3(Horizontal, 0.0f, Vertical).normalized;
 
-        this.transform.LookAt(transform.position + moveNormal);
-        iconMaster.rotation = rotation;
-        gameObject.GetComponent<Rigidbody>().MovePosition(this.transform.position + moveNormal * Time.deltaTime * speed.Value);
+            this.transform.LookAt(transform.position + moveNormal);
+            iconMaster.rotation = rotation;
+            gameObject.GetComponent<Rigidbody>().MovePosition(this.transform.position + moveNormal * Time.deltaTime * speed.Value);
+        }
     }
 }

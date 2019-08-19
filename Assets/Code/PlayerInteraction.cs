@@ -10,6 +10,7 @@ public class PlayerInteraction : MonoBehaviour {
     GameObject carryobj;
     public float raycastLenght = 1;
 
+    public GameState gs;
     // Use this for initialization
     void Start () {
         carryobj = transform.Find("CarriedFood").gameObject;
@@ -17,7 +18,7 @@ public class PlayerInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(controls.interact))
+		if(Input.GetKeyDown(controls.interact) && !gs.minigame)
         {            
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, raycastLenght))

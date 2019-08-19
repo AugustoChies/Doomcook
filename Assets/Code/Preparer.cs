@@ -4,40 +4,39 @@ using UnityEngine;
 
 public class Preparer : KitchenCell {
     public PreparationEffect pe;
-    public float timer;
-    public FloatReference prepTime;
     public GameObject meter, pointer;
+    public MinigamesScript minigames;
+    public GameState gs;
 
+    
     // Use this for initialization
     void Start () {
         playerChar = GameObject.Find("Player");
+        minigames = GameObject.Find("OrderCanvas").GetComponent<MinigamesScript>();
         carryobj = transform.Find("CarriedFood").gameObject;
-        timer = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(preparing)
         {            
-            timer += Time.deltaTime;
-            pointer.transform.Rotate(0, 0, -360 / prepTime.Value * Time.deltaTime);
-            if (timer >= prepTime.Value)
-            {
-                timer = 0;
+            if (!gs.minigame)
+            {                
                 preparing = false;
                 for (int i = 0; i < placed.ingredients.Count; i++)
                 {
                     placed.ingredients[i].preparation = pe.myprep;
                 }
+                ShowCarriedMesh(true);
             }
         }
 	}
 
-    public void ShowMeter()
-    {
-        meter.SetActive(true);
-        pointer.SetActive(true);
-    }
+    //public void ShowMeter()
+    //{
+    //    meter.SetActive(true);
+    //    pointer.SetActive(true);
+    //}
 
     public bool CheckCompatibility(Food food)
     {
@@ -72,8 +71,8 @@ public class Preparer : KitchenCell {
 
     public override Food TakeFood()
     {
-        meter.SetActive(false);
-        pointer.SetActive(false);
+        //meter.SetActive(false);
+        //pointer.SetActive(false);
         Food returnedfood = new Food(placed.ingredients);
         placed.ingredients = new List<Ingredient>();
 
@@ -83,12 +82,27 @@ public class Preparer : KitchenCell {
     public override void SumFood(Food newfood)
     {
         preparing = true;
-        ShowMeter();
+       // ShowMeter();
         Food summed = new Food(newfood.ingredients);
 
         for (int i = 0; i < summed.ingredients.Count; i++)
         {
             placed.ingredients.Add(summed.ingredients[i]);
+        }
+
+        switch (pe.myprep)
+        {
+            case Preparation.chopped:
+                minigames.StartCutting(5);
+                break;
+            case Preparation.mashed:
+                //dunno
+                break;
+            case Preparation.grated:
+                //dunno
+                break;
+            default:
+                break;
         }
     }
 
