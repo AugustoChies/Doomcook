@@ -96,7 +96,7 @@ public class Preparer : KitchenCell {
                 minigames.StartCutting(5);
                 break;
             case Preparation.mashed:
-                //dunno
+                minigames.StartMashing(5);
                 break;
             case Preparation.grated:
                 //dunno

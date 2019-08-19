@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinigamesScript : MonoBehaviour {
     public GameState gs;
     public KeycodesReference inputMap;
+    private bool takeInput;
     [Header("Minigame time values")]
     public float cutTime;
     public float mashTime;
@@ -23,28 +25,54 @@ public class MinigamesScript : MonoBehaviour {
     [Header("Cut game variables")]
     public float barSpeed;
     public float middleTolerance;
-    public float timeReduction;
     public float additionalSpeed;
     Transform beginning;
     Transform end;
     GameObject bar;
+
+    [Header("Mash game variables")]
+    public float gradualRegrowth;
+    GameObject button;
+    Vector3 originalScale;
     // Use this for initialization
     void Start() {
+        takeInput = false;
         gs.minigame = false;
         beginning = cutMinigame.transform.Find("Beginning");
         end = cutMinigame.transform.Find("Ending");
         bar = cutMinigame.transform.Find("Bar").gameObject;
+        button = mashMinigame.transform.Find("Button").gameObject;
+        originalScale = button.transform.localScale;
+    }
+
+    void LateUpdate()
+    {
+        if(gs.minigame)
+        {
+            takeInput = true;
+        }
     }
 
     public void StartCutting(float timeModifier)
     {
+        takeInput = false;
         gs.minigame = true;
         cutMinigame.SetActive(true);
         StartCoroutine(CutGame(timeModifier));
     }
 
+    public void StartMashing(float timeModifier)
+    {
+        takeInput = false;
+        gs.minigame = true;
+        button.transform.localScale = originalScale;
+        mashMinigame.SetActive(true);
+        StartCoroutine(MashGame(timeModifier));
+    }
+
     IEnumerator CutGame(float modifier)
     {
+        GameObject middle = cutMinigame.transform.Find("Middle").gameObject;
         bool right = true;
         float elapsedTime = cutTime + modifier;
         float currentSpeed = barSpeed;
@@ -52,19 +80,22 @@ public class MinigamesScript : MonoBehaviour {
         bar.transform.position = beginning.position;
         while (elapsedTime > 0)
         {
-            if(Input.GetKeyDown(inputMap.interact))
+            if(Input.GetKeyDown(inputMap.interact) && takeInput)
             {
-                if(barPosition > 0.5 - middleTolerance && barPosition < 0.5 + middleTolerance)
+                Color ocolor = middle.GetComponent<Image>().color;
+                if (barPosition > 0.5 - middleTolerance && barPosition < 0.5 + middleTolerance)
                 {
-                    elapsedTime -= timeReduction;
-                    currentSpeed += additionalSpeed;
+                    elapsedTime -= cutRedTime;
+                    currentSpeed += additionalSpeed;                    
+                    middle.GetComponent<Image>().color = Color.green;
                 }
                 else
                 {
-                    //miss sound
+                    middle.GetComponent<Image>().color = Color.red;
                 }
                 barPosition = 0;
                 right = true;
+                StartCoroutine(ChangeBackColor(ocolor, middle));
             }
 
             if(right)
@@ -89,6 +120,37 @@ public class MinigamesScript : MonoBehaviour {
             yield return null;
         }
         cutMinigame.SetActive(false);
+        gs.minigame = false;
+    }
+
+    IEnumerator ChangeBackColor(Color c,GameObject obj)
+    {
+        yield return new WaitForSeconds(0.3f);
+        obj.GetComponent<Image>().color = c;
+    }
+
+    IEnumerator MashGame(float modifier)
+    {
+        float elapsedTime = cutTime + modifier;
+        while (elapsedTime > 0)
+        {
+            if(button.transform.localScale.x < originalScale.x)
+            {
+                button.transform.localScale += new Vector3(originalScale.x,originalScale.y,originalScale.y) * gradualRegrowth * Time.deltaTime; 
+            }
+
+
+            if (Input.GetKeyDown(inputMap.interact) && takeInput)
+            {                
+                elapsedTime -= mashRedTime;
+                button.transform.localScale = originalScale / 2;
+            }
+            elapsedTime -= Time.deltaTime;
+
+
+            yield return null;
+        }
+        mashMinigame.SetActive(false);
         gs.minigame = false;
     }
 }
