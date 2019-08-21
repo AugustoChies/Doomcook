@@ -99,7 +99,7 @@ public class Preparer : KitchenCell {
                 minigames.StartMashing(5);
                 break;
             case Preparation.grated:
-                //dunno
+                minigames.StartGrating(5);
                 break;
             default:
                 break;

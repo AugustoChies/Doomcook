@@ -34,6 +34,10 @@ public class MinigamesScript : MonoBehaviour {
     public float gradualRegrowth;
     GameObject button;
     Vector3 originalScale;
+
+    [Header("Grate game variables")]
+    bool grateTick;
+    public GameObject Lbutton,Rbutton;
     // Use this for initialization
     void Start() {
         takeInput = false;
@@ -42,6 +46,9 @@ public class MinigamesScript : MonoBehaviour {
         end = cutMinigame.transform.Find("Ending");
         bar = cutMinigame.transform.Find("Bar").gameObject;
         button = mashMinigame.transform.Find("Button").gameObject;
+        Lbutton = grateMinigame.transform.Find("Left").gameObject;
+        Rbutton = grateMinigame.transform.Find("Right").gameObject;
+
         originalScale = button.transform.localScale;
     }
 
@@ -68,6 +75,14 @@ public class MinigamesScript : MonoBehaviour {
         button.transform.localScale = originalScale;
         mashMinigame.SetActive(true);
         StartCoroutine(MashGame(timeModifier));
+    }
+
+    public void StartGrating(float timeModifier)
+    {
+        takeInput = false;
+        gs.minigame = true;        
+        grateMinigame.SetActive(true);
+        StartCoroutine(GrateGame(timeModifier));
     }
 
     IEnumerator CutGame(float modifier)
@@ -151,6 +166,46 @@ public class MinigamesScript : MonoBehaviour {
             yield return null;
         }
         mashMinigame.SetActive(false);
+        gs.minigame = false;
+    }
+
+    IEnumerator GrateGame(float modifier)
+    {
+        float elapsedTime = grateTime + modifier;
+
+        grateTick = false;
+        Lbutton.GetComponent<Image>().color = Color.green;
+        Rbutton.GetComponent<Image>().color = Color.white;
+        while (elapsedTime > 0)
+        {
+            if(grateTick)
+            {
+                if (Input.GetKey(inputMap.interact))
+                {
+                    grateTick = false;
+                    Lbutton.GetComponent<Image>().color = Color.green;
+                    Rbutton.GetComponent<Image>().color = Color.white;
+                    elapsedTime -= grateRedTime;
+                }
+            }
+            else
+            {
+                if (Input.GetKey(inputMap.alternateminigame))
+                {
+                    grateTick = true;
+                    Lbutton.GetComponent<Image>().color = Color.white;
+                    Rbutton.GetComponent<Image>().color = Color.green;
+                }
+            }
+
+
+            
+            elapsedTime -= Time.deltaTime;
+
+
+            yield return null;
+        }
+        grateMinigame.SetActive(false);
         gs.minigame = false;
     }
 }
