@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248884c95fefec34590d38d11ac244d9, type: 3}
+  m_Name: MoleList
+  m_EditorClassIdentifier: 
+  dishes:
+  - ingredients:
+    - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
+      preparation: 1
+      point: 1
+  - ingredients:
+    - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
+      preparation: 2
+      point: 0
+    - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
+      preparation: 2
+      point: 0

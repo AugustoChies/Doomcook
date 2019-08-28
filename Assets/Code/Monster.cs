@@ -14,8 +14,12 @@ public abstract class Monster : MonoBehaviour {
     public FloatVariable life;
 
     protected float acounter = 0;
-    protected bool atTable = false;
-    protected bool moving = true;
+
+    [HideInInspector]
+    public bool atTable = false;
+    public bool moving = true;    
+    public bool barred = false;
+    protected Obstacle targetedObstacle;
 	// Use this for initialization
 	void Start () {
         int r = Random.Range(0, myList.dishes.Count);
@@ -106,9 +110,17 @@ public abstract class Monster : MonoBehaviour {
             atTable = true;
             moving = false;
         }
+        else if (other.GetComponent<Obstacle>())
+        {
+            barred = true;
+            moving = false;
+            targetedObstacle = other.GetComponent<Obstacle>();
+            targetedObstacle.barredMons.Add(this);
+        }
     }
 
     public abstract void Attack();
+    public abstract void AttackObstacle();
 
     IEnumerator Sink()
     {

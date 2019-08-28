@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zomboid : Monster {
-	void Update () {
+public class Mole : Monster
+{
+    void Awake()
+    {
+        moving = false;
+        StartCoroutine(Burrow(true));
+    }
+    void Update()
+    {
         if (moving)
         {
             this.transform.position += transform.forward * speed * Time.deltaTime;
@@ -54,5 +61,38 @@ public class Zomboid : Monster {
     public override void AttackObstacle()
     {
         targetedObstacle.life -= power;
+    }
+
+
+    IEnumerator Burrow(bool down)
+    {
+        if (down)
+        {
+            while (this.transform.position.y > -0.3f)
+            {
+                this.transform.position -= transform.up * 2.5f * Time.deltaTime;
+                yield return null;
+            }
+            moving = true;
+        }
+        else
+        {
+            while (this.transform.position.y < 2f)
+            {
+                this.transform.position += transform.up * 2.5f * Time.deltaTime;
+                yield return null;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Table")
+        {
+            StartCoroutine(Burrow(false));
+            myTable = other.gameObject;
+            atTable = true;
+            moving = false;
+        }        
     }
 }

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Preparer : KitchenCell {
+    public FloatVariable preptime;
     public PreparationEffect pe;
     public GameObject meter, pointer;
     public MinigamesScript minigames;
     public GameState gs;
 
-    
+    private float localtimer;
     // Use this for initialization
     void Start () {
         playerChar = GameObject.Find("Player");
@@ -29,14 +30,24 @@ public class Preparer : KitchenCell {
                 }
                 ShowCarriedMesh(true);
             }
+            else
+            {
+                localtimer += Time.deltaTime;
+                pointer.transform.Rotate(0, 0, -360 * Time.deltaTime / preptime.Value);
+                if(localtimer >= preptime.Value)
+                {
+                    gs.minigame = false;
+                    pointer.transform.eulerAngles = new Vector3(60,0,0);
+                }
+            }
         }
 	}
 
-    //public void ShowMeter()
-    //{
-    //    meter.SetActive(true);
-    //    pointer.SetActive(true);
-    //}
+    public void ShowMeter()
+    {
+        meter.SetActive(true);
+        pointer.SetActive(true);
+    }
 
     public bool CheckCompatibility(Food food)
     {
@@ -71,8 +82,8 @@ public class Preparer : KitchenCell {
 
     public override Food TakeFood()
     {
-        //meter.SetActive(false);
-        //pointer.SetActive(false);
+        meter.SetActive(false);
+        pointer.SetActive(false);
         Food returnedfood = new Food(placed.ingredients);
         placed.ingredients = new List<Ingredient>();
 
@@ -82,7 +93,8 @@ public class Preparer : KitchenCell {
     public override void SumFood(Food newfood)
     {
         preparing = true;
-       // ShowMeter();
+        ShowMeter();
+        localtimer = 0;
         Food summed = new Food(newfood.ingredients);
 
         for (int i = 0; i < summed.ingredients.Count; i++)
@@ -90,20 +102,22 @@ public class Preparer : KitchenCell {
             placed.ingredients.Add(summed.ingredients[i]);
         }
 
-        switch (pe.myprep)
-        {
-            case Preparation.chopped:
-                minigames.StartCutting(5);
-                break;
-            case Preparation.mashed:
-                minigames.StartMashing(5);
-                break;
-            case Preparation.grated:
-                minigames.StartGrating(5);
-                break;
-            default:
-                break;
-        }
+        gs.minigame = true;
+
+        //switch (pe.myprep)
+        //{
+        //    case Preparation.chopped:
+        //        minigames.StartCutting(5);
+        //        break;
+        //    case Preparation.mashed:
+        //        minigames.StartMashing(5);
+        //        break;
+        //    case Preparation.grated:
+        //        minigames.StartGrating(5);
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     public override bool CanbeTaken()

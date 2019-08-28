@@ -350,6 +350,7 @@ MonoBehaviour:
   pic: {fileID: 0}
   cic: {fileID: 0}
   playerChar: {fileID: 0}
+  preptime: {fileID: 11400000, guid: 9a8587228d8900f478fb9ae6c1e697cd, type: 2}
   pe: {fileID: 11400000, guid: 452e8fc7fa419c4489dda381fa88ad23, type: 2}
   meter: {fileID: 1040543469840372}
   pointer: {fileID: 1962661359217962}
