@@ -552,6 +552,7 @@ MonoBehaviour:
   atTable: 0
   moving: 1
   barred: 0
+  distManager: {fileID: 0}
 --- !u!1 &1406251812
 GameObject:
   m_ObjectHideFlags: 0

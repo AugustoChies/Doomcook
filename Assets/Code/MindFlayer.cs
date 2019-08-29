@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MindFlayer : Monster
 {
+    public Distortion distManager;
     void Update()
     {
         if (moving)
@@ -51,7 +51,7 @@ public class MindFlayer : Monster
     public override void Attack()
     {
         life.Value -= power;
-        //EFFECTO
+        distManager.Activate();
     }
 
     public override void AttackObstacle()
