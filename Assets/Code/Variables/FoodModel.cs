@@ -7,7 +7,7 @@ public class FoodModel : ScriptableObject {
     public SingleIngModelsList smlist;
     public Mesh myMesh;
     public int maxIngcount;
-    public bool hasVegetable, hasMeat;
+    public bool hasVegetable, hasMeat,hasFish;
     public CookPoint highestPoint;
     
     //chech if food applies to criteria
@@ -80,7 +80,31 @@ public class FoodModel : ScriptableObject {
         {            
             return false;
         }
-        
+
+        for (int i = 0; i < f.ingredients.Count; i++)
+        {
+            if (hasFish)
+            {
+                if (f.ingredients[i].type.isFish)
+                {
+                    yes = true;
+                    break;
+                }
+            }
+            else
+            {
+                yes = true;
+                if (f.ingredients[i].type.isFish)
+                {
+                    return false;
+                }
+            }
+        }
+        if (!yes)
+        {
+            return false;
+        }
+
 
         return true;
     }

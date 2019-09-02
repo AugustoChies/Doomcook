@@ -200,6 +200,7 @@ MonoBehaviour:
     Negative: 115
   angles: {x: -60, y: 180, z: 0}
   iconMaster: {fileID: 0}
+  gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
 --- !u!114 &114824713751320160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +219,7 @@ MonoBehaviour:
     ingredients: []
   modelReferences: {fileID: 11400000, guid: 4225e6ee0d102bc47917347c284a4228, type: 2}
   raycastLenght: 1
+  gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
 --- !u!114 &114406409834028132
 MonoBehaviour:
   m_ObjectHideFlags: 0

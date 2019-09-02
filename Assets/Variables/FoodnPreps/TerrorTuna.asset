@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e712f791a662104eb5c32ccc6f7b6dc, type: 3}
+  m_Name: TerrorTuna
+  m_EditorClassIdentifier: 
+  DeveloperDescription: A scary fish
+  IsChoppable: 1
+  IsMashable: 1
+  IsGratable: 1
+  isVegetable: 0
+  isMeat: 0
+  isFish: 1
