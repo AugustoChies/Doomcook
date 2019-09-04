@@ -3,7 +3,12 @@ guid: 1f7ed186bd316f24d95f40235c1fc071
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
+  - zonboid: {fileID: 1596999568692158, guid: 3fb0878854cd6dc43b45375d525ead6d, type: 3}
+  - mole: {fileID: 3620398435598375851, guid: dbd871f395ad76543a748bbb939b4f99, type: 3}
+  - blaze: {fileID: 1300854935, guid: f1d98de02f5a17f4e90e732d8ff07b16, type: 3}
+  - flayer: {fileID: 1300854935, guid: 21758ce3f788fb746b170b1476ad134b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

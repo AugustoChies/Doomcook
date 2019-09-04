@@ -7,26 +7,47 @@ public enum MonsterType
     zomboid,mole,blaze,flayer
 };
 
+[System.Serializable]
 public struct MonsterData
 {
-    MonsterType type;
-    int foodIndex;
-    float spawnTime;
+    public MonsterType type;
+    public int foodIndex;
+    public float spawnTime;
 };
 public class LaneSpawner : MonoBehaviour
 {
+    
     public List<MonsterData> monsters;
     public GameState gs;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject zonboid, mole, blaze, flayer;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(monsters.Count > 0 && gs.timer >= monsters[0].spawnTime)
+        {
+            GameObject mon = null;
+            switch (monsters[0].type)
+            {
+                case MonsterType.zomboid:
+                    mon = Instantiate(zonboid, this.transform.position,Quaternion.identity);
+                    mon.transform.eulerAngles = new Vector3(0, 90, 0);
+                    break;
+                case MonsterType.mole:
+                    mon = Instantiate(mole, this.transform.position, Quaternion.identity);
+                    mon.transform.eulerAngles = new Vector3(0, 90, 0);
+                    break;
+                case MonsterType.blaze:
+                    mon = Instantiate(blaze, this.transform.position, Quaternion.identity);
+                    mon.transform.eulerAngles = new Vector3(0, 90, 0);
+                    break;
+                case MonsterType.flayer:
+                    mon = Instantiate(flayer, this.transform.position, Quaternion.identity);
+                    mon.transform.eulerAngles = new Vector3(0, 90, 0);
+                    break;                   
+            }
+            mon.GetComponent<Monster>().SetFood(monsters[0].foodIndex);
+            monsters.RemoveAt(0);
+        }
     }
 }

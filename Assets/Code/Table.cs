@@ -13,14 +13,10 @@ public class Table : MonoBehaviour {
     void Start () {
         carryobjs = new List<GameObject>();
         carryobjs.Add(transform.Find("CarriedFood").gameObject);
-        carryobjs.Add(transform.Find("CarriedFood2").gameObject);
-        carryobjs.Add(transform.Find("CarriedFood3").gameObject);
-        carryobjs.Add(transform.Find("CarriedFood4").gameObject);
+        carryobjs.Add(transform.Find("CarriedFood2").gameObject);        
         placed = new List<Food>();
         placed.Add(new Food());
-        placed.Add(new Food());
-        placed.Add(new Food());
-        placed.Add(new Food());
+        placed.Add(new Food());      
     }
 	
 	// Update is called once per frame

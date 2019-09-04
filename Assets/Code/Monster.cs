@@ -21,11 +21,13 @@ public abstract class Monster : MonoBehaviour {
     public bool barred = false;
     protected Obstacle targetedObstacle;
 	// Use this for initialization
-	void Start () {
-        int r = Random.Range(0, myList.dishes.Count);
-        order = new Food(myList.dishes[r].ingredients);
-        ShowCarriedMesh();
-        
+	void Start () {        
+        ShowCarriedMesh();        
+    }
+
+    public void SetFood(int index)
+    {
+        order = new Food(myList.dishes[index].ingredients);
     }
 
     public void ShowCarriedMesh()
