@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CookTime
   m_EditorClassIdentifier: 
   DeveloperDescription: Default oven timer
-  Value: 10
+  Value: 8

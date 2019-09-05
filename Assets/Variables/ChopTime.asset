@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ChopTime
   m_EditorClassIdentifier: 
   DeveloperDescription: Max time for chopping food
-  Value: 3
+  Value: 2

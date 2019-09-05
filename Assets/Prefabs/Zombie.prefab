@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607aa9770892b9e48b8af66681348d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.85
   power: 5
   attackspeed: 4
   order:
@@ -549,6 +549,9 @@ MonoBehaviour:
   pic: {fileID: 11400000, guid: 9d5b6bb5e4e680745b1f426c3ce8976e, type: 2}
   cic: {fileID: 11400000, guid: db400c1d3640e0e4da4a273b66fb1826, type: 2}
   life: {fileID: 11400000, guid: 427fd3a975bc5bf4e9d7f850395bbaed, type: 2}
+  atTable: 0
+  moving: 1
+  barred: 0
 --- !u!1 &1792762589189850
 GameObject:
   m_ObjectHideFlags: 0
