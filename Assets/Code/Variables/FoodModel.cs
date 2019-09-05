@@ -30,7 +30,12 @@ public class FoodModel : ScriptableObject {
             }
         }
 
-        bool yes = false;
+        bool yes = true;
+
+        if (hasVegetable)
+        {
+            yes = false;
+        }
 
         for (int i = 0; i < f.ingredients.Count; i++)
         {
@@ -55,7 +60,10 @@ public class FoodModel : ScriptableObject {
             return false;
         }
 
-        yes = false;
+        if (hasMeat)
+        {
+            yes = false;
+        }
 
         for (int i = 0; i < f.ingredients.Count; i++)
         {
@@ -79,6 +87,11 @@ public class FoodModel : ScriptableObject {
         if (!yes)
         {            
             return false;
+        }
+
+        if (hasFish)
+        {
+            yes = false;
         }
 
         for (int i = 0; i < f.ingredients.Count; i++)

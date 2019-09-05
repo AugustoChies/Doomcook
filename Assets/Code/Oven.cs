@@ -17,30 +17,8 @@ public class Oven : KitchenCell{
 	void Update () {
         if (preparing)
         {
-            timer += Time.deltaTime;           
-
-            pointer.transform.Rotate(0, 0, -360/prepTime.Value * 4  * Time.deltaTime);
-
-            if(timer / prepTime > 1.0f)
-            {
-                meter.GetComponent<SpriteRenderer>().color = Color.black;
-            }
-            else if (timer / prepTime > 0.75f)
-            {
-                meter.GetComponent<SpriteRenderer>().color = Color.red;
-            }
-            else if (timer / prepTime > 0.50f)
-            {
-                meter.GetComponent<SpriteRenderer>().color = Color.yellow;
-            }
-            else if (timer / prepTime > 0.25f)
-            {
-                meter.GetComponent<SpriteRenderer>().color = Color.green;
-            }
-            else
-            {
-                meter.GetComponent<SpriteRenderer>().color = Color.white;
-            }
+            timer += Time.deltaTime;
+            pointer.transform.localEulerAngles = Vector3.Lerp(new Vector3(60, 0, 89.9f), new Vector3(60, 0, -89.9f),timer/prepTime);
         }
     }
 

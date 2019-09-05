@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6757009392064656901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6757009392064656903}
+  - component: {fileID: 6757009392064656902}
+  m_Layer: 0
+  m_Name: Lanespawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6757009392064656903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6757009392064656901}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -24.71, y: 2, z: -1}
+  m_LocalScale: {x: 1.2654605, y: 1.26546, z: 1.2654605}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6757009392064656902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6757009392064656901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7ed186bd316f24d95f40235c1fc071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters: []
+  gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
+  zonboid: {fileID: 1596999568692158, guid: 3fb0878854cd6dc43b45375d525ead6d, type: 3}
+  mole: {fileID: 3620398435598375851, guid: dbd871f395ad76543a748bbb939b4f99, type: 3}
+  blaze: {fileID: 1300854935, guid: f1d98de02f5a17f4e90e732d8ff07b16, type: 3}
+  flayer: {fileID: 1300854935, guid: 21758ce3f788fb746b170b1476ad134b, type: 3}
