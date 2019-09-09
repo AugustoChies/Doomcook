@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    public GameState gs;
     public Transform target;
     public Vector3 velocity = Vector3.one;
 
@@ -12,8 +13,15 @@ public class CameraControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothSpeed);
-        transform.position = smoothedPosition;
+        if (gs.wide)
+        {
+
+        }
+        else
+        {
+            Vector3 desiredPosition = target.position + offset;
+            Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothSpeed);
+            transform.position = smoothedPosition;
+        }
     }
 }

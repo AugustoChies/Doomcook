@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
         Vertical = new MoveAxis(controls.up, controls.down);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!gs.minigame)
         {
