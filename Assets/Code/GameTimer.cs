@@ -13,7 +13,7 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        if(!gs.upgrading)
+        if(!gs.upgrading && !gs.tutorial)
             gs.timer += Time.deltaTime;
     }
 }

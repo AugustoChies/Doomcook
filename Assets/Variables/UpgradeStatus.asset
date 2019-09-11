@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UpgradeStatus
   m_EditorClassIdentifier: 
   wallUpgrade: 0
-  prepUpgrade: 1
+  prepUpgrade: 0
   ovenUpgrade: 0
   tableCount: 0
   snackCount: 0

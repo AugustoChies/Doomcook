@@ -11,12 +11,16 @@ public enum UpgradeIDs
 [CreateAssetMenu]
 public class UpgradeRequirements : ScriptableObject
 {
+    public UpgradesStatus upgrades;
     public List<UpgradeIDs> iDs;
     public List<int> stars;
     public List<int> money;
 
-    public void CheckAvailability()
+    public void CheckAvailability(int ID)
     {
-        //stuff
+        if(ID <= 5)
+        {
+
+        }
     }
 }
