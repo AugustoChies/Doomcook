@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: UpgradeStatus
   m_EditorClassIdentifier: 
   wallUpgrade: 0
-  prepUpgrade: 0
+  prepUpgrade: 1
   ovenUpgrade: 0
   tableCount: 0
   snackCount: 0
-  screens: 0000000000
+  screens: 000000
   money: 0
   stars: 0

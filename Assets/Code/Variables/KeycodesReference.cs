@@ -9,6 +9,6 @@ public class KeycodesReference : ScriptableObject {
     public string DeveloperDescription = "";
 #endif
 
-    public KeyCode up, down, left, right, interact, alternateminigame, pause;
+    public KeyCode up, down, left, right, interact, alternateminigame, wideCamera,pause;
     
 }

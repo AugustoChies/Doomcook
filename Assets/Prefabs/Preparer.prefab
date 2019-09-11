@@ -308,6 +308,8 @@ MonoBehaviour:
   pointer: {fileID: 1523986791210596}
   minigames: {fileID: 0}
   gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
+  upgrades: {fileID: 11400000, guid: 42d9fee285f4d3d47b14ee4c8153807a, type: 2}
+  myUpgrade: 0
 --- !u!1 &1869005226982910
 GameObject:
   m_ObjectHideFlags: 0

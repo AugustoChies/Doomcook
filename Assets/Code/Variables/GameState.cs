@@ -7,6 +7,8 @@ public class GameState : ScriptableObject
     [Header("Camera")]
     public bool wide;
     [Header("Game")]
-    public bool minigame,tutorial;
+    public bool minigame;
+    public bool tutorial;
+    public bool upgrading;
     public float timer;
 }

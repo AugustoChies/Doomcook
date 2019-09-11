@@ -5,17 +5,32 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     public GameState gs;
-    public Transform target;
+    public KeycodesReference keys;
+    public Transform target,widetarget;
     public Vector3 velocity = Vector3.one;
 
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
+    private void Start()
+    {
+        gs.wide = false;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(keys.wideCamera))
+        {
+            gs.wide = !gs.wide;
+        }
+    }
+
     void FixedUpdate()
     {
         if (gs.wide)
-        {
-
+        {            
+            Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, widetarget.position, ref velocity, smoothSpeed);
+            transform.position = smoothedPosition;
         }
         else
         {

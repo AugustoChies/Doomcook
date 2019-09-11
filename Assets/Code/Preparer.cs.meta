@@ -3,7 +3,19 @@ guid: b082301f57e0846459d1d67837fa95e6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - modelReferences: {instanceID: 0}
+  - iic: {instanceID: 0}
+  - pic: {instanceID: 0}
+  - cic: {instanceID: 0}
+  - playerChar: {instanceID: 0}
+  - preptime: {instanceID: 0}
+  - pe: {instanceID: 0}
+  - meter: {instanceID: 0}
+  - pointer: {instanceID: 0}
+  - minigames: {instanceID: 0}
+  - gs: {instanceID: 0}
+  - upgrades: {fileID: 11400000, guid: 42d9fee285f4d3d47b14ee4c8153807a, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

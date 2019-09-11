@@ -18,7 +18,7 @@ public class PlayerInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(controls.interact) && !gs.minigame)
+		if(Input.GetKeyDown(controls.interact) && !gs.minigame && !gs.wide && !gs.upgrading)
         {            
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, raycastLenght))

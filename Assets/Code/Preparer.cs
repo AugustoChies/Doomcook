@@ -8,6 +8,8 @@ public class Preparer : KitchenCell {
     public GameObject meter, pointer;
     public MinigamesScript minigames;
     public GameState gs;
+    public UpgradesStatus upgrades;
+    public PrepUpgrade myUpgrade;
 
     private float localtimer;
     // Use this for initialization
@@ -19,27 +21,76 @@ public class Preparer : KitchenCell {
 	
 	// Update is called once per frame
 	void Update () {
-		if(preparing)
-        {            
-            if (!gs.minigame)
-            {                
-                preparing = false;
-                for (int i = 0; i < placed.ingredients.Count; i++)
-                {
-                    placed.ingredients[i].preparation = pe.myprep;
-                }
-                ShowCarriedMesh(true);
-            }
-            else
+        if (gs.upgrading)
+        {
+            myUpgrade = upgrades.prepUpgrade;
+        }
+		else 
+        {
+            switch (myUpgrade)
             {
-                localtimer += Time.deltaTime;
-                pointer.transform.Rotate(0, 0, -360 * Time.deltaTime / preptime.Value);
-                if(localtimer >= preptime.Value)
-                {
-                    gs.minigame = false;
-                    pointer.transform.eulerAngles = new Vector3(60,0,0);
-                }
-            }
+                case PrepUpgrade.standart:
+                    if (preparing)
+                    {
+                        if (!gs.minigame)
+                        {
+                            preparing = false;
+                            for (int i = 0; i < placed.ingredients.Count; i++)
+                            {
+                                placed.ingredients[i].preparation = pe.myprep;
+                            }
+                            ShowCarriedMesh(true);
+                        }
+                        else
+                        {
+                            localtimer += Time.deltaTime;
+                            pointer.transform.Rotate(0, 0, -360 * Time.deltaTime / preptime.Value);
+                            if (localtimer >= preptime.Value)
+                            {
+                                gs.minigame = false;
+                                pointer.transform.eulerAngles = new Vector3(60, 0, 0);
+                            }
+                        }
+                    }
+                    break;
+                case PrepUpgrade.minigame:
+                    if (preparing)
+                    { 
+                        if (!gs.minigame)
+                        {
+                            preparing = false;
+                            for (int i = 0; i < placed.ingredients.Count; i++)
+                            {
+                                placed.ingredients[i].preparation = pe.myprep;
+                            }
+                            ShowCarriedMesh(true);
+                        }
+                    }
+                    break;
+                case PrepUpgrade.auto:
+                    if (preparing)
+                    {
+                        localtimer += Time.deltaTime;
+                        pointer.transform.Rotate(0, 0, -360 * Time.deltaTime / preptime.Value);
+                        if (localtimer >= preptime.Value)
+                        {
+                            preparing = false;
+                            pointer.transform.eulerAngles = new Vector3(60, 0, 0);
+                        }
+                    }
+                    else if(meter.activeSelf)
+                    {                        
+                        for (int i = 0; i < placed.ingredients.Count; i++)
+                        {
+                            placed.ingredients[i].preparation = pe.myprep;
+                        }
+                        ShowCarriedMesh(true);
+                    }
+                    
+                    break;
+                default:
+                    break;
+            }            
         }
 	}
 
@@ -93,8 +144,7 @@ public class Preparer : KitchenCell {
     public override void SumFood(Food newfood)
     {
         preparing = true;
-        ShowMeter();
-        localtimer = 0;
+
         Food summed = new Food(newfood.ingredients);
 
         for (int i = 0; i < summed.ingredients.Count; i++)
@@ -102,22 +152,36 @@ public class Preparer : KitchenCell {
             placed.ingredients.Add(summed.ingredients[i]);
         }
 
-        gs.minigame = true;
-
-        //switch (pe.myprep)
-        //{
-        //    case Preparation.chopped:
-        //        minigames.StartCutting(5);
-        //        break;
-        //    case Preparation.mashed:
-        //        minigames.StartMashing(5);
-        //        break;
-        //    case Preparation.grated:
-        //        minigames.StartGrating(5);
-        //        break;
-        //    default:
-        //        break;
-        //}
+        switch (myUpgrade)
+        {
+            case PrepUpgrade.standart:
+                gs.minigame = true;
+                ShowMeter();
+                localtimer = 0;
+                break;
+            case PrepUpgrade.minigame:
+                switch (pe.myprep)
+                {
+                    case Preparation.chopped:
+                        minigames.StartCutting(5);
+                        break;
+                    case Preparation.mashed:
+                        minigames.StartMashing(5);
+                        break;
+                    case Preparation.grated:
+                        minigames.StartGrating(5);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case PrepUpgrade.auto:
+                ShowMeter();
+                localtimer = 0;
+                break;
+            default:
+                break;
+        }
     }
 
     public override bool CanbeTaken()
