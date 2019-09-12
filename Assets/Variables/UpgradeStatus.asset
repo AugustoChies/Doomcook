@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallUpgrade: 2
   prepUpgrade: 0
-  ovenUpgrade: 0
+  ovenUpgrade: 2
   tableCount: 0
   snackCount: 0
   screens: 000000
