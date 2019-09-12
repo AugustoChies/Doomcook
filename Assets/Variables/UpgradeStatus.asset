@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5888447dad975c448c80b545cb92541, type: 3}
   m_Name: UpgradeStatus
   m_EditorClassIdentifier: 
-  wallUpgrade: 0
+  wallUpgrade: 2
   prepUpgrade: 0
   ovenUpgrade: 0
   tableCount: 0
