@@ -11,6 +11,10 @@ public class Screen : MonoBehaviour
     private Transform iconmaster;
     private Food mahfood;
     private GameObject mahmonsta;
+    public int myLane;
+    public LanesMonsterList lanelist;
+    
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,10 +30,32 @@ public class Screen : MonoBehaviour
         ing9 = iconmaster.Find("Ing9").gameObject;
     }
 
+    
     // Update is called once per frame
     void Update()
     {
-        
+        if(!mahmonsta || !mahmonsta.GetComponent<Monster>().onlist)
+        {
+            
+            
+            if(lanelist.lanes[myLane - 1].Count > 0)
+            {
+                float closestDist = Vector3.Distance(lanelist.lanes[myLane - 1][0].transform.position, this.transform.position);
+                int closestIndex = 0;
+                for (int i = 0; i < lanelist.lanes[myLane - 1].Count; i++)
+                {
+                    if(Vector3.Distance(lanelist.lanes[myLane - 1][i].transform.position, this.transform.position) < closestDist)
+                    {
+                        closestDist = Vector3.Distance(lanelist.lanes[myLane - 1][i].transform.position, this.transform.position);
+                        closestIndex = i;
+                    }
+                }
+
+                mahmonsta = lanelist.lanes[myLane - 1][closestIndex];
+                mahfood = mahmonsta.GetComponent<Monster>().order;
+                ShowIcons(true, mahfood);
+            }
+        }
     }
 
     public void ShowIcons(bool yes, Food placed)

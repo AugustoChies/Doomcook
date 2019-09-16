@@ -49,21 +49,12 @@ public class LaneSpawner : MonoBehaviour
             }
             mon.GetComponent<Monster>().SetFood(monsters[0].foodIndex);
             mon.GetComponent<Monster>().myLane = myLaneIndex;
+            mon.GetComponent<Monster>().onlist = true;
             monsters.RemoveAt(0);
-            switch (myLaneIndex)
-            {
-                case 1:
-                    lanelist.lane1.Add(mon);
-                    break;
-                case 2:
-                    lanelist.lane2.Add(mon);
-                    break;
-                case 3:
-                    lanelist.lane3.Add(mon);
-                    break;
-                default:
-                    break;
-            }
+            
+            lanelist.lanes[myLaneIndex - 1].Add(mon);
+           
+            
         }
     }
 }

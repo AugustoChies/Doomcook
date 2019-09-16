@@ -4,12 +4,13 @@ using UnityEngine;
 [CreateAssetMenu]
 public class LanesMonsterList : ScriptableObject
 {
-    public List<GameObject> lane1, lane2, lane3;
+    public List<GameObject>[] lanes;
 
     public void Setup()
     {
-        lane1 = new List<GameObject>();
-        lane2 = new List<GameObject>();
-        lane3 = new List<GameObject>();
+        lanes = new List<GameObject>[3];
+        lanes[0] = new List<GameObject>();
+        lanes[1] = new List<GameObject>();
+        lanes[2] = new List<GameObject>();
     }
 }

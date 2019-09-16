@@ -21,6 +21,7 @@ public abstract class Monster : MonoBehaviour {
     public bool atTable = false;
     public bool moving = true;    
     public bool barred = false;
+    public bool onlist;
     protected Obstacle targetedObstacle;
 	// Use this for initialization
 	void Start () {        
@@ -127,21 +128,9 @@ public abstract class Monster : MonoBehaviour {
     public abstract void AttackObstacle();
 
     IEnumerator Sink()
-    {
-        switch (myLane)
-        {
-            case 1:
-                lanelist.lane1.Remove(this.gameObject);
-                break;
-            case 2:
-                lanelist.lane2.Remove(this.gameObject);
-                break;
-            case 3:
-                lanelist.lane3.Remove(this.gameObject);
-                break;
-            default:
-                break;
-        }
+    {        
+        lanelist.lanes[myLane - 1].Remove(this.gameObject);
+        onlist = false;
         for (float i = 0; i < 3; i += Time.deltaTime)
         {
             this.transform.position -= transform.up * 2 * Time.deltaTime;
