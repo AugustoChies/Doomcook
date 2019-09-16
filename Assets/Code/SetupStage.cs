@@ -5,20 +5,17 @@ using System.IO;
 
 public class SetupStage : MonoBehaviour
 {
+    public LanesMonsterList laneList;
     public LaneSpawner[] lanes;
     public int currentStage;
     
     // Start is called before the first frame update
     void Awake()
     {
+        laneList.Setup();
         Setup();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     void Setup()
     {

@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: Lanespawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7ed186bd316f24d95f40235c1fc071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanelist: {fileID: 11400000, guid: d6b538f292cfd354e86ab335add13af6, type: 2}
+  myLaneIndex: 1
   monsters: []
   gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
   zonboid: {fileID: 1596999568692158, guid: 3fb0878854cd6dc43b45375d525ead6d, type: 3}
