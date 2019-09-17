@@ -7,6 +7,7 @@ TagManager:
   - Interaction
   - Table
   - Enemy
+  - Snack
   layers:
   - Default
   - TransparentFX
