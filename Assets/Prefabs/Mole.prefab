@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3615114238366935217}
   - component: {fileID: 3515169113053521405}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3617526971742101523}
   - component: {fileID: 3515428613642861717}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3615227406610245113}
   - component: {fileID: 3515091254243435649}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3615179668151504541}
   - component: {fileID: 3515528892681152427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3614726745124408569}
   - component: {fileID: 3515603447043539273}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3615088481599127449}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Icons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 3624624759785081593}
   - component: {fileID: 3632600844577472653}
   - component: {fileID: 3706203267224374753}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chef carl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3617582834261942865}
   - component: {fileID: 3515695238545880407}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 3737794391481003365}
   - component: {fileID: 3673467222637978409}
   - component: {fileID: 6634736913409101374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mole
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -751,6 +751,7 @@ MonoBehaviour:
   atTable: 0
   moving: 1
   barred: 0
+  onlist: 0
 --- !u!1 &3620534793133273295
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3617571993049517291}
   - component: {fileID: 3517247916183658593}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3615057968132681979}
   - component: {fileID: 3517189923875340085}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3617819054922854899}
   - component: {fileID: 3517097009426049579}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

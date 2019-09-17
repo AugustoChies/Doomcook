@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248710323}
   - component: {fileID: 248710324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361923769}
   - component: {fileID: 361923770}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 841124420}
   - component: {fileID: 841124421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 1081989044}
   - component: {fileID: 1081989043}
   - component: {fileID: 1081989042}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chef carl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1183938159}
   - component: {fileID: 1183938160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 1300854938}
   - component: {fileID: 1300854937}
   - component: {fileID: 8494974062535100925}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MindFlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -554,6 +554,7 @@ MonoBehaviour:
   atTable: 0
   moving: 1
   barred: 0
+  onlist: 0
   distManager: {fileID: 0}
 --- !u!1 &1406251812
 GameObject:
@@ -565,7 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406251813}
   - component: {fileID: 1406251814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425246940}
   - component: {fileID: 1425246941}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -723,7 +724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425728254}
   - component: {fileID: 1425728255}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1695148386}
   - component: {fileID: 1695148387}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1949151635}
   - component: {fileID: 1949151636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072572936}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Icons
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4738164773714158}
   - component: {fileID: 212796034549233440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4083617501805030}
   - component: {fileID: 212984593994392126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4402221216777470}
   - component: {fileID: 212890861570828404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4412544735046212}
   - component: {fileID: 212183157679078722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 33443053697254124}
   - component: {fileID: 23088080471984280}
   - component: {fileID: 95848244076742132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chef carl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 136446603013334384}
   - component: {fileID: 54421142041504572}
   - component: {fileID: 114728419686590860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -554,6 +554,7 @@ MonoBehaviour:
   atTable: 0
   moving: 1
   barred: 0
+  onlist: 0
 --- !u!1 &1792762589189850
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4542655571003016}
   - component: {fileID: 212297702516912062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4730745106298764}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Icons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4934156542379244}
   - component: {fileID: 212372805720492380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757017270313124}
   - component: {fileID: 212780699625582056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4390182976628742}
   - component: {fileID: 212477283563877504}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590909560040940}
   - component: {fileID: 212669305861713044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
