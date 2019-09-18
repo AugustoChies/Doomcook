@@ -15,12 +15,4 @@ public class UpgradeRequirements : ScriptableObject
     public List<UpgradeIDs> iDs;
     public List<int> stars;
     public List<int> money;
-
-    public void CheckAvailability(int ID)
-    {
-        if(ID <= 5)
-        {
-
-        }
-    }
 }
