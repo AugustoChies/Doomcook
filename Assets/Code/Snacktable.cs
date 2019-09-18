@@ -7,7 +7,8 @@ public class Snacktable : MonoBehaviour
     public List<GameObject> snackmodels;
     private int snackmodelCurrent = 0;
     private int placedSnacks;
-    public float availableSnacks;
+    public int availableSnacks;
+    public float snackeatingtime;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -25,7 +26,11 @@ public class Snacktable : MonoBehaviour
     public void Eat()
     {
         placedSnacks--;
-        snackmodels[0].SetActive(false);
+        snackmodels[snackmodelCurrent].SetActive(false);
         snackmodelCurrent++;
+        if(placedSnacks <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

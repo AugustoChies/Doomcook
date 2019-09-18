@@ -93,6 +93,29 @@ public class Mole : Monster
             myTable = other.gameObject;
             atTable = true;
             moving = false;
-        }        
+        }
+        else if (other.tag == "Snack")
+        {
+            if (!ateSnack && !snacking)
+            {
+                int availableSnacks = other.transform.parent.GetComponent<Snacktable>().availableSnacks;
+                availableSnacks--;
+                if (availableSnacks < 0) { availableSnacks = 0; }
+
+                snackXPos = other.transform.parent.GetComponent<Snacktable>().snackmodels[7 - availableSnacks].transform.position.x;
+                other.transform.parent.GetComponent<Snacktable>().availableSnacks--;
+                snacking = true;
+
+                if (other.name == "Lower")
+                {
+                    up = true;
+                }
+                else if (other.name == "Upper")
+                {
+                    up = false;
+                }
+            }
+
+        }
     }
 }

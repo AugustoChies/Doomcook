@@ -12,6 +12,8 @@ public abstract class Monster : MonoBehaviour {
     public IngredientPrepMap pic;
     public IngredientCookMap cic;
     public FloatVariable life;
+    public float snackEatingTime;
+    public float snackpersonaltime;
 
     protected float acounter = 0;
     public LanesMonsterList lanelist;
@@ -21,11 +23,98 @@ public abstract class Monster : MonoBehaviour {
     public bool atTable = false;
     public bool moving = true;    
     public bool barred = false;
+
+    public bool snacking = false;
+    public bool eatingSnack = false;
+    public bool ateSnack = false;
+    public float snackXPos;
+    public bool up;
+    public float originalZ;
+    protected Snacktable snacktable;
+
     public bool onlist;
     protected Obstacle targetedObstacle;
-	// Use this for initialization
-	void Start () {        
-        ShowCarriedMesh();        
+    // Use this for initialization
+    void Start()
+    {
+        ShowCarriedMesh();
+        originalZ = this.transform.position.z;
+    }
+
+    void Update()
+    {
+        if (moving)
+        {
+            this.transform.position += transform.forward * speed * Time.deltaTime;
+            if (ateSnack && this.transform.position.z > originalZ + 0.05f)
+            {
+                this.transform.position += transform.right * speed * Time.deltaTime;
+            }
+            else if (ateSnack && this.transform.position.z < originalZ - 0.05f)
+            {
+                this.transform.position += -transform.right * speed * Time.deltaTime;
+            }
+
+            if (snacking && this.transform.position.x >= snackXPos)
+            {
+                if (up)
+                {
+                    this.transform.eulerAngles = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    this.transform.eulerAngles = new Vector3(0, 180, 0);
+                }
+                snacking = false;
+            }
+        }
+        else if (atTable)
+        {
+            bool eat = false;
+            for (int i = 0; i < myTable.GetComponent<Table>().placed.Count; i++)
+            {
+                if (myTable.GetComponent<Table>().placed[i].Equals(order))
+                {
+                    eat = true;
+                    atTable = false;
+                    myTable.GetComponent<Table>().placed[i] = new Food();
+                    order = new Food();
+                    myTable.GetComponent<Table>().ShowCarriedMesh();
+                    ShowCarriedMesh();
+                    StartCoroutine("Sink");
+                    break;
+                }
+            }
+            if (!eat)
+            {
+                acounter += 1 * Time.deltaTime;
+                if (acounter > attackspeed)
+                {
+                    acounter = 0;
+                    Attack();
+                }
+            }
+        }
+        else if (barred)
+        {
+            acounter += 1 * Time.deltaTime;
+            if (acounter > attackspeed)
+            {
+                acounter = 0;
+                AttackObstacle();
+            }
+        }
+        else if (eatingSnack)
+        {
+            snackpersonaltime += 1 * Time.deltaTime;
+            if (snackpersonaltime >= snackEatingTime)
+            {
+                ateSnack = true;
+                moving = true;
+                snacktable.Eat();
+                this.transform.eulerAngles = new Vector3(0, 90, 0);
+            }
+        }
     }
 
     public void SetFood(int index)
@@ -115,12 +204,47 @@ public abstract class Monster : MonoBehaviour {
             atTable = true;
             moving = false;
         }
+        else if(other.tag == "Snack")
+        {
+            if (!ateSnack && !snacking)
+            {
+                int availableSnacks = other.transform.parent.GetComponent<Snacktable>().availableSnacks;
+                availableSnacks--;
+                if(availableSnacks < 0) { availableSnacks = 0; }
+
+                snackXPos = other.transform.parent.GetComponent<Snacktable>().snackmodels[7 - availableSnacks].transform.position.x;
+                other.transform.parent.GetComponent<Snacktable>().availableSnacks--;                
+                snacking = true;
+                
+                if (other.name == "Lower")
+                {
+                    up = true;
+                }
+                else if (other.name == "Upper")
+                {
+                    up = false;                    
+                }
+            }
+            
+        }
         else if (other.GetComponent<Obstacle>())
         {
             barred = true;
             moving = false;
             targetedObstacle = other.GetComponent<Obstacle>();
             targetedObstacle.barredMons.Add(this);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Snack")
+        {
+            moving = false;
+            eatingSnack = true;
+            snacktable = collision.transform.parent.gameObject.GetComponent<Snacktable>();
+            snackEatingTime = snacktable.snackeatingtime;
+            snackpersonaltime = 0;
         }
     }
 

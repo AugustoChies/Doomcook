@@ -34,10 +34,8 @@ public class Screen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!mahmonsta || !mahmonsta.GetComponent<Monster>().onlist)
-        {
-            
-            
+       // if(!mahmonsta || !mahmonsta.GetComponent<Monster>().onlist)
+       // {           
             if(lanelist.lanes[myLane - 1].Count > 0)
             {
                 float closestDist = Vector3.Distance(lanelist.lanes[myLane - 1][0].transform.position, this.transform.position);
@@ -55,7 +53,7 @@ public class Screen : MonoBehaviour
                 mahfood = mahmonsta.GetComponent<Monster>().order;
                 ShowIcons(true, mahfood);
             }
-        }
+        //}
     }
 
     public void ShowIcons(bool yes, Food placed)
