@@ -127,4 +127,10 @@ public class Table : MonoBehaviour {
             }
         }  
     }
+
+    public void DeleteFood(short index)
+    {
+        placed[index] = (new Food());
+        ShowCarriedMesh();
+    }
 }

@@ -30,31 +30,83 @@ public class UpgradeButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moneytxt.text = "" + requirements.money[costindex];
+        startxt.text = "" + requirements.stars[costindex];
         switch (myID)
         {
             case UpgradeIDs.strongwall:
+                if (upgrades.wallUpgrade == WallUpgrade.great)
+                {
+                    mybutton.interactable = false;
+                }
+                else
+                {
+                    mybutton.interactable = true;
+                }
                 break;
             case UpgradeIDs.strongestwall:
+                if (upgrades.wallUpgrade == WallUpgrade.greater)
+                {
+                    mybutton.interactable = false;
+                }
+                else
+                {
+                    mybutton.interactable = true;
+                }
                 break;
-            case UpgradeIDs.autoprep:
-                moneytxt.text = "" + requirements.money[costindex];
-                startxt.text = "" + requirements.stars[costindex];
+            case UpgradeIDs.autoprep:                
                 if (upgrades.prepUpgrade == PrepUpgrade.auto)
                 {
                     mybutton.interactable = false;
                 }
-                    break;
+                else
+                {
+                    mybutton.interactable = true;
+                }
+                break;
             case UpgradeIDs.miniprep:
+                if (upgrades.prepUpgrade == PrepUpgrade.minigame)
+                {
+                    mybutton.interactable = false;
+                }
+                else
+                {
+                    mybutton.interactable = true;
+                }
                 break;
             case UpgradeIDs.fastburn:
+                if (upgrades.ovenUpgrade == OvenUpgrade.fast)
+                {
+                    mybutton.interactable = false;
+                }
+                else
+                {
+                    mybutton.interactable = true;
+                }
                 break;
             case UpgradeIDs.noburn:
+                if (upgrades.ovenUpgrade == OvenUpgrade.unburning)
+                {
+                    mybutton.interactable = false;
+                }
+                else
+                {
+                    mybutton.interactable = true;
+                }
                 break;
             case UpgradeIDs.table:
                 break;
             case UpgradeIDs.snack:
                 break;
             case UpgradeIDs.screen:
+                if (upgrades.screens[screenID])
+                {
+                    //mybutton.interactable = false;
+                }
+                else
+                {
+                    mybutton.interactable = true;
+                }
                 break;
             default:
                 break;
@@ -69,29 +121,83 @@ public class UpgradeButton : MonoBehaviour
             case UpgradeIDs.strongwall:
                 if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
                 {
-
+                    upgrades.money -= requirements.money[costindex];
 
                     upgrades.wallUpgrade = WallUpgrade.great;
                 }
                 break;
             case UpgradeIDs.strongestwall:
-                upgrades.wallUpgrade = WallUpgrade.greater;
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    upgrades.money -= requirements.money[costindex];
+
+                    upgrades.wallUpgrade = WallUpgrade.greater;
+                }
                 break;
             case UpgradeIDs.autoprep:
-                upgrades.prepUpgrade = PrepUpgrade.auto;          
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    upgrades.money -= requirements.money[costindex];
+
+                    upgrades.prepUpgrade = PrepUpgrade.auto;
+                }                
                 break;
             case UpgradeIDs.miniprep:
-                upgrades.prepUpgrade = PrepUpgrade.minigame;
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    upgrades.money -= requirements.money[costindex];
+
+                    upgrades.prepUpgrade = PrepUpgrade.minigame;
+                }
                 break;
             case UpgradeIDs.fastburn:
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    upgrades.money -= requirements.money[costindex];
+
+                    upgrades.ovenUpgrade = OvenUpgrade.fast;
+                }
                 break;
             case UpgradeIDs.noburn:
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    upgrades.money -= requirements.money[costindex];
+
+                    upgrades.ovenUpgrade = OvenUpgrade.unburning;
+                }
                 break;
             case UpgradeIDs.table:
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    upgrades.money -= requirements.money[costindex];
+
+                    upgrades.tableCount++;
+                }
                 break;
             case UpgradeIDs.snack:
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    upgrades.money -= requirements.money[costindex];
+
+                    upgrades.snackCount++;
+                }
                 break;
             case UpgradeIDs.screen:
+                if (requirements.money[costindex] <= upgrades.money && requirements.stars[costindex] <= upgrades.stars)
+                {
+                    if (!upgrades.screens[screenID])
+                    {
+                        upgrades.money -= requirements.money[costindex];
+
+                        upgrades.screens[screenID] = true;
+                    }
+                    else
+                    {
+                        upgrades.money += (int)(requirements.money[costindex] * 0.8f);
+
+                        upgrades.screens[screenID] = false;
+                    }
+                }
                 break;
             default:
                 break;

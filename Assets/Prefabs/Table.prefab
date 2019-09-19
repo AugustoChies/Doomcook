@@ -169,6 +169,8 @@ GameObject:
   - component: {fileID: 4253842756841248}
   - component: {fileID: 33507298915769046}
   - component: {fileID: 23707560897350236}
+  - component: {fileID: 1050015601}
+  - component: {fileID: 1050015600}
   m_Layer: 0
   m_Name: CarriedFood
   m_TagString: Untagged
@@ -244,6 +246,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1050015601
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198118019354174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0888623, y: 0.1079087, z: 0.084785536}
+  m_Center: {x: 0, y: 0.000000005587935, z: 0}
+--- !u!114 &1050015600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198118019354174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba75737216fa8a643af9e1c1b730d6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mytable: {fileID: 0}
+  myIndex: 0
 --- !u!1 &1333998576714098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1343,8 @@ GameObject:
   - component: {fileID: 4670010367363904}
   - component: {fileID: 33109247154469168}
   - component: {fileID: 23501797423305514}
+  - component: {fileID: 1419348070}
+  - component: {fileID: 5565683622143784004}
   m_Layer: 0
   m_Name: CarriedFood2
   m_TagString: Untagged
@@ -1389,6 +1420,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1419348070
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725489218676426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0888623, y: 0.1079087, z: 0.084785536}
+  m_Center: {x: 0, y: 0.000000005587935, z: 0}
+--- !u!114 &5565683622143784004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725489218676426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba75737216fa8a643af9e1c1b730d6cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mytable: {fileID: 0}
+  myIndex: 1
 --- !u!1 &1741967770843276
 GameObject:
   m_ObjectHideFlags: 0
