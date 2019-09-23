@@ -51,35 +51,6 @@ public class UpgradeController : MonoBehaviour
     public void DoneButton()
     {
         gs.upgrading = false;
-    }
-
-    public void PreparerMinigame()
-    {
-        upgrades.prepUpgrade = PrepUpgrade.minigame;
-    }
-
-    public void PreparerAuto()
-    {
-        upgrades.prepUpgrade = PrepUpgrade.auto;
-    }
-
-    public void OvenBurner()
-    {
-        upgrades.ovenUpgrade = OvenUpgrade.fast;
-    }
-
-    public void OvenUnburner()
-    {
-        upgrades.ovenUpgrade = OvenUpgrade.unburning;
-    }
-
-    public void StrongerWall()
-    {
-        upgrades.wallUpgrade = WallUpgrade.great;
-    }
-
-    public void StrongestWall()
-    {
-        upgrades.wallUpgrade = WallUpgrade.greater;
-    }
+    } 
+  
 }
