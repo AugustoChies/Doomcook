@@ -22,6 +22,7 @@ public class LoseWinBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gs.end = false;
         stars = new GameObject[3];
         done = false;
         reward = winCanvas.transform.Find("RewardValue").GetComponent<TextMeshProUGUI>();
@@ -39,11 +40,13 @@ public class LoseWinBehavior : MonoBehaviour
             {
                 done = true;
                 StartCoroutine(RiseLose());
+                gs.end = true;
             }
             else if(lane1.monsters.Count == 0 && lane2.monsters.Count == 0 && lane3.monsters.Count == 0
                 && monsterList.lanes[0].Count == 0 && monsterList.lanes[1].Count == 0 && monsterList.lanes[2].Count == 0)
             {
                 done = true;
+                gs.end = true;
                 stars[0].SetActive(false);
                 stars[1].SetActive(false);
                 stars[2].SetActive(false);
