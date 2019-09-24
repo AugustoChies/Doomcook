@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5888447dad975c448c80b545cb92541, type: 3}
   m_Name: UpgradeStatus
   m_EditorClassIdentifier: 
-  wallUpgrade: 1
-  prepUpgrade: 1
-  ovenUpgrade: 1
-  tableCount: 0
-  snackCount: 0
+  wallUpgrade: 0
+  prepUpgrade: 0
+  ovenUpgrade: 0
+  tableCount: 2
+  snackCount: 1
   screens: 010101
-  money: 0
+  money: -40
   stars: 0
