@@ -47,7 +47,7 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     sellImage.SetActive(false);
-                    if(requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                    if(requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                     {
                         mybutton.interactable = false;
                     }
@@ -65,16 +65,12 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     sellImage.SetActive(false);
-                    if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                    if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                     {
-                        Debug.Log("in" +this.name);
-
                         mybutton.interactable = false;
                     }
                     else
                     {
-                        Debug.Log("out" + " " + costindex);
-
                         mybutton.interactable = true;
                     }
                 }
@@ -87,7 +83,7 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     sellImage.SetActive(false);
-                    if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                    if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                     {
                         mybutton.interactable = false;
                     }
@@ -105,7 +101,7 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     sellImage.SetActive(false);
-                    if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                    if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                     {
                         mybutton.interactable = false;
                     }
@@ -123,7 +119,7 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     sellImage.SetActive(false);
-                    if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                    if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                     {
                         mybutton.interactable = false;
                     }
@@ -141,7 +137,7 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     sellImage.SetActive(false);
-                    if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                    if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                     {
                         mybutton.interactable = false;
                     }
@@ -152,7 +148,7 @@ public class UpgradeButton : MonoBehaviour
                 }
                 break;
             case UpgradeIDs.table:
-                if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                 {
                     mybutton.interactable = false;
                 }
@@ -162,7 +158,7 @@ public class UpgradeButton : MonoBehaviour
                 }
                 break;
             case UpgradeIDs.snack:
-                if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                 {
                     mybutton.interactable = false;
                 }
@@ -179,7 +175,7 @@ public class UpgradeButton : MonoBehaviour
                 else
                 {
                     sellImage.SetActive(false);
-                    if (requirements.money[costindex] < upgrades.money || requirements.stars[costindex] < upgrades.stars)
+                    if (requirements.money[costindex] > upgrades.money || requirements.stars[costindex] > upgrades.stars)
                     {
                         mybutton.interactable = false;
                     }

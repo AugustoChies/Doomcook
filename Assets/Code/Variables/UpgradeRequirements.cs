@@ -12,7 +12,7 @@ public enum UpgradeIDs
 public class UpgradeRequirements : ScriptableObject
 {
     public UpgradesStatus upgrades;
-    public List<UpgradeIDs> iDs;
-    public List<int> stars;
+    public List<UpgradeIDs> iDs;   
     public List<int> money;
+    public List<int> stars;
 }

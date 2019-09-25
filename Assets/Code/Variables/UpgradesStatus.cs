@@ -24,8 +24,8 @@ public class UpgradesStatus : ScriptableObject
     public WallUpgrade wallUpgrade;
     public PrepUpgrade prepUpgrade;
     public OvenUpgrade ovenUpgrade;
-    public float tableCount;
-    public float snackCount;
+    public int tableCount;
+    public int snackCount;
     public List<bool> screens;
 
     public int money, stars;
