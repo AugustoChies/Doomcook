@@ -192,7 +192,8 @@ public class Preparer : KitchenCell {
     {
         if (playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count > 1 
             || playerChar.GetComponent<PlayerInteraction>().carried.ingredients[0].IsPrepared() 
-            || !CheckCompatibility(playerChar.GetComponent<PlayerInteraction>().carried))
+            || !CheckCompatibility(playerChar.GetComponent<PlayerInteraction>().carried)
+            || preparing || placed.ingredients.Count > 2)
         {
             return false;
         }
