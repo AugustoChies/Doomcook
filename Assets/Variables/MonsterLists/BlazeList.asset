@@ -16,11 +16,36 @@ MonoBehaviour:
   - ingredients:
     - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
       preparation: 1
-      point: 1
+      point: 4
   - ingredients:
     - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
       preparation: 2
-      point: 0
+      point: 4
     - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
       preparation: 2
-      point: 0
+      point: 4
+  - ingredients:
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 2
+      point: 4
+  - ingredients:
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 1
+      point: 4
+    - type: {fileID: 11400000, guid: bd700e5505f232440a5173f5488e0767, type: 2}
+      preparation: 1
+      point: 4
+  - ingredients:
+    - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
+      preparation: 3
+      point: 4
+    - type: {fileID: 11400000, guid: bd700e5505f232440a5173f5488e0767, type: 2}
+      preparation: 1
+      point: 4
+  - ingredients:
+    - type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
+      preparation: 3
+      point: 4
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 2
+      point: 4
