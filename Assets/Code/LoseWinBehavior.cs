@@ -78,7 +78,7 @@ public class LoseWinBehavior : MonoBehaviour
                 }
                 obtainedmoney = obtainedstars * 500;
 
-                StartCoroutine(RiseWin(obtainedmoney,obtainedstars - 1));
+                StartCoroutine(RiseWin(obtainedmoney,obtainedstars));
             }
         }
     }
@@ -120,30 +120,30 @@ public class LoseWinBehavior : MonoBehaviour
 
         winCanvas.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine(ShowStar(reward,stars));
+        StartCoroutine(ShowStar(reward,0,stars));
     }
 
-    IEnumerator ShowStar(int reward,int index)
+    IEnumerator ShowStar(int reward,int index,int star)
     {
-        if(index >= 0)
+        if(index < star)
         {
-            stars[2-index].SetActive(true);
-            stars[2-index].transform.localScale = new Vector3(2,2,2);
+            Debug.Log(index);
+            stars[index].SetActive(true);
+            stars[index].transform.localScale = new Vector3(2,2,2);
             float scalevalue = 2;
-            while (stars[2 - index].transform.localScale.x > 1.2f)
+            while (stars[index].transform.localScale.x > 1.2f)
             {
                 scalevalue -= 2 * Time.deltaTime;
-                stars[2-index].transform.localScale = new Vector3(scalevalue, scalevalue, scalevalue);
+                stars[index].transform.localScale = new Vector3(scalevalue, scalevalue, scalevalue);
                 yield return null;
             }
-            stars[2 - index].transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            stars[index].transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             yield return new WaitForSeconds(0.5f);
-            StartCoroutine(ShowStar(reward,index - 1));
+            StartCoroutine(ShowStar(reward,index + 1,star));
         }
         else
         {
             StartCoroutine(RiseMoney(reward));
-
         }
     }
 

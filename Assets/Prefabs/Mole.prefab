@@ -736,7 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   power: 5
-  attackspeed: 3
+  attackspeed: 4
   order:
     ingredients: []
   iconMaster: {fileID: 3620317748051668793}
@@ -746,11 +746,19 @@ MonoBehaviour:
   pic: {fileID: 11400000, guid: 9d5b6bb5e4e680745b1f426c3ce8976e, type: 2}
   cic: {fileID: 11400000, guid: db400c1d3640e0e4da4a273b66fb1826, type: 2}
   life: {fileID: 11400000, guid: 427fd3a975bc5bf4e9d7f850395bbaed, type: 2}
+  snackEatingTime: 0
+  snackpersonaltime: 0
   lanelist: {fileID: 11400000, guid: d6b538f292cfd354e86ab335add13af6, type: 2}
   myLane: 0
   atTable: 0
   moving: 1
   barred: 0
+  snacking: 0
+  eatingSnack: 0
+  ateSnack: 0
+  snackXPos: 0
+  up: 0
+  originalZ: 0
   onlist: 0
 --- !u!1 &3620534793133273295
 GameObject:

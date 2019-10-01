@@ -47,6 +47,7 @@ public class LaneSpawner : MonoBehaviour
                 case MonsterType.flayer:
                     mon = Instantiate(flayer, this.transform.position, Quaternion.identity);
                     mon.transform.eulerAngles = new Vector3(0, 90, 0);
+                    mon.GetComponent<MindFlayer>().distManager = GameObject.Find("OrderCanvas").GetComponent<Distortion>();
                     break;
             }
             mon.GetComponent<Monster>().SetFood(monsters[0].foodIndex);
