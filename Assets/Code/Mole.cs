@@ -51,6 +51,9 @@ public class Mole : Monster
                 AttackObstacle();
             }
         }
+
+        iconMaster.transform.rotation = rotation;
+
     }
 
     public override void Attack()

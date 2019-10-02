@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Zomboid : Monster {
-	
+
 
     public override void Attack()
     {

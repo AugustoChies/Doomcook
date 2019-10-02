@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Monster : MonoBehaviour {
     public float speed, power, attackspeed;
     public Food order;
+
     public GameObject iconMaster,myTable;
     public MonsterPrefList myList;
 
@@ -34,10 +35,16 @@ public abstract class Monster : MonoBehaviour {
 
     public bool onlist;
     protected Obstacle targetedObstacle;
+
+    [SerializeField]
+    protected Vector3 angles;
+    protected Quaternion rotation;
     // Use this for initialization
     void Start()
     {
         ShowCarriedMesh();
+        rotation = Quaternion.Euler(angles);
+
         originalZ = this.transform.position.z;
     }
 
@@ -115,6 +122,9 @@ public abstract class Monster : MonoBehaviour {
                 this.transform.eulerAngles = new Vector3(0, 90, 0);
             }
         }
+
+        iconMaster.transform.rotation = rotation;
+
     }
 
     public void SetFood(int index)
