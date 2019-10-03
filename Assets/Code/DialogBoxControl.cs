@@ -47,13 +47,16 @@ public class DialogBoxControl : MonoBehaviour
             NewText();
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (gs.tutorial)
         {
-            textTriggers = 0;
-            StartCoroutine("RetractBox");
-            StartCoroutine(DelayedPause());           
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                textTriggers = 0;
+                StartCoroutine("RetractBox");
+                StartCoroutine(DelayedPause());
+            }
+            inputlock = false;
         }
-        inputlock = false;
     }
 
 
