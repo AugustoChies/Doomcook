@@ -14,9 +14,12 @@ public class UpgradeController : MonoBehaviour
 
     private void Awake()
     {
+        for (int i = 0; i < screens.Length; i++)
+        {
+            screens[i].SetActive(upgrades.screens[i]);
+        }
         canvas = this.transform.Find("UpgradeMenu").gameObject;
         originalPos = canvas.GetComponent<RectTransform>().anchoredPosition.x;
-        gs.upgrading = true;
         canvas.SetActive(true);
     }
     
