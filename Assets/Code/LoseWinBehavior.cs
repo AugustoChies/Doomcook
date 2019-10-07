@@ -19,6 +19,8 @@ public class LoseWinBehavior : MonoBehaviour
     private GameObject[] stars;
     int obtainedmoney;
     int obtainedstars;
+    public short stageIndex;
+    public Resources resources;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,11 @@ public class LoseWinBehavior : MonoBehaviour
                     obtainedstars = 1;
                 }
                 obtainedmoney = obtainedstars * 500;
+                if (resources.starsPerStage[stageIndex] < obtainedstars)
+                {
+                    resources.starsPerStage[stageIndex] = obtainedstars;
+                }
+                resources.money += obtainedmoney;
 
                 StartCoroutine(RiseWin(obtainedmoney,obtainedstars));
             }
@@ -121,6 +128,8 @@ public class LoseWinBehavior : MonoBehaviour
         winCanvas.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(ShowStar(reward,0,stars));
+
+        
     }
 
     IEnumerator ShowStar(int reward,int index,int star)
