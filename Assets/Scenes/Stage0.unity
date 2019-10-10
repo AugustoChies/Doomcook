@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4442453, g: 0.49369276, b: 0.57307476, a: 1}
+  m_IndirectSpecularColor: {r: 0.44424582, g: 0.49369353, b: 0.57307565, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4600,7 +4600,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 99.491035, y: 80.29055, z: 122.72059, w: 17.87202}
+  m_margin: {x: 61.663734, y: 80.29055, z: 122.72059, w: 17.87202}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 1
@@ -6550,7 +6550,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 99.491035, y: 80.29055, z: 122.72059, w: 17.87202}
+  m_margin: {x: 64.59773, y: 80.29055, z: 122.72059, w: 17.87202}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 1
@@ -11448,7 +11448,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 99.491035, y: 80.29055, z: 122.72059, w: 17.87202}
+  m_margin: {x: 61.99866, y: 80.29055, z: 122.72059, w: 17.87202}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 1
@@ -12356,6 +12356,8 @@ MonoBehaviour:
   monsterList: {fileID: 11400000, guid: d6b538f292cfd354e86ab335add13af6, type: 2}
   gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
   upgrade: {fileID: 11400000, guid: 42d9fee285f4d3d47b14ee4c8153807a, type: 2}
+  stageIndex: 0
+  resources: {fileID: 0}
 --- !u!114 &1395057902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13369,7 +13371,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 99.491035, y: 80.29055, z: 122.72059, w: 17.87202}
+  m_margin: {x: 57.760983, y: 80.29055, z: 122.72059, w: 17.87202}
   m_textInfo:
     textComponent: {fileID: 0}
     characterCount: 1

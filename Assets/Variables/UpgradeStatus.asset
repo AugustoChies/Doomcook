@@ -15,8 +15,8 @@ MonoBehaviour:
   wallUpgrade: 0
   prepUpgrade: 0
   ovenUpgrade: 0
-  tableCount: 5
-  snackCount: 5
+  tableCount: 1
+  snackCount: 0
   screens: 000000
-  money: 80
+  money: 60
   stars: 0

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class UpgradeController : MonoBehaviour
 {
@@ -21,6 +23,10 @@ public class UpgradeController : MonoBehaviour
         canvas = this.transform.Find("UpgradeMenu").gameObject;
         originalPos = canvas.GetComponent<RectTransform>().anchoredPosition.x;
         canvas.SetActive(true);
+        if(SceneManager.GetActiveScene().name == "Stage0")
+        {
+            upgrades.money += 200;
+        }
     }
     
     // Update is called once per frame
