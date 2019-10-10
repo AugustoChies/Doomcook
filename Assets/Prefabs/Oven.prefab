@@ -140,10 +140,10 @@ MonoBehaviour:
   placed:
     ingredients: []
   preparing: 0
-  modelReferences: {fileID: 0}
-  iic: {fileID: 0}
-  pic: {fileID: 0}
-  cic: {fileID: 0}
+  modelReferences: {fileID: 11400000, guid: 4225e6ee0d102bc47917347c284a4228, type: 2}
+  iic: {fileID: 11400000, guid: 55466b61026f0d8438b089635e4261ef, type: 2}
+  pic: {fileID: 11400000, guid: 9d5b6bb5e4e680745b1f426c3ce8976e, type: 2}
+  cic: {fileID: 11400000, guid: db400c1d3640e0e4da4a273b66fb1826, type: 2}
   playerChar: {fileID: 0}
   timer: 0
   prepTime:
