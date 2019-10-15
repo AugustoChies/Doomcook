@@ -10,7 +10,7 @@ public enum Dificulty
 
 public class OrderGenerator : MonoBehaviour {
     public Food myOrder;
-    public float remainingTime,time;
+    public float remainingTime;
     public IngredientType[] possibleingredients;
     public Preparation[] possiblePreparations;
     public CookPoint[] possibleCooking;
@@ -21,6 +21,7 @@ public class OrderGenerator : MonoBehaviour {
     public IngredientCookMap cic;
     protected GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9, fillbar;
     public Transform iconmaster;
+    public GameState gs;
     // Use this for initialization
     void Start () {
         ing1 = iconmaster.Find("Ing1").gameObject;
@@ -34,20 +35,21 @@ public class OrderGenerator : MonoBehaviour {
         ing9 = iconmaster.Find("Ing9").gameObject;
         fillbar = iconmaster.Find("FillBar").gameObject;
 
-        Generate();
+        remainingTime = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        remainingTime -= Time.deltaTime;
-        if(remainingTime < 0)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!gs.tutorial)
         {
-            Generate();                         
+            if (remainingTime <= 0)
+            {
+                Generate();
+            }
         }
 
-        fillbar.GetComponent<Image>().fillAmount = remainingTime / time;
-        fillbar.GetComponent<Image>().color = Color.Lerp(Color.red, Color.green, remainingTime / time);
-	}
+    }
 
     public void Generate()
     {
@@ -130,7 +132,7 @@ public class OrderGenerator : MonoBehaviour {
             ShowIcons(false, myOrder);
         myOrder = new Food(ingredientsgen);
         ShowIcons(true,myOrder);
-        remainingTime = time;
+        remainingTime = 1;
     }
 
     public void ShowIcons(bool yes, Food placed)

@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using TMPro;
 
-public class DialogBoxControl : MonoBehaviour
+public class DialogBoxControlTutorial : MonoBehaviour
 {
-    public GameObject portrait;
     public GameObject box;
     public List<string> filestack;
     public string fulltext;
@@ -23,27 +22,26 @@ public class DialogBoxControl : MonoBehaviour
     public int textTriggers = 0;
     public GameState gs;
     public short stageID;
-    
+
 
     bool inputlock = false;
 
-    
+
     // Use this for initialization
     void Awake()
     {
         triang = this.transform.Find("Dialoguebox/Triangle").gameObject;
-        gs.upgrading = false;
         gs.tutorial = true;
         filestack = new List<string>();
         ReadScriptfromFile();
-       
+
     }
 
     void Update()
     {
         if (!expanded && textTriggers > 0)
         {
-            StartCoroutine("ExpandBox");            
+            StartCoroutine("ExpandBox");
             NewText();
         }
 
@@ -84,23 +82,20 @@ public class DialogBoxControl : MonoBehaviour
 
     IEnumerator DelayedPause()
     {
-        for (float i = 0; i < 0.25f; i+= 1* Time.deltaTime)
+        for (float i = 0; i < 0.25f; i += 1 * Time.deltaTime)
         {
             yield return null;
         }
 
         gs.tutorial = false;
        
-        gs.upgrading = true;
-        
-        
+
     }
 
     IEnumerator ExpandBox()
     {
         expanded = true;
         box.SetActive(true);
-        portrait.SetActive(true);
 
         for (float i = 0; i <= 1.0f; i += expandSpeed * Time.deltaTime)
         {
@@ -119,7 +114,6 @@ public class DialogBoxControl : MonoBehaviour
             yield return null;
         }
         box.SetActive(false);
-        portrait.SetActive(false);
     }
 
     bool pressed = false;
@@ -177,27 +171,27 @@ public class DialogBoxControl : MonoBehaviour
                 // This last process could be done to only update the vertex data that has changed as opposed to all of the vertex data but it would require extra steps and knowing what type of renderer is used.
                 // These extra steps would be a performance optimization but it is unlikely that such optimization will be necessary.
             }
-           
+
 
             currentindex++;
-             
-                for (float i = 0; i < letterDelay; i += 1 * Time.deltaTime)
+
+            for (float i = 0; i < letterDelay; i += 1 * Time.deltaTime)
+            {
+                if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !inputlock)
                 {
-                    if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !inputlock)
-                    {
-                        currentindex = charcount;
-                        pressed = true;
-                        inputlock = true;
-                        break;
-                    }
-                    yield return null;
+                    currentindex = charcount;
+                    pressed = true;
+                    inputlock = true;
+                    break;
                 }
-                     
+                yield return null;
+            }
+
         }
-       
+
 
         StartCoroutine("WaitText");
-        
+
     }
 
     IEnumerator WaitText()
@@ -211,7 +205,7 @@ public class DialogBoxControl : MonoBehaviour
 
 
         while (currentindex < charcount)
-        {           
+        {
 
             // Get the index of the material used by the current character.
             int materialIndex = tmtext.textInfo.characterInfo[currentindex].materialReferenceIndex;
@@ -224,12 +218,12 @@ public class DialogBoxControl : MonoBehaviour
             // Only change the vertex color if the text element is visible.
             if (tmtext.textInfo.characterInfo[currentindex].isVisible)
             {
-                
-                    newVertexColors[vertexIndex + 0] = c0;
-                    newVertexColors[vertexIndex + 1] = c0;
-                    newVertexColors[vertexIndex + 2] = c0;
-                    newVertexColors[vertexIndex + 3] = c0;
-                
+
+                newVertexColors[vertexIndex + 0] = c0;
+                newVertexColors[vertexIndex + 1] = c0;
+                newVertexColors[vertexIndex + 2] = c0;
+                newVertexColors[vertexIndex + 3] = c0;
+
                 // New function which pushes (all) updated vertex data to the appropriate meshes when using either the Mesh Renderer or CanvasRenderer.
                 tmtext.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
 
@@ -240,18 +234,18 @@ public class DialogBoxControl : MonoBehaviour
 
             currentindex++;
         }
-       
+
         pressed = false;
         while (!pressed)
         {
-            for (float i = 0; i < arrowBlink; i+= 1 * Time.deltaTime)
-            {                
+            for (float i = 0; i < arrowBlink; i += 1 * Time.deltaTime)
+            {
                 if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !inputlock)
-                {                    
+                {
                     pressed = true;
                     inputlock = true;
                     break;
-                }                
+                }
                 yield return null;
             }
             triang.SetActive(!triang.activeSelf);
@@ -265,11 +259,7 @@ public class DialogBoxControl : MonoBehaviour
         {
             if (textTriggers <= 0)
             {
-                gs.tutorial = false;
-                if (SceneManager.GetActiveScene().name != "StageTutorial")
-                {
-                    gs.upgrading = true;
-                }
+                gs.tutorial = false;               
             }
             StartCoroutine("RetractBox");
         }
@@ -296,5 +286,5 @@ public class DialogBoxControl : MonoBehaviour
             fs.Close();
         }
         textTriggers = filestack.Count;
-    }   
+    }
 }
