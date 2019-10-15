@@ -78,12 +78,12 @@ public class LoseWinBehavior : MonoBehaviour
                 {
                     obtainedstars = 1;
                 }
-                obtainedmoney = obtainedstars * 500;
+                obtainedmoney = obtainedstars * 200;
                 if (resources.starsPerStage[stageIndex] < obtainedstars)
                 {
                     resources.starsPerStage[stageIndex] = obtainedstars;
                 }
-                resources.money += obtainedmoney;
+                upgrade.money += obtainedmoney;
 
                 StartCoroutine(RiseWin(obtainedmoney,obtainedstars));
             }
@@ -92,7 +92,7 @@ public class LoseWinBehavior : MonoBehaviour
 
     public void ButtonMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("StageMap");
     }
 
     public void ButtonRestart()
@@ -136,7 +136,6 @@ public class LoseWinBehavior : MonoBehaviour
     {
         if(index < star)
         {
-            Debug.Log(index);
             stars[index].SetActive(true);
             stars[index].transform.localScale = new Vector3(2,2,2);
             float scalevalue = 2;

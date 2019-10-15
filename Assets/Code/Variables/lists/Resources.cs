@@ -4,5 +4,4 @@ using UnityEngine;
 public class Resources : ScriptableObject
 {
     public List<int> starsPerStage;
-    public int money;
 }

@@ -35,23 +35,35 @@ public class Food{
     }
 
     public bool Equals(Food f2)
-    {
-        if(this.ingredients.Count == f2.ingredients.Count)
+    {   
+
+        if (this.ingredients.Count == f2.ingredients.Count)
         {
-            bool equal = true;
-            
-            for (int i = 0; i < ingredients.Count; i++)
+            Food token1 = new Food(this.ingredients);
+            Food token2 = new Food(f2.ingredients);
+            bool equal = false;
+            short equalities = (short)this.ingredients.Count;
+
+            for (int i = 0; i < token1.ingredients.Count; i++)
             {
-                if(ingredients[i].type != f2.ingredients[i].type
-                    || ingredients[i].preparation != f2.ingredients[i].preparation
-                    || ingredients[i].point != f2.ingredients[i].point)
+                for (int k = 0; k < token2.ingredients.Count; k++)
                 {
-                    equal = false;
-                    break;
+                    if (token1.ingredients[i].type == token2.ingredients[k].type
+                        && token1.ingredients[i].preparation == token2.ingredients[k].preparation
+                        && token1.ingredients[i].point == token2.ingredients[k].point)
+                    {
+                        equalities--;
+                        token2.ingredients.RemoveAt(k);
+                        break;
+                    }
                 }
                 
             }
-
+            if(equalities == 0)
+            {
+                equal = true;
+            }
+            
             return equal;
         }
         else

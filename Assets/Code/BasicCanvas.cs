@@ -68,6 +68,6 @@ public class BasicCanvas : MonoBehaviour
     public void Menu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("StageMap");
     }
 }
