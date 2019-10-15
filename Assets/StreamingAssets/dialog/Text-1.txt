@@ -1,5 +1,5 @@
 Hello? Hello? Can you hear me over there?
-Oh, good. I'm Doug, and it's my first day working at WEED.
+Oh, good. I'm Doug, and it's my first day working at W.E.E.D.
 That stands for World Ending Event Defense. As you can see, there is clearly some work for us right now.
 We plan to rescue you, but you seem to be hanging in there right now, so we're going to help other people around first. You know, priorities and stuff.
 But don't worry! We got your back. We can set you up with multiple upgrades to help you fend for yourself.
@@ -10,5 +10,6 @@ Monsters will have an indication of the dish they want above their heads.You can
 Yes this monsters seem to come lined up on a lane. They are dangerous but not very bright.
 You can press the F key to see farther away. Since you can't see very far normally.
 And about the upgrades I mentioned. Right now you only have access to tables. And no. These tables are not for eating, they're for breaking. They're obstacles monsters will have to break through in order to keep going.
+You can place one of them by clicking on spots that show up on the field when you have at least one on your inventory.
 These upgrades cost money and renoum. You can get both by simply surviving. But I'll be your friend and give you 200 bucks to start with.
 Be safe and good luck over there.

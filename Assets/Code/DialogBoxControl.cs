@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
-using System.Text;
 using TMPro;
 
 public class DialogBoxControl : MonoBehaviour
@@ -23,7 +22,7 @@ public class DialogBoxControl : MonoBehaviour
     public GameObject triang;
     public int textTriggers = 0;
     public GameState gs;
-    
+    public short stageID;
     
 
     bool inputlock = false;
@@ -37,6 +36,7 @@ public class DialogBoxControl : MonoBehaviour
         gs.tutorial = true;
         filestack = new List<string>();
         ReadScriptfromFile();
+       
     }
 
     void Update()
@@ -90,7 +90,11 @@ public class DialogBoxControl : MonoBehaviour
         }
 
         gs.tutorial = false;
-        gs.upgrading = true;
+        if (SceneManager.GetActiveScene().name != "StageTutorial")
+        {
+            gs.upgrading = true;
+        }
+        
     }
 
     IEnumerator ExpandBox()
@@ -263,7 +267,10 @@ public class DialogBoxControl : MonoBehaviour
             if (textTriggers <= 0)
             {
                 gs.tutorial = false;
-                gs.upgrading = true;
+                if (SceneManager.GetActiveScene().name != "StageTutorial")
+                {
+                    gs.upgrading = true;
+                }
             }
             StartCoroutine("RetractBox");
         }
@@ -271,7 +278,7 @@ public class DialogBoxControl : MonoBehaviour
 
     public void ReadScriptfromFile()
     {
-        string path = Application.streamingAssetsPath + "/dialog/Text1" + ".txt";
+        string path = Application.streamingAssetsPath + "/dialog/Text" + stageID + ".txt";
 
         if (!File.Exists(path))
         {

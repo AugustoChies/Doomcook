@@ -11,6 +11,7 @@ public class UpgradeController : MonoBehaviour
     public GameObject canvas;
     public GameObject[] screens;
     public GameState gs;
+    public Configs configs;
     public UpgradesStatus upgrades;
     public UpgradeRequirements requirements;
 
@@ -23,9 +24,10 @@ public class UpgradeController : MonoBehaviour
         canvas = this.transform.Find("UpgradeMenu").gameObject;
         originalPos = canvas.GetComponent<RectTransform>().anchoredPosition.x;
         canvas.SetActive(true);
-        if(SceneManager.GetActiveScene().name == "Stage0")
+        if(configs.first && SceneManager.GetActiveScene().name == "Stage0")
         {
             upgrades.money += 200;
+            configs.first = false;
         }
     }
     
