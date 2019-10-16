@@ -15,5 +15,6 @@ MonoBehaviour:
   wide: 0
   minigame: 0
   tutorial: 0
-  upgrading: 1
+  upgrading: 0
+  end: 0
   timer: 0
