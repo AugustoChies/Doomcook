@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum Dificulty
 { easy,medium,hard};
@@ -22,6 +23,7 @@ public class OrderGenerator : MonoBehaviour {
     protected GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9, fillbar;
     public Transform iconmaster;
     public GameState gs;
+    public GameObject button;
     // Use this for initialization
     void Start () {
         ing1 = iconmaster.Find("Ing1").gameObject;
@@ -36,6 +38,7 @@ public class OrderGenerator : MonoBehaviour {
         fillbar = iconmaster.Find("FillBar").gameObject;
 
         remainingTime = 0;
+        button.SetActive(false);
 	}
 
     // Update is called once per frame
@@ -45,6 +48,7 @@ public class OrderGenerator : MonoBehaviour {
         {
             if (remainingTime <= 0)
             {
+                button.SetActive(true);
                 Generate();
             }
         }
@@ -199,5 +203,10 @@ public class OrderGenerator : MonoBehaviour {
             else
                 ing9.SetActive(false);
         }
+    }
+
+    public void DoneButton()
+    {
+        SceneManager.LoadScene("Cutscene");
     }
 }
