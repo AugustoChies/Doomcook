@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class UpgradeController : MonoBehaviour
 {
@@ -14,6 +14,7 @@ public class UpgradeController : MonoBehaviour
     public Configs configs;
     public UpgradesStatus upgrades;
     public UpgradeRequirements requirements;
+    TextMeshProUGUI textMoney,textStar;
 
     private void Awake()
     {
@@ -29,6 +30,9 @@ public class UpgradeController : MonoBehaviour
             upgrades.money += 200;
             configs.first = false;
         }
+        textMoney = transform.Find("UpgradeMenu/MoneyImage").GetComponentInChildren<TextMeshProUGUI>();
+        textStar = transform.Find("UpgradeMenu/StarImage").GetComponentInChildren<TextMeshProUGUI>();
+        textStar.text = "" + upgrades.stars;
     }
     
     // Update is called once per frame
@@ -36,7 +40,9 @@ public class UpgradeController : MonoBehaviour
     {
         if(gs.upgrading)
         {
-            if(canvas.GetComponent<RectTransform>().anchoredPosition.x > 0)
+            textMoney.text = "" + upgrades.money;            
+
+            if (canvas.GetComponent<RectTransform>().anchoredPosition.x > 0)
             {
                 canvas.GetComponent<RectTransform>().anchoredPosition -= new Vector2(1800 * Time.deltaTime, 0);
             }
@@ -57,6 +63,8 @@ public class UpgradeController : MonoBehaviour
                 canvas.GetComponent<RectTransform>().anchoredPosition += new Vector2(2400 * Time.deltaTime, 0);
             }           
         }
+
+        
     }
 
     public void DoneButton()

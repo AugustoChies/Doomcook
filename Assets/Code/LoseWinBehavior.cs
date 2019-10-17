@@ -102,7 +102,7 @@ public class LoseWinBehavior : MonoBehaviour
 
     public void ButtonWinContinue()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("StageMap");
     }
 
     IEnumerator RiseLose()
