@@ -8,6 +8,7 @@ using TMPro;
 public class BasicCanvas : MonoBehaviour
 {
     public Image tablesprite, snacksprite;
+    public KeycodesReference keycodes;
     public TextMeshProUGUI tableText, snackText;
     public UpgradesStatus upgrades;
     public GameObject pauseMenu;
@@ -39,7 +40,7 @@ public class BasicCanvas : MonoBehaviour
             snackText.enabled = false;
         }
 
-        if(!gs.tutorial && !gs.upgrading && Input.GetKeyDown(KeyCode.Escape))
+        if(!gs.tutorial && !gs.upgrading && Input.GetKeyDown(keycodes.pause))
         {
             if(pauseMenu.activeSelf)
             {

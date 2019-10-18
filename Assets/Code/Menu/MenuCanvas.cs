@@ -9,6 +9,7 @@ public class MenuCanvas : MonoBehaviour
     public Resources res;
     public UpgradesStatus upgrades;
     public Configs configs;
+
     public void NewGame()
     {
         configs.first = true;

@@ -8,6 +8,8 @@ using TMPro;
 public class DialogBoxControlTutorial : MonoBehaviour
 {
     public GameObject box;
+    public GameObject instructions;
+
     public List<string> filestack;
     public string fulltext;
     [Tooltip("box expansion speed")]
@@ -102,11 +104,13 @@ public class DialogBoxControlTutorial : MonoBehaviour
             this.gameObject.transform.localScale = new Vector3(1.0f, i, 1.0f);
             yield return null;
         }
+        instructions.SetActive(true);
     }
 
     IEnumerator RetractBox()
     {
         expanded = false;
+        instructions.SetActive(false);
 
         for (float i = 1.0f; i > 0.1f; i -= expandSpeed * Time.deltaTime)
         {
@@ -114,6 +118,7 @@ public class DialogBoxControlTutorial : MonoBehaviour
             yield return null;
         }
         box.SetActive(false);
+
     }
 
     bool pressed = false;

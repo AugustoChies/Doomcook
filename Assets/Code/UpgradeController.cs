@@ -11,7 +11,6 @@ public class UpgradeController : MonoBehaviour
     public GameObject canvas;
     public GameObject[] screens;
     public GameState gs;
-    public Configs configs;
     public UpgradesStatus upgrades;
     public UpgradeRequirements requirements;
     TextMeshProUGUI textMoney,textStar;
@@ -25,11 +24,7 @@ public class UpgradeController : MonoBehaviour
         canvas = this.transform.Find("UpgradeMenu").gameObject;
         originalPos = canvas.GetComponent<RectTransform>().anchoredPosition.x;
         canvas.SetActive(true);
-        if(configs.first && SceneManager.GetActiveScene().name == "Stage0")
-        {
-            upgrades.money += 200;
-            configs.first = false;
-        }
+        
         textMoney = transform.Find("UpgradeMenu/MoneyImage").GetComponentInChildren<TextMeshProUGUI>();
         textStar = transform.Find("UpgradeMenu/StarImage").GetComponentInChildren<TextMeshProUGUI>();
         textStar.text = "" + upgrades.stars;

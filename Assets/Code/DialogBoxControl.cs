@@ -9,6 +9,8 @@ public class DialogBoxControl : MonoBehaviour
 {
     public GameObject portrait;
     public GameObject box;
+    public GameObject instructions;
+
     public List<string> filestack;
     public string fulltext;
     [Tooltip("box expansion speed")]
@@ -101,6 +103,7 @@ public class DialogBoxControl : MonoBehaviour
         expanded = true;
         box.SetActive(true);
         portrait.SetActive(true);
+        instructions.SetActive(true);
 
         for (float i = 0; i <= 1.0f; i += expandSpeed * Time.deltaTime)
         {
@@ -120,6 +123,7 @@ public class DialogBoxControl : MonoBehaviour
         }
         box.SetActive(false);
         portrait.SetActive(false);
+        instructions.SetActive(false);
     }
 
     bool pressed = false;
