@@ -32,10 +32,12 @@ public class DialogBoxControlTutorial : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+
         triang = this.transform.Find("Dialoguebox/Triangle").gameObject;
         gs.tutorial = true;
         filestack = new List<string>();
         ReadScriptfromFile();
+
 
     }
 

@@ -15,7 +15,7 @@ public class SetupStage : MonoBehaviour
         laneList.Setup();
         Setup();
     }
-   
+
 
     void Setup()
     {

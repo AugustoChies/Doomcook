@@ -38,7 +38,7 @@ public class DialogBoxControl : MonoBehaviour
         gs.tutorial = true;
         filestack = new List<string>();
         ReadScriptfromFile();
-       
+
     }
 
     void Update()
