@@ -4,15 +4,17 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8ef4c374a918e34eb2142cfe52da9d6, type: 3}
   m_Name: PreparationsMap
   m_EditorClassIdentifier: 
-  preparations: 010000000200000003000000
+  preparations: 01000000020000000300000000000000
   icons:
-  - {fileID: 21300006, guid: 32cf08e6b43e1454980c162eb6bb1491, type: 3}
-  - {fileID: 21300008, guid: 32cf08e6b43e1454980c162eb6bb1491, type: 3}
-  - {fileID: 21300010, guid: 32cf08e6b43e1454980c162eb6bb1491, type: 3}
+  - {fileID: 21300000, guid: 9f078b180969def4584ad3ca80ba1af7, type: 3}
+  - {fileID: 21300000, guid: db621af020e2a4e45862c7a68f095fe0, type: 3}
+  - {fileID: 21300000, guid: 46648f7cabff978488581c75c975e44f, type: 3}
+  - {fileID: 21300000, guid: 76010481673d51c43bf212b48eaa8b24, type: 3}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44424582, g: 0.49369353, b: 0.57307565, a: 1}
+  m_IndirectSpecularColor: {r: 0.4442453, g: 0.49369276, b: 0.57307476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1932,6 +1932,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1616330501157286, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438817140772922, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707444836676600, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1817656280779712, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784606271945396, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489855166315218, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009591527461012, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412344265292680, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212355257385050, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b83caaa53bee1664493bd0ca2e97140a, type: 3}
 --- !u!1001 &1693160779
@@ -3453,6 +3489,51 @@ PrefabInstance:
         type: 3}
       propertyPath: myLane
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707058312775579, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707058982721566, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707059017443100, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707059144020102, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707059489299459, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707059702404373, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707059991092018, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707060088596227, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641707060277051249, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2eabc7368750ec24f8551fd6cf6c6514, type: 3}

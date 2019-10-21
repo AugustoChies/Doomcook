@@ -120,10 +120,7 @@ public class Oven : KitchenCell{
     }
     public override bool CanbePlaced()
     {
-        if (!playerChar.GetComponent<PlayerInteraction>().carried.ingredients[0].IsPrepared())
-        {
-            return false;
-        }
+        
         for (int i = 0; i < playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count; i++)
         {
             if (playerChar.GetComponent<PlayerInteraction>().carried.ingredients[i].IsCooked())

@@ -160,11 +160,10 @@ public abstract class Monster : MonoBehaviour {
         {
             ing1.SetActive(true);
             ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[order.ingredients[0].type];
-            if (order.ingredients[0].IsPrepared())
-            {
+            
                 ing4.GetComponent<SpriteRenderer>().sprite = pic.pairs[order.ingredients[0].preparation];
                 ing4.SetActive(true);
-            }
+            
 
             if (order.ingredients[0].IsCooked())
             {
@@ -176,11 +175,10 @@ public abstract class Monster : MonoBehaviour {
         {
             ing2.SetActive(true);
             ing2.GetComponent<SpriteRenderer>().sprite = iic.pairs[order.ingredients[1].type];
-            if (order.ingredients[1].IsPrepared())
-            {
+            
                 ing5.GetComponent<SpriteRenderer>().sprite = pic.pairs[order.ingredients[1].preparation];
                 ing5.SetActive(true);
-            }
+            
 
             if (order.ingredients[1].IsCooked())
             {
@@ -192,11 +190,10 @@ public abstract class Monster : MonoBehaviour {
         {
             ing3.SetActive(true);
             ing3.GetComponent<SpriteRenderer>().sprite = iic.pairs[order.ingredients[2].type];
-            if (order.ingredients[2].IsPrepared())
-            {
+            
                 ing6.GetComponent<SpriteRenderer>().sprite = pic.pairs[order.ingredients[2].preparation];
                 ing6.SetActive(true);
-            }
+            
 
             if (order.ingredients[2].IsCooked())
             {

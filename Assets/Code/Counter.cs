@@ -46,20 +46,20 @@ public class Counter : KitchenCell {
     {
         if (placed.ingredients.Count + playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count < 4)
         {
-            if (placed.ingredients.Count > 0)
-            {
-                for (int i = 0; i < playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count; i++)
-                {
-                    if (!playerChar.GetComponent<PlayerInteraction>().carried.ingredients[i].IsPrepared())
-                    {
-                        return false;
-                    }
-                }
-                if (!placed.ingredients[0].IsPrepared())
-                {
-                    return false;
-                }
-            }
+            //if (placed.ingredients.Count > 0)
+            //{
+            //    for (int i = 0; i < playerChar.GetComponent<PlayerInteraction>().carried.ingredients.Count; i++)
+            //    {
+            //        if (!playerChar.GetComponent<PlayerInteraction>().carried.ingredients[i].IsPrepared())
+            //        {
+            //            return false;
+            //        }
+            //    }
+            //    if (!placed.ingredients[0].IsPrepared())
+            //    {
+            //        return false;
+            //    }
+            //}
         }
         else
         {

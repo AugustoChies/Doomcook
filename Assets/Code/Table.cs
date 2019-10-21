@@ -75,11 +75,7 @@ public class Table : MonoBehaviour {
                 {
                     ing1.SetActive(true);
                     ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed[k].ingredients[0].type];
-                    if (placed[k].ingredients[0].IsPrepared())
-                    {
-                        ing4.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed[k].ingredients[0].preparation];
-                        ing4.SetActive(true);
-                    }                       
+                                      
 
                     if (placed[k].ingredients[0].IsCooked())
                     {
@@ -91,11 +87,7 @@ public class Table : MonoBehaviour {
                 {
                     ing2.SetActive(true);
                     ing2.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed[k].ingredients[1].type];
-                    if (placed[k].ingredients[1].IsPrepared())
-                    {
-                        ing5.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed[k].ingredients[1].preparation];
-                        ing5.SetActive(true);
-                    }
+                    
 
                     if (placed[k].ingredients[1].IsCooked())
                     {
@@ -107,11 +99,7 @@ public class Table : MonoBehaviour {
                 {
                     ing3.SetActive(true);
                     ing3.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed[k].ingredients[2].type];
-                    if (placed[k].ingredients[2].IsPrepared())
-                    {
-                        ing6.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed[k].ingredients[2].preparation];
-                        ing6.SetActive(true);
-                    }
+                    
 
                     if (placed[k].ingredients[2].IsCooked())
                     {

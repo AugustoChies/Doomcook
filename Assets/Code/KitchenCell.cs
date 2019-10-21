@@ -35,13 +35,10 @@ public abstract class KitchenCell : MonoBehaviour {
         {
             ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[0].type];
             ing1.SetActive(yes);
-            if(placed.ingredients[0].IsPrepared())
-            {
+            
                 ing4.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[0].preparation];
                 ing4.SetActive(yes);
-            }
-            else            
-                ing4.SetActive(false);
+            
             
             if (placed.ingredients[0].IsCooked())
             {
@@ -55,13 +52,10 @@ public abstract class KitchenCell : MonoBehaviour {
         {
             ing2.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[1].type];
             ing2.SetActive(yes);
-            if (placed.ingredients[1].IsPrepared())
-            {
+            
                 ing5.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[1].preparation];
                 ing5.SetActive(yes);
-            }
-            else
-                ing5.SetActive(false);
+           
 
             if (placed.ingredients[1].IsCooked())
             {
@@ -76,13 +70,10 @@ public abstract class KitchenCell : MonoBehaviour {
             ing3.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[2].type];
             ing3.SetActive(yes);
 
-            if (placed.ingredients[2].IsPrepared())
-            {
+            
                 ing6.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[2].preparation];
                 ing6.SetActive(yes);
-            }
-            else
-                ing6.SetActive(false);
+            
 
             if (placed.ingredients[2].IsCooked())
             {
