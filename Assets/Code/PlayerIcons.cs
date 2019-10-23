@@ -6,7 +6,7 @@ public class PlayerIcons : MonoBehaviour {
     public IngredientIconMap iic;
     public IngredientPrepMap pic;
     public IngredientCookMap cic;
-    public GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9;
+    public GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9,bubble;
     public Transform iconmaster;
     // Use this for initialization
     void Awake () {
@@ -27,6 +27,7 @@ public class PlayerIcons : MonoBehaviour {
         ing7 = iconmaster.Find("Ing7").gameObject;
         ing8 = iconmaster.Find("Ing8").gameObject;
         ing9 = iconmaster.Find("Ing9").gameObject;
+        bubble = iconmaster.Find("Bubble").gameObject;
     }
 
     // Update is called once per frame
@@ -39,6 +40,7 @@ public class PlayerIcons : MonoBehaviour {
     {
         if (ing1 != null && placed.ingredients.Count > 0)
         {
+            bubble.SetActive(yes);
             ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[0].type];
             ing1.SetActive(yes);
             

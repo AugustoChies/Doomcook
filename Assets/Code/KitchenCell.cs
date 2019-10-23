@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class KitchenCell : MonoBehaviour {
     public Food placed;
-    protected GameObject carryobj,ing1,ing2,ing3,ing4,ing5,ing6,ing7,ing8,ing9;
+    protected GameObject carryobj,ing1,ing2,ing3,ing4,ing5,ing6,ing7,ing8,ing9,bubble;
     public bool preparing;
     public ModelReferenceList modelReferences;
     public IngredientIconMap iic;
@@ -33,6 +33,8 @@ public abstract class KitchenCell : MonoBehaviour {
         }
         if (ing1 != null && placed.ingredients.Count > 0)
         {
+            bubble.SetActive(yes);
+
             ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[0].type];
             ing1.SetActive(yes);
             
