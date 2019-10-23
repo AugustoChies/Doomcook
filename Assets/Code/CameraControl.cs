@@ -15,7 +15,7 @@ public class CameraControl : MonoBehaviour
     private void Start()
     {
         gs.wide = false;
-        this.GetComponent<Camera>().transparencySortMode = TransparencySortMode.Perspective;
+        this.GetComponent<Camera>().transparencySortMode = TransparencySortMode.Orthographic;
     }
 
     private void Update()

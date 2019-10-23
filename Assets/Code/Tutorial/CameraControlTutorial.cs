@@ -10,7 +10,10 @@ public class CameraControlTutorial : MonoBehaviour
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
-   
+    void Start()
+    {
+        this.GetComponent<Camera>().transparencySortMode = TransparencySortMode.Orthographic;
+    }
 
     void FixedUpdate()
     {        
