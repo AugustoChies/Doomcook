@@ -426,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 502104944}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.55999994, y: -1.528, z: -5}
-  m_LocalScale: {x: 0.6667202, y: 4.7004733, z: 9.640916}
+  m_LocalScale: {x: 0.6667202, y: 4.7004733, z: 9.272826}
   m_Children: []
   m_Father: {fileID: 1022503040}
   m_RootOrder: 12
@@ -881,8 +881,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006178215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: -1.528, z: -1.01}
-  m_LocalScale: {x: 0.3, y: 4.7004733, z: 8.4528}
+  m_LocalPosition: {x: 3.83, y: -1.528, z: -1.01}
+  m_LocalScale: {x: 0.45162156, y: 4.7004733, z: 8.4528}
   m_Children: []
   m_Father: {fileID: 1022503040}
   m_RootOrder: 3
@@ -1393,7 +1393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1105380587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,7 @@ Transform:
   m_GameObject: {fileID: 1388778257}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.55999994, y: -1.528, z: 3}
-  m_LocalScale: {x: 0.6667202, y: 4.7004733, z: 9.640916}
+  m_LocalScale: {x: 0.6667202, y: 4.7004733, z: 9.253062}
   m_Children: []
   m_Father: {fileID: 1022503040}
   m_RootOrder: 4
@@ -2733,7 +2733,7 @@ PrefabInstance:
     - target: {fileID: 7088542148557077162, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: possiblePreparations.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7088542148557077162, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
@@ -2761,6 +2761,11 @@ PrefabInstance:
       propertyPath: button
       value: 
       objectReference: {fileID: 1105380586}
+    - target: {fileID: 7088542148557077162, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
+        type: 3}
+      propertyPath: possiblePreparations.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7088542148792079172, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3777,47 +3782,47 @@ PrefabInstance:
     - target: {fileID: 7088542148941048442, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542149122706205, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542149352401318, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542149406225514, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542150241348222, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542150315489384, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542150316560432, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542150472172109, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542150629830721, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542149406225512, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
@@ -3906,7 +3911,7 @@ PrefabInstance:
     - target: {fileID: 7088542148849927921, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7088542148941048440, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
