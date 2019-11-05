@@ -119,6 +119,7 @@ public class DialogBoxControl : MonoBehaviour
     IEnumerator RetractBox()
     {
         expanded = false;
+        source.Stop();
 
         for (float i = 1.0f; i > 0.1f; i -= expandSpeed * Time.deltaTime)
         {
@@ -205,8 +206,11 @@ public class DialogBoxControl : MonoBehaviour
 
             if (playTime >= 3)
             {
-                source.Play();
-                playTime = 0;
+                if (expanded)
+                {
+                    source.Play();
+                    playTime = 0;
+                }
             }
         }
        
