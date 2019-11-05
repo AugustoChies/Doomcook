@@ -27,18 +27,14 @@ public class DialogBoxControlTutorial : MonoBehaviour
 
 
     bool inputlock = false;
-
-
+    
     // Use this for initialization
     void Awake()
     {
-
         triang = this.transform.Find("Dialoguebox/Triangle").gameObject;
         gs.tutorial = true;
         filestack = new List<string>();
         ReadScriptfromFile();
-
-
     }
 
     void Update()
@@ -179,7 +175,6 @@ public class DialogBoxControlTutorial : MonoBehaviour
                 // These extra steps would be a performance optimization but it is unlikely that such optimization will be necessary.
             }
 
-
             currentindex++;
 
             for (float i = 0; i < letterDelay; i += 1 * Time.deltaTime)
@@ -192,7 +187,7 @@ public class DialogBoxControlTutorial : MonoBehaviour
                     break;
                 }
                 yield return null;
-            }
+            }           
 
         }
 

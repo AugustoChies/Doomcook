@@ -29,10 +29,14 @@ public class DialogBoxControl : MonoBehaviour
 
     bool inputlock = false;
 
-    
+    public AudioSource source;
+    public float playTime;
+
     // Use this for initialization
     void Awake()
     {
+        source = GetComponent<AudioSource>();
+        playTime = 0;
         triang = this.transform.Find("Dialoguebox/Triangle").gameObject;
         gs.upgrading = false;
         gs.tutorial = true;
@@ -184,7 +188,9 @@ public class DialogBoxControl : MonoBehaviour
            
 
             currentindex++;
-             
+            playTime++;
+
+
                 for (float i = 0; i < letterDelay; i += 1 * Time.deltaTime)
                 {
                     if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !inputlock)
@@ -196,7 +202,12 @@ public class DialogBoxControl : MonoBehaviour
                     }
                     yield return null;
                 }
-                     
+
+            if (playTime >= 3)
+            {
+                source.Play();
+                playTime = 0;
+            }
         }
        
 

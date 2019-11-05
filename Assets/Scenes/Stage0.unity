@@ -3406,14 +3406,12 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7190519470195718462, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
-        type: 3}
-      propertyPath: expandSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7189987401389331092, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
+    - target: {fileID: 915730138, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a08239b36b57e4a44a3df46ec44ec062, type: 3}
+    - target: {fileID: 915730138, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d, type: 3}
+      propertyPath: m_Pitch
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
