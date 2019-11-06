@@ -135,7 +135,7 @@ public abstract class Monster : MonoBehaviour {
     public void ShowCarriedMesh()
     {       
         
-        GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9;
+        GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9,bubble;
         ing1 = iconMaster.transform.Find("Ing1").gameObject;
         ing2 = iconMaster.transform.Find("Ing2").gameObject;
         ing3 = iconMaster.transform.Find("Ing3").gameObject;
@@ -145,6 +145,8 @@ public abstract class Monster : MonoBehaviour {
         ing7 = iconMaster.transform.Find("Ing7").gameObject;
         ing8 = iconMaster.transform.Find("Ing8").gameObject;
         ing9 = iconMaster.transform.Find("Ing9").gameObject;
+        bubble = iconMaster.transform.Find("Bubble").gameObject;
+
 
         ing1.SetActive(false);
         ing2.SetActive(false);
@@ -155,9 +157,11 @@ public abstract class Monster : MonoBehaviour {
         ing7.SetActive(false);
         ing8.SetActive(false);
         ing9.SetActive(false);
+        bubble.SetActive(false);
 
         if (order.ingredients.Count > 0)
         {
+            bubble.SetActive(true);
             ing1.SetActive(true);
             ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[order.ingredients[0].type];
             
