@@ -108,9 +108,9 @@ public class DialogBoxControl : MonoBehaviour
         box.SetActive(true);
         portrait.SetActive(true);
         instructions.SetActive(true);
-
         for (float i = 0; i <= 1.0f; i += expandSpeed * Time.deltaTime)
         {
+            
             this.gameObject.transform.localScale = new Vector3(1.0f, i, 1.0f);
             yield return null;
         }
