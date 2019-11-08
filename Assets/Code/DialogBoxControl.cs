@@ -204,7 +204,7 @@ public class DialogBoxControl : MonoBehaviour
                     yield return null;
                 }
 
-            if (playTime >= 3)
+            if (playTime >= 2)
             {
                 if (expanded)
                 {

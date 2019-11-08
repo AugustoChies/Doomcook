@@ -48,6 +48,9 @@ TagManager:
   - name: Counters
     uniqueID: 977846363
     locked: 0
+  - name: Monster
+    uniqueID: 2340516655
+    locked: 0
   - name: Player
     uniqueID: 1003695701
     locked: 0

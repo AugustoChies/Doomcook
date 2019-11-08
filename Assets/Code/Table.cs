@@ -50,16 +50,17 @@ public class Table : MonoBehaviour {
                         break;
                     }
                 }
-                GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9;
-                ing1 = carryobjs[k].transform.Find("Ing1").gameObject;
-                ing2 = carryobjs[k].transform.Find("Ing2").gameObject;
-                ing3 = carryobjs[k].transform.Find("Ing3").gameObject;
-                ing4 = carryobjs[k].transform.Find("Ing4").gameObject;
-                ing5 = carryobjs[k].transform.Find("Ing5").gameObject;
-                ing6 = carryobjs[k].transform.Find("Ing6").gameObject;
-                ing7 = carryobjs[k].transform.Find("Ing7").gameObject;
-                ing8 = carryobjs[k].transform.Find("Ing8").gameObject;
-                ing9 = carryobjs[k].transform.Find("Ing9").gameObject;
+                GameObject ing1, ing2, ing3, ing4, ing5, ing6, ing7, ing8, ing9,bubble;
+                ing1 = carryobjs[k].transform.Find("Icons/Ing1").gameObject;
+                ing2 = carryobjs[k].transform.Find("Icons/Ing2").gameObject;
+                ing3 = carryobjs[k].transform.Find("Icons/Ing3").gameObject;
+                ing4 = carryobjs[k].transform.Find("Icons/Ing4").gameObject;
+                ing5 = carryobjs[k].transform.Find("Icons/Ing5").gameObject;
+                ing6 = carryobjs[k].transform.Find("Icons/Ing6").gameObject;
+                ing7 = carryobjs[k].transform.Find("Icons/Ing7").gameObject;
+                ing8 = carryobjs[k].transform.Find("Icons/Ing8").gameObject;
+                ing9 = carryobjs[k].transform.Find("Icons/Ing9").gameObject;
+                bubble = carryobjs[k].transform.Find("Icons/Bubble").gameObject;
 
                 ing1.SetActive(false);
                 ing2.SetActive(false);
@@ -70,9 +71,11 @@ public class Table : MonoBehaviour {
                 ing7.SetActive(false);
                 ing8.SetActive(false);
                 ing9.SetActive(false);
+                bubble.SetActive(false);
 
                 if (placed[k].ingredients.Count > 0)
                 {
+                    bubble.SetActive(true);
                     ing1.SetActive(true);
                     ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed[k].ingredients[0].type];
                                       
