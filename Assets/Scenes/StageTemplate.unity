@@ -1138,6 +1138,15 @@ PrefabInstance:
       propertyPath: expandSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7190519470195718462, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
+        type: 3}
+      propertyPath: letterDelay
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 915730138, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c87ca5d6e4c1d604688cab3e0213c335, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d, type: 3}
 --- !u!1001 &191845926
