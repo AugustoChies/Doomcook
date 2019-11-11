@@ -17,9 +17,16 @@ public class UpgradeController : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < screens.Length; i++)
+        if (SceneManager.GetActiveScene().name == "Stage0")
         {
-            screens[i].SetActive(upgrades.screens[i]);
+            screens[0].SetActive(upgrades.screens[0]);
+        }
+        else
+        {
+            for (int i = 0; i < screens.Length; i++)
+            {
+                screens[i].SetActive(upgrades.screens[i]);
+            }
         }
         canvas = this.transform.Find("UpgradeMenu").gameObject;
         originalPos = canvas.GetComponent<RectTransform>().anchoredPosition.x;
@@ -46,9 +53,16 @@ public class UpgradeController : MonoBehaviour
                 canvas.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
             }
 
-            for (int i = 0; i < screens.Length; i++)
+            if (SceneManager.GetActiveScene().name == "Stage0")
             {
-                screens[i].SetActive(upgrades.screens[i]);
+                screens[0].SetActive(upgrades.screens[0]);
+            }
+            else
+            {
+                for (int i = 0; i < screens.Length; i++)
+                {
+                    screens[i].SetActive(upgrades.screens[i]);
+                }
             }
         }
         else
