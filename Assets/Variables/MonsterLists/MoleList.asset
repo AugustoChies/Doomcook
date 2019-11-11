@@ -25,3 +25,41 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
       preparation: 3
       point: 0
+  - ingredients:
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 0
+      point: 0
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 0
+      point: 0
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 0
+      point: 0
+  - ingredients:
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 0
+      point: 1
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 0
+      point: 1
+  - ingredients:
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 3
+      point: 1
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 3
+      point: 0
+  - ingredients:
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 1
+      point: 0
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 1
+      point: 0
+  - ingredients:
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 2
+      point: 0
+    - type: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f, type: 2}
+      preparation: 2
+      point: 0

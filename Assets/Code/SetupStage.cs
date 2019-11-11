@@ -8,7 +8,8 @@ public class SetupStage : MonoBehaviour
     public LanesMonsterList laneList;
     public LaneSpawner[] lanes;
     public int currentStage;
-    
+    public float elapsedTime = 0;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,7 +20,7 @@ public class SetupStage : MonoBehaviour
 
     void Setup()
     {
-        string path = Application.streamingAssetsPath + "/Stage" + currentStage + ".txt";
+        string path = Application.streamingAssetsPath + "/Stages/Stage" + currentStage + ".txt";
         StreamReader stream = new StreamReader(path);
         string[] text;
         while (!stream.EndOfStream)
@@ -67,7 +68,8 @@ public class SetupStage : MonoBehaviour
                     break;
             }
             md.type = type;
-            md.spawnTime = float.Parse(text[2]);
+            md.spawnTime = float.Parse(text[2]) + elapsedTime;
+            elapsedTime += float.Parse(text[2]);
             md.foodIndex = int.Parse(text[3]);
             currentlane.monsters.Add(md);
         }

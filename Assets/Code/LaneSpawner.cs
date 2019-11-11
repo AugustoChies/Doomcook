@@ -21,14 +21,16 @@ public class LaneSpawner : MonoBehaviour
     public List<MonsterData> monsters;
     public GameState gs;
     public GameObject zonboid, mole, blaze, flayer;
-    public float elapsedTime = 0;
-
+    public SetupStage setupper;
+    void Awake()
+    {
+        setupper = GameObject.Find("SpawnControl").GetComponent<SetupStage>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if (monsters.Count > 0 && gs.timer >= monsters[0].spawnTime + elapsedTime)
+        if (monsters.Count > 0 && gs.timer >= monsters[0].spawnTime)
         {
-            elapsedTime += monsters[0].spawnTime;
             GameObject mon = null;
             switch (monsters[0].type)
             {

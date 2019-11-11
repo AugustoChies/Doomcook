@@ -52,12 +52,33 @@ public class Screen : MonoBehaviour
                 mahmonsta = lanelist.lanes[myLane - 1][closestIndex];
                 mahfood = mahmonsta.GetComponent<Monster>().order;
                 ShowIcons(true, mahfood);
+            } 
+            else
+            {
+                ShowIcons(false, mahfood);
             }
         //}
     }
 
     public void ShowIcons(bool yes, Food placed)
     {
+        
+            ing1.SetActive(false);
+            ing2.SetActive(false);
+            ing3.SetActive(false);
+            ing4.SetActive(false);
+            ing5.SetActive(false);
+            ing6.SetActive(false);
+            ing7.SetActive(false);
+            ing8.SetActive(false);
+            ing9.SetActive(false);
+
+        if (!yes)
+        {
+            return;
+        }
+
+
         if (ing1 != null && placed.ingredients.Count > 0)
         {
             ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[0].type];

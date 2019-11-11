@@ -1,15 +1,8 @@
-Hello? Hello? Can you hear me over there?
-Oh, good. I'm Doug, and it's my first day working at W.E.E.D.
-That stands for World Ending Event Defense. As you can see, there is clearly some work for us right now.
-We plan to rescue you, but you seem to be hanging in there right now, so we're going to help other people around first. You know, priorities and stuff.
-But don't worry! We got your back. We can set you up with multiple upgrades to help you fend for yourself.
-These monsters are hungry, and if they don't eat something soon they'll start trying to destroy the wall between you.
-And then eat the first thing they find. That being you.
-You seem to know about the cooking part already, so let's skip explaining that.
-Monsters will have an indication of the dish they want above their heads.You can get them these dishes by placing them on the reciever in front of each lane.
-Yes this monsters seem to come lined up on a lane. They are dangerous but not very bright.
-You can press the F key to see farther away. Since you can't see very far normally.
-And about the upgrades I mentioned. Right now you only have access to tables. And no. These tables are not for eating, they're for breaking. They're obstacles monsters will have to break through in order to keep going.
-You can place one of them by clicking on spots that show up on the field when you have at least one in your inventory.
-These upgrades cost money and renown. You can get both by simply surviving. But I'll be your friend and give you 200 bucks to start with.
-Be safe and good luck over there.
+Hello again. Everything going well?
+So, about saving you.....
+It seems that your cooking attracts monsters to your location. And it's really helping us do our jobs.
+So we will have to postpone your rescue a little bit, but dont worry, we're  leaving different "mobile kitchens" around.
+I see you already found one. Move to the next closest one after dealing with each wave of creatures.
+Eventually you're going to end up in one of our bases. We'll take you in and you'll be completely safe.
+Ah, by the way, there will be 3 lanes from now on, you seem to be drawing more attention from monsters.
+Remember we are still supporting you from the sidelines. Goodluck and stay safe!

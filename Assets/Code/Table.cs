@@ -78,7 +78,9 @@ public class Table : MonoBehaviour {
                     bubble.SetActive(true);
                     ing1.SetActive(true);
                     ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed[k].ingredients[0].type];
-                                      
+
+                    ing4.SetActive(true);
+                    ing4.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed[k].ingredients[0].preparation];
 
                     if (placed[k].ingredients[0].IsCooked())
                     {
@@ -90,7 +92,9 @@ public class Table : MonoBehaviour {
                 {
                     ing2.SetActive(true);
                     ing2.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed[k].ingredients[1].type];
-                    
+
+                    ing5.SetActive(true);
+                    ing5.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed[k].ingredients[1].preparation];
 
                     if (placed[k].ingredients[1].IsCooked())
                     {
@@ -102,7 +106,9 @@ public class Table : MonoBehaviour {
                 {
                     ing3.SetActive(true);
                     ing3.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed[k].ingredients[2].type];
-                    
+
+                    ing6.SetActive(true);
+                    ing6.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed[k].ingredients[2].preparation];
 
                     if (placed[k].ingredients[2].IsCooked())
                     {
