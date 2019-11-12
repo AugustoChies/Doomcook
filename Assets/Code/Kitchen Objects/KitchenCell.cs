@@ -15,33 +15,18 @@ public abstract class KitchenCell : MonoBehaviour {
     
 
     public void ShowCarriedMesh(bool yes)
-    {        
-        if (carryobj != null)
-        {
-            carryobj.SetActive(yes);
-            if(yes)
-            {
-                for (int i = 0; i < modelReferences.fms.Count; i++)
-                {
-                    if (modelReferences.fms[i].Check(placed))
-                    {
-                        carryobj.GetComponent<MeshFilter>().mesh = modelReferences.fms[i].GetMesh(placed);
-                        break;
-                    }
-                }
-            }
-        }
+    {
         if (ing1 != null && placed.ingredients.Count > 0)
         {
             bubble.SetActive(yes);
 
             ing1.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[0].type];
             ing1.SetActive(yes);
-            
-                ing4.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[0].preparation];
-                ing4.SetActive(yes);
-            
-            
+
+            ing4.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[0].preparation];
+            ing4.SetActive(yes);
+
+
             if (placed.ingredients[0].IsCooked())
             {
                 ing7.GetComponent<SpriteRenderer>().sprite = cic.pairs[placed.ingredients[0].point];
@@ -54,10 +39,10 @@ public abstract class KitchenCell : MonoBehaviour {
         {
             ing2.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[1].type];
             ing2.SetActive(yes);
-            
-                ing5.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[1].preparation];
-                ing5.SetActive(yes);
-           
+
+            ing5.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[1].preparation];
+            ing5.SetActive(yes);
+
 
             if (placed.ingredients[1].IsCooked())
             {
@@ -67,15 +52,15 @@ public abstract class KitchenCell : MonoBehaviour {
             else
                 ing8.SetActive(false);
         }
-        if (ing3!= null && placed.ingredients.Count > 2)
+        if (ing3 != null && placed.ingredients.Count > 2)
         {
             ing3.GetComponent<SpriteRenderer>().sprite = iic.pairs[placed.ingredients[2].type];
             ing3.SetActive(yes);
 
-            
-                ing6.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[2].preparation];
-                ing6.SetActive(yes);
-            
+
+            ing6.GetComponent<SpriteRenderer>().sprite = pic.pairs[placed.ingredients[2].preparation];
+            ing6.SetActive(yes);
+
 
             if (placed.ingredients[2].IsCooked())
             {
@@ -85,6 +70,7 @@ public abstract class KitchenCell : MonoBehaviour {
             else
                 ing9.SetActive(false);
         }
+        StartCoroutine(ShowStuff(yes));
     }
 
     public abstract Food TakeFood();
@@ -94,4 +80,30 @@ public abstract class KitchenCell : MonoBehaviour {
 
     public abstract bool CanbeTaken();
     public abstract bool CanbePlaced();
+
+    IEnumerator ShowStuff(bool yes)
+    {
+        if (!yes)
+        {
+            yield return new WaitForSeconds(0.15f);
+        }
+        
+
+        if (carryobj != null)
+        {
+            carryobj.SetActive(yes);
+            if (yes)
+            {
+                for (int i = 0; i < modelReferences.fms.Count; i++)
+                {
+                    if (modelReferences.fms[i].Check(placed))
+                    {
+                        carryobj.GetComponent<MeshFilter>().mesh = modelReferences.fms[i].GetMesh(placed);
+                        break;
+                    }
+                }
+            }
+        }
+        
+    }
 }

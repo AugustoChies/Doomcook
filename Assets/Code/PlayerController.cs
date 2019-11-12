@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     private Vector3 angles;
     private Quaternion rotation;
     public Transform iconMaster;
-
+    public Animator anim;
     public GameState gs;
 
 
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour {
         rotation = Quaternion.Euler(angles);
         Horizontal = new MoveAxis(controls.right, controls.left);
         Vertical = new MoveAxis(controls.up, controls.down);
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -55,7 +56,19 @@ public class PlayerController : MonoBehaviour {
 
             this.transform.LookAt(transform.position + moveNormal);
             iconMaster.rotation = rotation;
+            if(Horizontal != 0 || Vertical != 0)
+            {
+                anim.SetBool("Moving", true);
+            }
+            else
+            {
+                anim.SetBool("Moving", false);
+            }
             gameObject.GetComponent<Rigidbody>().MovePosition(this.transform.position + moveNormal * Time.deltaTime * speed.Value);
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
         }
     }
 }
