@@ -365,10 +365,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4133028606606454}
     m_Modifications:
-    - target: {fileID: 100046, guid: 33e39b7eeb6a7a847b0763844c08e14f, type: 3}
-      propertyPath: m_Name
-      value: Mesh_chef
-      objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 33e39b7eeb6a7a847b0763844c08e14f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00013042314
@@ -425,6 +421,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 100046, guid: 33e39b7eeb6a7a847b0763844c08e14f, type: 3}
+      propertyPath: m_Name
+      value: Mesh_chef
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 33e39b7eeb6a7a847b0763844c08e14f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2585af5bf6ef7340997a58cca236c18, type: 2}
+    - target: {fileID: 13700000, guid: 33e39b7eeb6a7a847b0763844c08e14f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c69e5edd42908b4895e10f340c22a91, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e39b7eeb6a7a847b0763844c08e14f, type: 3}
 --- !u!4 &1719988483409950645 stripped
@@ -440,11 +448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4133028606606454}
     m_Modifications:
-    - target: {fileID: 2372288951696924193, guid: 4bba3217c4b232f42b17cbf2c6d5a164,
-        type: 3}
-      propertyPath: m_Name
-      value: Icons
-      objectReference: {fileID: 0}
     - target: {fileID: 2375679874123974231, guid: 4bba3217c4b232f42b17cbf2c6d5a164,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -499,6 +502,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372288951696924193, guid: 4bba3217c4b232f42b17cbf2c6d5a164,
+        type: 3}
+      propertyPath: m_Name
+      value: Icons
       objectReference: {fileID: 0}
     - target: {fileID: 2370953405165027575, guid: 4bba3217c4b232f42b17cbf2c6d5a164,
         type: 3}
