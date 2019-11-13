@@ -19,6 +19,7 @@ public abstract class Monster : MonoBehaviour {
     protected float acounter = 0;
     public LanesMonsterList lanelist;
     public int myLane;
+    public Animator anim;
 
     [HideInInspector]
     public bool atTable = false;
@@ -50,8 +51,13 @@ public abstract class Monster : MonoBehaviour {
 
     void Update()
     {
+        anim.SetBool("Moving", false);
+        anim.SetBool("Snacking", false);
+
         if (moving)
         {
+            anim.SetBool("Moving", true);
+
             this.transform.position += transform.forward * speed * Time.deltaTime;
             if (ateSnack && this.transform.position.z > originalZ + 0.05f)
             {
@@ -98,6 +104,7 @@ public abstract class Monster : MonoBehaviour {
                 if (acounter > attackspeed)
                 {
                     acounter = 0;
+                    anim.SetTrigger("Attack");
                     Attack();
                 }
             }
@@ -108,11 +115,13 @@ public abstract class Monster : MonoBehaviour {
             if (acounter > attackspeed)
             {
                 acounter = 0;
+                anim.SetTrigger("Attack");
                 AttackObstacle();
             }
         }
         else if (eatingSnack)
         {
+            anim.SetBool("Snacking", true);
             snackpersonaltime += 1 * Time.deltaTime;
             if (snackpersonaltime >= snackEatingTime)
             {
@@ -226,7 +235,6 @@ public abstract class Monster : MonoBehaviour {
                 snackXPos = other.transform.parent.GetComponent<Snacktable>().snackmodels[7 - availableSnacks].transform.position.x;
                 other.transform.parent.GetComponent<Snacktable>().availableSnacks--;                
                 snacking = true;
-                
                 if (other.name == "Lower")
                 {
                     up = true;
@@ -253,6 +261,7 @@ public abstract class Monster : MonoBehaviour {
         {
             moving = false;
             eatingSnack = true;
+            anim.SetTrigger("Eat");
             snacktable = collision.transform.parent.gameObject.GetComponent<Snacktable>();
             snackEatingTime = snacktable.snackeatingtime;
             snackpersonaltime = 0;
@@ -263,9 +272,11 @@ public abstract class Monster : MonoBehaviour {
     public abstract void AttackObstacle();
 
     IEnumerator Sink()
-    {        
+    {
+        anim.SetTrigger("Eat");
         lanelist.lanes[myLane - 1].Remove(this.gameObject);
         onlist = false;
+        yield return new WaitForSeconds(1.5f);         
         for (float i = 0; i < 3; i += Time.deltaTime)
         {
             this.transform.position -= transform.up * 2 * Time.deltaTime;

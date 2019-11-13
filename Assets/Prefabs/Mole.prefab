@@ -238,6 +238,7 @@ MonoBehaviour:
   snackpersonaltime: 0
   lanelist: {fileID: 11400000, guid: d6b538f292cfd354e86ab335add13af6, type: 2}
   myLane: 0
+  anim: {fileID: 1212493944504566642}
   atTable: 0
   moving: 1
   barred: 0
@@ -320,11 +321,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 74dfa152fee3c0f4792e42aac281e033, type: 2}
+    - target: {fileID: 9500000, guid: 51a0a9b2fe9484041b83ca8030ade65a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f4a01317e2f613646b002d6cb2c8d113, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51a0a9b2fe9484041b83ca8030ade65a, type: 3}
 --- !u!4 &1212493944497581234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400032, guid: 51a0a9b2fe9484041b83ca8030ade65a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1212493944497190418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1212493944504566642 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 51a0a9b2fe9484041b83ca8030ade65a,
     type: 3}
   m_PrefabInstance: {fileID: 1212493944497190418}
   m_PrefabAsset: {fileID: 0}

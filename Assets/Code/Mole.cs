@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Mole : Monster
 {
+    bool underground;
     void Awake()
     {
-        moving = false;
+        moving = true;
         StartCoroutine(Burrow(true));
     }
     void Update()
     {
+        anim.SetBool("Moving", false);
+        anim.SetBool("Snacking", false);
         if (moving)
         {
+            anim.SetBool("Moving", true);
             this.transform.position += transform.forward * speed * Time.deltaTime;
         }
-        else if (atTable)
+        else if (atTable && !underground)
         {
             bool eat = false;
             for (int i = 0; i < myTable.GetComponent<Table>().placed.Count; i++)
@@ -32,12 +36,13 @@ public class Mole : Monster
                     break;
                 }
             }
-            if (!eat)
+            if (!eat && !underground)
             {
                 acounter += 1 * Time.deltaTime;
                 if (acounter > attackspeed)
                 {
                     acounter = 0;
+                    anim.SetTrigger("Attack");
                     Attack();
                 }
             }
@@ -48,6 +53,7 @@ public class Mole : Monster
             if (acounter > attackspeed)
             {
                 acounter = 0;
+                anim.SetTrigger("Attack");
                 AttackObstacle();
             }
         }
@@ -58,33 +64,46 @@ public class Mole : Monster
 
     public override void Attack()
     {
-        life.Value -= power;
+        StartCoroutine(WaitAttack());
     }
 
     public override void AttackObstacle()
     {
+        StartCoroutine(WaitAttackObstacle());
+    }
+
+    IEnumerator WaitAttack()
+    {
+        yield return new WaitForSeconds(0.8f);
+        life.Value -= power;
+    }
+
+    IEnumerator WaitAttackObstacle()
+    {
+        yield return new WaitForSeconds(0.8f);
         targetedObstacle.life -= power;
     }
 
-
     IEnumerator Burrow(bool down)
-    {
+    {        
         if (down)
         {
-            while (this.transform.position.y > -0.3f)
-            {
-                this.transform.position -= transform.up * 2.5f * Time.deltaTime;
-                yield return null;
-            }
+            underground = true;
+            yield return new WaitForSeconds(Random.Range(2.0f,4.0f));
+            moving = false;
+            anim.SetTrigger("Dig");
+            yield return new WaitForSeconds(2);
+            this.transform.position = new Vector3(this.transform.position.x,-0.3f, this.transform.position.z);
+            
+            
             moving = true;
         }
         else
         {
-            while (this.transform.position.y < 2f)
-            {
-                this.transform.position += transform.up * 2.5f * Time.deltaTime;
-                yield return null;
-            }
+            this.transform.position = new Vector3(this.transform.position.x, 2f, this.transform.position.z);
+            anim.SetTrigger("Surface");
+            yield return new WaitForSeconds(3);
+            underground = false;
         }
     }
 

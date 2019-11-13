@@ -7,11 +7,23 @@ public class Zomboid : Monster {
 
     public override void Attack()
     {
-        life.Value -= power;
+        StartCoroutine(WaitAttack());
     }
 
     public override void AttackObstacle()
     {
+        StartCoroutine(WaitAttackObstacle());
+    }
+
+    IEnumerator WaitAttack()
+    {
+        yield return new WaitForSeconds(0.8f);
+        life.Value -= power;
+    }
+
+    IEnumerator WaitAttackObstacle()
+    {
+        yield return new WaitForSeconds(0.8f);
         targetedObstacle.life -= power;
     }
 }
