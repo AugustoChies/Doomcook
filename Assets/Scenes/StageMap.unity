@@ -679,7 +679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1953057518, guid: a942c5db01766e9489f6baf7b7c29765, type: 3}
       propertyPath: m_text
-      value: 'Contains: (zomboid mage here)'
+      value: 'Contains: (zomboid image here)'
       objectReference: {fileID: 0}
     - target: {fileID: 1953057518, guid: a942c5db01766e9489f6baf7b7c29765, type: 3}
       propertyPath: m_havePropertiesChanged
@@ -1842,7 +1842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1953057518, guid: a942c5db01766e9489f6baf7b7c29765, type: 3}
       propertyPath: m_text
-      value: 'Contains: (zomboid mage here)'
+      value: 'Contains: (mole image here)'
       objectReference: {fileID: 0}
     - target: {fileID: 1953057518, guid: a942c5db01766e9489f6baf7b7c29765, type: 3}
       propertyPath: m_havePropertiesChanged

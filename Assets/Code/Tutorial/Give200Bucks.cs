@@ -12,7 +12,8 @@ public class Give200Bucks : MonoBehaviour
     {
        if (stars.starsPerStage[0] < 1)
        {
-            upgrades.money = 200;         
+            upgrades.money = 200;
+            upgrades.tableCount = 0;
        }
     }
 

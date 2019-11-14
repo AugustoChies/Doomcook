@@ -561,6 +561,11 @@ PrefabInstance:
       propertyPath: lane3
       value: 
       objectReference: {fileID: 2079092062}
+    - target: {fileID: 7088542148557077154, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
+        type: 3}
+      propertyPath: stageIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7088542150320772990, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -936,6 +941,11 @@ PrefabInstance:
     - target: {fileID: 616799050, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d, type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190519470195718462, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
+        type: 3}
+      propertyPath: stageID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d, type: 3}
@@ -2208,17 +2218,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2131062297, guid: 0d47060e2db668641954185e15f74d07, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c392e841d084a34b912990ff15134a6,
+        type: 3}
     - target: {fileID: 114302650891860622, guid: 0d47060e2db668641954185e15f74d07,
         type: 3}
       propertyPath: myIngredient
       value: 
       objectReference: {fileID: 11400000, guid: 99ec17cccf334184f8eaaf590a820c5f,
         type: 2}
-    - target: {fileID: 2131062297, guid: 0d47060e2db668641954185e15f74d07, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2c392e841d084a34b912990ff15134a6,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d47060e2db668641954185e15f74d07, type: 3}
 --- !u!1 &1080776923

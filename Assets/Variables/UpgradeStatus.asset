@@ -18,5 +18,5 @@ MonoBehaviour:
   tableCount: 0
   snackCount: 0
   screens: 000000
-  money: 600
-  stars: 30
+  money: 0
+  stars: 0
