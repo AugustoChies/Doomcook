@@ -8,10 +8,22 @@ public class BlazeSprite : Monster
 
     public override void Attack()
     {
+        StartCoroutine(WaitAttack());
+    }
+
+
+    public override void AttackObstacle()
+    {
+        StartCoroutine(WaitAttackObstacle());
+    }
+
+    IEnumerator WaitAttack()
+    {
+        yield return new WaitForSeconds(0.8f);
         life.Value -= power;
         for (int i = 0; i < myTable.GetComponent<Table>().placed.Count; i++)
         {
-            Food newBurned =  new Food(myTable.GetComponent<Table>().placed[i].ingredients);
+            Food newBurned = new Food(myTable.GetComponent<Table>().placed[i].ingredients);
 
             if (newBurned.ingredients.Count > 0)
             {
@@ -32,9 +44,9 @@ public class BlazeSprite : Monster
         myTable.GetComponent<Table>().ShowCarriedMesh();
     }
 
-
-    public override void AttackObstacle()
+    IEnumerator WaitAttackObstacle()
     {
+        yield return new WaitForSeconds(0.8f);
         targetedObstacle.life -= power;
     }
 }
