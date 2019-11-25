@@ -10,9 +10,13 @@ public class Oven : KitchenCell{
     public UpgradesStatus upgrades;
     public OvenUpgrade myupgrade;
     public float quickmultiplier, slowmultiplier;
+    public GameObject normal, fast, block;
 
     // Use this for initialization
     void Start () {
+        normal = this.transform.Find("Default").gameObject;
+        fast = this.transform.Find("Fast").gameObject;
+        block = this.transform.Find("Block").gameObject;
         playerChar = GameObject.Find("Player");
         timer = 0;
     }
@@ -22,6 +26,23 @@ public class Oven : KitchenCell{
         if(gs.upgrading)
         {
             myupgrade = upgrades.ovenUpgrade;
+            normal.SetActive(false);
+            fast.SetActive(false);
+            block.SetActive(false);
+            switch (myupgrade)
+            {
+                case OvenUpgrade.standart:
+                    normal.SetActive(true);
+                    break;
+                case OvenUpgrade.fast:
+                    fast.SetActive(true);
+                    break;
+                case OvenUpgrade.unburning:
+                    block.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
         }
         if (preparing)
         {

@@ -44,7 +44,7 @@ public class ObstaclePlacer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {          
-            myinst = Instantiate(myprefab, this.transform.position, this.transform.rotation);
+            myinst = Instantiate(myprefab, this.transform.position + new Vector3(0, 0.101f,0), this.transform.rotation);
             if (myID == UpgradeIDs.table)
             {
                 upgrades.tableCount--;

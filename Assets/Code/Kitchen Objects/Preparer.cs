@@ -10,20 +10,42 @@ public class Preparer : KitchenCell {
     public GameState gs;
     public UpgradesStatus upgrades;
     public PrepUpgrade myUpgrade;
+    public GameObject normal, auto, minigame;
 
     private float localtimer;
     // Use this for initialization
     void Start () {
+        normal = this.transform.Find("PreparerDefault").gameObject;
+        auto = this.transform.Find("PreparerAuto").gameObject;
+        minigame = this.transform.Find("PreparerMini").gameObject;
+
         playerChar = GameObject.Find("Player");
         minigames = GameObject.Find("OrderCanvas").GetComponent<MinigamesScript>();
         carryobj = transform.Find("CarriedFood").gameObject;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (gs.upgrading)
         {
             myUpgrade = upgrades.prepUpgrade;
+            normal.SetActive(false);
+            minigame.SetActive(false);
+            auto.SetActive(false);
+            switch (myUpgrade)
+            {
+                case PrepUpgrade.standart:
+                    normal.SetActive(true);
+                    break;
+                case PrepUpgrade.minigame:
+                    minigame.SetActive(true);
+                    break;
+                case PrepUpgrade.auto:
+                    auto.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
         }
 		else 
         {

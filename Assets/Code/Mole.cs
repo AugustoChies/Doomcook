@@ -89,7 +89,7 @@ public class Mole : Monster
         if (down)
         {
             underground = true;
-            yield return new WaitForSeconds(Random.Range(2.0f,4.0f));
+            yield return new WaitForSeconds(Random.Range(1.0f,2.0f));
             moving = false;
             anim.SetTrigger("Dig");
             yield return new WaitForSeconds(2);
