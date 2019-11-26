@@ -174,27 +174,27 @@ public class MinigamesScript : MonoBehaviour {
         float elapsedTime = grateTime + modifier;
 
         grateTick = false;
-        Lbutton.GetComponent<Image>().color = Color.green;
+        Lbutton.GetComponent<Image>().color = Color.gray;
         Rbutton.GetComponent<Image>().color = Color.white;
         while (elapsedTime > 0)
         {
             if(grateTick)
             {
-                if (Input.GetKey(inputMap.interact))
+                if (Input.GetKey(inputMap.left))
                 {
                     grateTick = false;
-                    Lbutton.GetComponent<Image>().color = Color.green;
+                    Lbutton.GetComponent<Image>().color = Color.gray;
                     Rbutton.GetComponent<Image>().color = Color.white;
                     elapsedTime -= grateRedTime;
                 }
             }
             else
             {
-                if (Input.GetKey(inputMap.alternateminigame))
+                if (Input.GetKey(inputMap.right))
                 {
                     grateTick = true;
                     Lbutton.GetComponent<Image>().color = Color.white;
-                    Rbutton.GetComponent<Image>().color = Color.green;
+                    Rbutton.GetComponent<Image>().color = Color.gray;
                 }
             }
 
