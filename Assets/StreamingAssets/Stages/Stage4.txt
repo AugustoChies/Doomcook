@@ -1,4 +1,6 @@
 1 bla 1.5 2
-2 bla 3 5
+2 bla 10 5
 3 bla 0 5
 1 bla 23 0
+3 bla 5 0
+2 bla 5 0

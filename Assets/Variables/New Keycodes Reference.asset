@@ -17,7 +17,7 @@ MonoBehaviour:
   down: 115
   left: 97
   right: 100
-  interact: 106
-  alternateminigame: 107
+  interact: 32
+  alternateminigame: 304
   wideCamera: 102
   pause: 112

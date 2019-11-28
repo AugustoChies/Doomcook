@@ -18120,6 +18120,11 @@ PrefabInstance:
       propertyPath: stageID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114372140134178782, guid: 055e80a1e20f8d54584f44fd474442e0,
+        type: 3}
+      propertyPath: expandSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 114974788257444980, guid: 055e80a1e20f8d54584f44fd474442e0,
         type: 3}
       propertyPath: m_fontColor.a
