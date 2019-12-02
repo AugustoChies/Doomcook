@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -13,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: b4867f80ae410944097cb4eeb7dbda3e, type: 2}
   unprepared: {fileID: 4300002, guid: 56be052822e0d8d459a1d331a09d5f8a, type: 3}
-  chopped: {fileID: 4300000, guid: 6d05be1b78e41a948b8d50bee67bce65, type: 3}
-  mashed: {fileID: 4300000, guid: cead1578867b39244a74ceeda55bb266, type: 3}
-  grated: {fileID: 4300000, guid: 39d0bbd8cb77c27428b7c82b55d16c83, type: 3}
+  chopped: {fileID: 4300002, guid: 56be052822e0d8d459a1d331a09d5f8a, type: 3}
+  mashed: {fileID: 4300002, guid: 56be052822e0d8d459a1d331a09d5f8a, type: 3}
+  grated: {fileID: 4300002, guid: 56be052822e0d8d459a1d331a09d5f8a, type: 3}
