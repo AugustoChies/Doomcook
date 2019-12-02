@@ -123,6 +123,31 @@ public class Oven : KitchenCell{
         return returnedfood;
     }
 
+    public Food TakeAlternateFood()
+    {
+        for (int i = 0; i < placed.ingredients.Count; i++)
+        {            
+            if (timer / prepTime * slowmultiplier * 4 > 4)
+            {
+                placed.ingredients[i].point = CookPoint.burned;
+            }
+            else
+            {
+                return new Food();
+            }
+        }
+
+        preparing = false;
+        timer = 0;
+        pointer.transform.eulerAngles = new Vector3(60, 0, 0);
+        meter.SetActive(false);
+        pointer.SetActive(false);
+        Food returnedfood = new Food(placed.ingredients);
+        placed.ingredients = new List<Ingredient>();
+
+        return returnedfood;
+    }
+
     public override void SumFood(Food newfood)
     {
         preparing = true;

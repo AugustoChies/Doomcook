@@ -222,9 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e811be4e3ffc6c4687f4a9c91981bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  power: 10
-  attackspeed: 5
+  speed: 0.85
+  power: 5
+  attackspeed: 4
   order:
     ingredients: []
   iconMaster: {fileID: 2787657570560555503}
@@ -483,6 +483,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300854941}
     m_Modifications:
+    - target: {fileID: 100046, guid: e02e4ba0d611fdb40bb465561e770f50, type: 3}
+      propertyPath: m_Name
+      value: Mesh_elemental
+      objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: e02e4ba0d611fdb40bb465561e770f50, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00013042314
@@ -539,18 +543,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 100046, guid: e02e4ba0d611fdb40bb465561e770f50, type: 3}
-      propertyPath: m_Name
-      value: Mesh_elemental
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: e02e4ba0d611fdb40bb465561e770f50, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 148fa154667c7d34e8c582fc6583505b, type: 2}
     - target: {fileID: 9500000, guid: e02e4ba0d611fdb40bb465561e770f50, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 289d6a94eedeb2a448f9970ad515018b, type: 2}
+    - target: {fileID: 13700000, guid: e02e4ba0d611fdb40bb465561e770f50, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 148fa154667c7d34e8c582fc6583505b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02e4ba0d611fdb40bb465561e770f50, type: 3}
 --- !u!4 &7549245661587946344 stripped

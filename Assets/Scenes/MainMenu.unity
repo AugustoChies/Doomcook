@@ -948,7 +948,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Everything that looks weird or copyrighted is probably a placeholder
+  m_text: "PF II \nVERSION"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1017,12 +1017,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1110818916}
-    characterCount: 68
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 9
-    wordCount: 10
+    spaceCount: 3
+    wordCount: 3
     linkCount: 0
-    lineCount: 4
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -1447,6 +1447,7 @@ GameObject:
   - component: {fileID: 2106005899}
   - component: {fileID: 2106005898}
   - component: {fileID: 2106005897}
+  - component: {fileID: 2106005900}
   m_Layer: 5
   m_Name: LoadButton
   m_TagString: Untagged
@@ -1514,7 +1515,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1094699254}
+      - m_Target: {fileID: 2106005900}
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
@@ -1564,6 +1565,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106005895}
   m_CullTransparentMesh: 0
+--- !u!114 &2106005900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106005895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13d191f15d88a542a88e693705a4de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources: {fileID: 11400000, guid: d053b0304031b714d823b7c1d9e5e38c, type: 2}
+  upgrades: {fileID: 11400000, guid: 42d9fee285f4d3d47b14ee4c8153807a, type: 2}
 --- !u!1 &2134633265
 GameObject:
   m_ObjectHideFlags: 0

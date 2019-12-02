@@ -23,11 +23,6 @@ public class MenuCanvas : MonoBehaviour
         SceneManager.LoadScene("StageTutorial");
     }
 
-    public void LoadGame()
-    {
-
-    }
-
     public void Quit()
     {
         Application.Quit();

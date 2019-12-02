@@ -121,7 +121,7 @@ MonoBehaviour:
   upgrades: {fileID: 11400000, guid: 42d9fee285f4d3d47b14ee4c8153807a, type: 2}
   myupgrade: 0
   quickmultiplier: 1.25
-  slowmultiplier: 0.8
+  slowmultiplier: 0.9
   normal: {fileID: 7956455944255747960}
   fast: {fileID: 641990172936915011}
   block: {fileID: 694329412473268080}
@@ -471,10 +471,6 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f672febee58b45f4293b6266a4483f0c, type: 3}
       propertyPath: m_Name
       value: Default
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: f672febee58b45f4293b6266a4483f0c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f672febee58b45f4293b6266a4483f0c, type: 3}
       propertyPath: m_LocalPosition.x

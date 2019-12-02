@@ -13,7 +13,7 @@ public class LoseWinBehavior : MonoBehaviour
     public LaneSpawner lane1, lane2, lane3;
     public LanesMonsterList monsterList;
     public GameState gs;
-    public UpgradesStatus upgrade;
+    public UpgradesStatus upgrades;
     private bool done;
     private TextMeshProUGUI reward;
     private GameObject[] stars;
@@ -53,7 +53,7 @@ public class LoseWinBehavior : MonoBehaviour
                 stars[1].SetActive(false);
                 stars[2].SetActive(false);
                 float targetLife = 0;
-                switch (upgrade.wallUpgrade)
+                switch (upgrades.wallUpgrade)
                 {
                     case WallUpgrade.standart:
                         targetLife = life.normalLife;
@@ -83,7 +83,7 @@ public class LoseWinBehavior : MonoBehaviour
                 {
                     resources.starsPerStage[stageIndex] = obtainedstars;
                 }
-                upgrade.money += obtainedmoney;
+                upgrades.money += obtainedmoney;
 
                 StartCoroutine(RiseWin(obtainedmoney,obtainedstars));
             }
@@ -102,6 +102,32 @@ public class LoseWinBehavior : MonoBehaviour
 
     public void ButtonWinContinue()
     {
+        int[] stars = new int[9];
+        for (int i = 0; i < 9; i++)
+        {
+            PlayerPrefs.SetInt("Star" + i, resources.starsPerStage[i]);
+        }
+
+        int money = PlayerPrefs.GetInt("Money");
+        int ovenstatus = PlayerPrefs.GetInt("Oven");
+        int wallstatus = PlayerPrefs.GetInt("Wall");
+        int prepstatus = PlayerPrefs.GetInt("Peparer");
+        int tables = PlayerPrefs.GetInt("Tables");
+        int snacks = PlayerPrefs.GetInt("Snacks");
+        int screen0 = PlayerPrefs.GetInt("Screen0");
+        int screen1 = PlayerPrefs.GetInt("Screen1");
+        int screen2 = PlayerPrefs.GetInt("Screen2");
+
+        upgrades.money = money;
+        upgrades.ovenUpgrade = (OvenUpgrade)ovenstatus;
+        upgrades.wallUpgrade = (WallUpgrade)wallstatus;
+        upgrades.prepUpgrade = (PrepUpgrade)prepstatus;
+        upgrades.tableCount = tables;
+        upgrades.snackCount = snacks;
+        upgrades.screens[0] = screen0 != 0;
+        upgrades.screens[1] = screen1 != 0;
+        upgrades.screens[2] = screen2 != 0;
+        PlayerPrefs.Save();
         SceneManager.LoadScene("StageMap");
     }
 

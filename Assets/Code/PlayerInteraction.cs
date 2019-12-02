@@ -74,8 +74,38 @@ public class PlayerInteraction : MonoBehaviour {
             }    
                         
         }
+        if (Input.GetKeyDown(controls.alternateminigame) && !gs.minigame && !gs.wide && !gs.upgrading && !gs.tutorial && !gs.end)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, raycastLenght))
+            {
+                GameObject hitcell = hit.transform.gameObject;
+                if (hitcell.GetComponent<Oven>() && hitcell.GetComponent<Oven>().myupgrade == OvenUpgrade.unburning)
+                {
+                    if(!carrying)
+                    {
+                        if (hitcell.GetComponent<KitchenCell>().placed.ingredients.Count > 0)
+                        {                            
+                            hitcell.GetComponent<KitchenCell>().ShowCarriedMesh(false);
+                            carried = hitcell.GetComponent<Oven>().TakeAlternateFood();
+                            carrying = true;
+                            for (int i = 0; i < modelReferences.fms.Count; i++)
+                            {
+                                if (modelReferences.fms[i].Check(carried))
+                                {
+                                    carryobj.GetComponent<MeshFilter>().mesh = modelReferences.fms[i].GetMesh(carried);
+                                    break;
+                                }
+                            }
+                            StartCoroutine(ShowFood());
+                            this.gameObject.GetComponent<PlayerIcons>().ShowIcons(true, carried);
+                        }
+                    }
+                }
+            }
+        }
 
-        if(carrying)
+        if (carrying)
         {
             anim.SetBool("Carrying", true);
         }
