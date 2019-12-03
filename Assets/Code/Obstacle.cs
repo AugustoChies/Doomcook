@@ -6,7 +6,7 @@ public class Obstacle : MonoBehaviour
 {
     public float life;
     public List<Monster> barredMons;
-
+    public GameObject dust;
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +17,7 @@ public class Obstacle : MonoBehaviour
                 m.barred = false;
                 m.moving = true;
             }
+            Instantiate(dust, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

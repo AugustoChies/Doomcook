@@ -11,9 +11,11 @@ public class Oven : KitchenCell{
     public OvenUpgrade myupgrade;
     public float quickmultiplier, slowmultiplier;
     public GameObject normal, fast, block;
+    ParticleSystem fire;
 
     // Use this for initialization
     void Start () {
+        fire = this.GetComponentInChildren<ParticleSystem>();
         normal = this.transform.Find("Default").gameObject;
         fast = this.transform.Find("Fast").gameObject;
         block = this.transform.Find("Block").gameObject;
@@ -63,7 +65,16 @@ public class Oven : KitchenCell{
                 default:
                     break;
             }
-            
+
+            if (timer / prepTime * 4 > 4)
+            {
+                if (!fire.isPlaying)
+                {
+                    fire.Play();
+                }
+            }
+
+
         }
     }
 
@@ -113,6 +124,7 @@ public class Oven : KitchenCell{
        
         
         preparing = false;
+        fire.Stop();
         timer = 0;
         pointer.transform.eulerAngles = new Vector3(60,0,0);
         meter.SetActive(false);

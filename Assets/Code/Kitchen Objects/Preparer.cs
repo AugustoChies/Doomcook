@@ -11,10 +11,12 @@ public class Preparer : KitchenCell {
     public UpgradesStatus upgrades;
     public PrepUpgrade myUpgrade;
     public GameObject normal, auto, minigame;
+    ParticleSystem smoke;
 
     private float localtimer;
     // Use this for initialization
     void Start () {
+        smoke = this.GetComponentInChildren<ParticleSystem>();
         normal = this.transform.Find("PreparerDefault").gameObject;
         auto = this.transform.Find("PreparerAuto").gameObject;
         minigame = this.transform.Find("PreparerMini").gameObject;
@@ -54,9 +56,14 @@ public class Preparer : KitchenCell {
                 case PrepUpgrade.standart:
                     if (preparing)
                     {
+                        if(!smoke.isPlaying)
+                        {
+                            smoke.Play();
+                        }
                         if (!gs.minigame)
                         {
                             preparing = false;
+                            smoke.Stop();
                             for (int i = 0; i < placed.ingredients.Count; i++)
                             {
                                 placed.ingredients[i].preparation = pe.myprep;
@@ -77,9 +84,14 @@ public class Preparer : KitchenCell {
                     break;
                 case PrepUpgrade.minigame:
                     if (preparing)
-                    { 
+                    {
+                        if (!smoke.isPlaying)
+                        {
+                            smoke.Play();
+                        }
                         if (!gs.minigame)
                         {
+                            smoke.Stop();
                             preparing = false;
                             for (int i = 0; i < placed.ingredients.Count; i++)
                             {
@@ -92,10 +104,15 @@ public class Preparer : KitchenCell {
                 case PrepUpgrade.auto:
                     if (preparing)
                     {
+                        if (!smoke.isPlaying)
+                        {
+                            smoke.Play();
+                        }
                         localtimer += Time.deltaTime;
                         pointer.transform.Rotate(0, 0, -360 * Time.deltaTime / preptime.Value);
                         if (localtimer >= preptime.Value)
                         {
+                            smoke.Stop();
                             preparing = false;
                             pointer.transform.eulerAngles = new Vector3(60, 0, 0);
                         }

@@ -9,6 +9,7 @@ public class Snacktable : MonoBehaviour
     private int placedSnacks;
     public int availableSnacks;
     public float snackeatingtime;
+    public GameObject dust;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class Snacktable : MonoBehaviour
         snackmodelCurrent++;
         if(placedSnacks <= 0)
         {
+            Instantiate(dust, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

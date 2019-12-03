@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 5
   barredMons: []
+  dust: {fileID: 1724010620634299428, guid: 5c1145c6569effd46b0eb9c3230b426d, type: 3}
 --- !u!1001 &1687586559696998212
 PrefabInstance:
   m_ObjectHideFlags: 0

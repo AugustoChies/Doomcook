@@ -332,6 +332,7 @@ MonoBehaviour:
   snackmodels: []
   availableSnacks: 0
   snackeatingtime: 4
+  dust: {fileID: 1724010620634299428, guid: 5c1145c6569effd46b0eb9c3230b426d, type: 3}
 --- !u!1 &3070751459244862684
 GameObject:
   m_ObjectHideFlags: 0
