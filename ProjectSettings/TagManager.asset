@@ -8,6 +8,7 @@ TagManager:
   - Table
   - Enemy
   - Snack
+  - MonArea
   layers:
   - Default
   - TransparentFX

@@ -37,12 +37,17 @@ public abstract class Monster : MonoBehaviour {
     public bool onlist;
     protected Obstacle targetedObstacle;
 
+    public Monster inFrontOfMe;
+    public float angerMultipier;
+    //public bool barredByMonster;
+
     [SerializeField]
     protected Vector3 angles;
     protected Quaternion rotation;
     // Use this for initialization
     void Start()
     {
+        angerMultipier = 1;
         ShowCarriedMesh();
         rotation = Quaternion.Euler(angles);
 
@@ -100,7 +105,7 @@ public abstract class Monster : MonoBehaviour {
             }
             if (!eat)
             {
-                acounter += 1 * Time.deltaTime;
+                acounter += 1 * Time.deltaTime * angerMultipier;
                 if (acounter > attackspeed)
                 {
                     acounter = 0;
@@ -111,12 +116,23 @@ public abstract class Monster : MonoBehaviour {
         }
         else if (barred)
         {
-            acounter += 1 * Time.deltaTime;
-            if (acounter > attackspeed)
+            if (targetedObstacle != null)
             {
-                acounter = 0;
-                anim.SetTrigger("Attack");
-                AttackObstacle();
+                acounter += 1 * Time.deltaTime * angerMultipier;
+                if (acounter > attackspeed)
+                {
+                    acounter = 0;
+                    anim.SetTrigger("Attack");
+                    AttackObstacle();
+                }
+            }
+            else
+            {
+                if(inFrontOfMe == null || !inFrontOfMe.barred)
+                {
+                    barred = false;                   
+                    moving = true;
+                }
             }
         }
         else if (eatingSnack)
@@ -246,6 +262,17 @@ public abstract class Monster : MonoBehaviour {
             }
             
         }
+        else if (other.tag == "MonArea")
+        {
+            Monster token = other.transform.parent.GetComponent<Monster>();
+            if (token.atTable || token.barred)
+            {
+                inFrontOfMe = token;
+                inFrontOfMe.angerMultipier = 1.5f;
+                barred = true;
+                moving = false;
+            }
+        }
         else if (other.GetComponent<Obstacle>())
         {
             barred = true;
@@ -253,6 +280,7 @@ public abstract class Monster : MonoBehaviour {
             targetedObstacle = other.GetComponent<Obstacle>();
             targetedObstacle.barredMons.Add(this);
         }
+        
     }
 
     void OnCollisionEnter(Collision collision)
