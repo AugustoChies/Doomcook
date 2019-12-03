@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlazeSprite : Monster
 {
-    
+    public ParticleSystem fire;
 
     public override void Attack()
     {
@@ -19,8 +19,11 @@ public class BlazeSprite : Monster
 
     IEnumerator WaitAttack()
     {
-        yield return new WaitForSeconds(0.8f);
+        fire.Play();
+        yield return new WaitForSeconds(1.0f);
+        fire.Stop();
         life.Value -= power;
+        
         for (int i = 0; i < myTable.GetComponent<Table>().placed.Count; i++)
         {
             Food newBurned = new Food(myTable.GetComponent<Table>().placed[i].ingredients);
@@ -46,7 +49,9 @@ public class BlazeSprite : Monster
 
     IEnumerator WaitAttackObstacle()
     {
-        yield return new WaitForSeconds(0.8f);
+        fire.Play();
+        yield return new WaitForSeconds(1.0f);
+        fire.Stop();
         targetedObstacle.life -= power;
     }
 }

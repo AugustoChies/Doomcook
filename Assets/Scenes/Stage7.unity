@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44424582, g: 0.49369353, b: 0.57307565, a: 1}
+  m_IndirectSpecularColor: {r: 0.4442453, g: 0.49369276, b: 0.57307476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -439,6 +439,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4502189568104374, guid: a6459ee2a7813a4469954abc555adc0c,
     type: 3}
   m_PrefabInstance: {fileID: 905602866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &151316977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7641707059660210779, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654244828}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &157987224
 PrefabInstance:
@@ -2166,6 +2172,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4240422001964052, guid: 19796a5ffe74a904b869f77e50419b32,
     type: 3}
   m_PrefabInstance: {fileID: 157987224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &801767613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7641707059660210779, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+    type: 3}
+  m_PrefabInstance: {fileID: 7641707059336580534}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &807655139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7641707059660210779, guid: 2eabc7368750ec24f8551fd6cf6c6514,
+    type: 3}
+  m_PrefabInstance: {fileID: 1519199032}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &844474429 stripped
 Transform:
@@ -3930,42 +3948,42 @@ PrefabInstance:
         type: 3}
       propertyPath: ppv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 242872165}
     - target: {fileID: 7088542148557077155, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: screens.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 801767613}
     - target: {fileID: 7088542148557077155, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: screens.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 151316977}
     - target: {fileID: 7088542148557077155, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: screens.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 807655139}
     - target: {fileID: 7088542148557077154, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: life
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 436879022}
     - target: {fileID: 7088542148557077154, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: lane1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1324765926}
     - target: {fileID: 7088542148557077154, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: lane2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 599831602}
     - target: {fileID: 7088542148557077154, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: lane3
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2079092062}
     - target: {fileID: 7088542148557077154, guid: 16eeadbe9e8bd974bba0b4d6e4214e2d,
         type: 3}
       propertyPath: stageIndex
