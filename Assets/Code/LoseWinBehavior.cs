@@ -102,32 +102,24 @@ public class LoseWinBehavior : MonoBehaviour
 
     public void ButtonWinContinue()
     {
-        int[] stars = new int[9];
+        //Save        
         for (int i = 0; i < 9; i++)
         {
             PlayerPrefs.SetInt("Star" + i, resources.starsPerStage[i]);
         }
 
-        int money = PlayerPrefs.GetInt("Money");
-        int ovenstatus = PlayerPrefs.GetInt("Oven");
-        int wallstatus = PlayerPrefs.GetInt("Wall");
-        int prepstatus = PlayerPrefs.GetInt("Peparer");
-        int tables = PlayerPrefs.GetInt("Tables");
-        int snacks = PlayerPrefs.GetInt("Snacks");
-        int screen0 = PlayerPrefs.GetInt("Screen0");
-        int screen1 = PlayerPrefs.GetInt("Screen1");
-        int screen2 = PlayerPrefs.GetInt("Screen2");
+        PlayerPrefs.SetInt("Money", upgrades.money);
+        PlayerPrefs.SetInt("Oven", (int)upgrades.ovenUpgrade);
+        PlayerPrefs.SetInt("Wall", (int)upgrades.wallUpgrade);
+        PlayerPrefs.SetInt("Peparer",(int)upgrades.prepUpgrade);
+        PlayerPrefs.SetInt("Tables", upgrades.tableCount);
+        PlayerPrefs.SetInt("Snacks", upgrades.snackCount);
+        PlayerPrefs.SetInt("Screen0", upgrades.screens[0] ? 1 : 0);
+        PlayerPrefs.SetInt("Screen1", upgrades.screens[1] ? 1 : 0);
+        PlayerPrefs.SetInt("Screen2", upgrades.screens[2] ? 1 : 0);
 
-        upgrades.money = money;
-        upgrades.ovenUpgrade = (OvenUpgrade)ovenstatus;
-        upgrades.wallUpgrade = (WallUpgrade)wallstatus;
-        upgrades.prepUpgrade = (PrepUpgrade)prepstatus;
-        upgrades.tableCount = tables;
-        upgrades.snackCount = snacks;
-        upgrades.screens[0] = screen0 != 0;
-        upgrades.screens[1] = screen1 != 0;
-        upgrades.screens[2] = screen2 != 0;
         PlayerPrefs.Save();
+        ///////////////////////////////////////////
         SceneManager.LoadScene("StageMap");
     }
 

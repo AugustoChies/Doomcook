@@ -4819,7 +4819,7 @@ MonoBehaviour:
   lane3: {fileID: 0}
   monsterList: {fileID: 11400000, guid: d6b538f292cfd354e86ab335add13af6, type: 2}
   gs: {fileID: 11400000, guid: 9280f4327db2e2e4f83d1deef4b8d3fd, type: 2}
-  upgrade: {fileID: 11400000, guid: 42d9fee285f4d3d47b14ee4c8153807a, type: 2}
+  upgrades: {fileID: 11400000, guid: 42d9fee285f4d3d47b14ee4c8153807a, type: 2}
   stageIndex: 3
   resources: {fileID: 11400000, guid: d053b0304031b714d823b7c1d9e5e38c, type: 2}
 --- !u!1 &7088542148590858457
