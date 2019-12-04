@@ -209,7 +209,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!114 &114728419686590860
 MonoBehaviour:
@@ -252,6 +252,8 @@ MonoBehaviour:
   onlist: 0
   inFrontOfMe: {fileID: 0}
   angerMultipier: 0
+  fireCircle: {fileID: 8965653629049918836, guid: 295cfe9cbd1d4dd4b81e264ce5ba8d6a,
+    type: 3}
   angles: {x: -60, y: 180, z: 0}
 --- !u!1 &4140382049470343844
 GameObject:
@@ -281,8 +283,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4140382049470343844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.318, z: 0}
-  m_LocalScale: {x: 1, y: 2.5, z: 1}
+  m_LocalPosition: {x: 0, y: -0.391, z: 0}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 4514196086260546}
   m_RootOrder: 3

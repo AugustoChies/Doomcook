@@ -12,11 +12,12 @@ public class Preparer : KitchenCell {
     public PrepUpgrade myUpgrade;
     public GameObject normal, auto, minigame;
     ParticleSystem smoke;
-
+    AudioSource source;
     private float localtimer;
     // Use this for initialization
     void Start () {
         smoke = this.GetComponentInChildren<ParticleSystem>();
+        source = this.GetComponent<AudioSource>();
         normal = this.transform.Find("PreparerDefault").gameObject;
         auto = this.transform.Find("PreparerAuto").gameObject;
         minigame = this.transform.Find("PreparerMini").gameObject;
@@ -56,12 +57,17 @@ public class Preparer : KitchenCell {
                 case PrepUpgrade.standart:
                     if (preparing)
                     {
+                        if(!source.isPlaying)
+                        {
+                            source.Play();
+                        }
                         if(!smoke.isPlaying)
                         {
                             smoke.Play();
                         }
                         if (!gs.minigame)
                         {
+                            source.Stop();
                             preparing = false;
                             smoke.Stop();
                             for (int i = 0; i < placed.ingredients.Count; i++)
@@ -71,7 +77,7 @@ public class Preparer : KitchenCell {
                             ShowCarriedMesh(true);
                         }
                         else
-                        {
+                        {                            
                             localtimer += Time.deltaTime;
                             pointer.transform.Rotate(0, 0, -360 * Time.deltaTime / preptime.Value);
                             if (localtimer >= preptime.Value)
@@ -85,12 +91,17 @@ public class Preparer : KitchenCell {
                 case PrepUpgrade.minigame:
                     if (preparing)
                     {
+                        if (!source.isPlaying)
+                        {
+                            source.Play();
+                        }
                         if (!smoke.isPlaying)
                         {
                             smoke.Play();
                         }
                         if (!gs.minigame)
                         {
+                            source.Stop();
                             smoke.Stop();
                             preparing = false;
                             for (int i = 0; i < placed.ingredients.Count; i++)
@@ -104,6 +115,10 @@ public class Preparer : KitchenCell {
                 case PrepUpgrade.auto:
                     if (preparing)
                     {
+                        if (!source.isPlaying)
+                        {
+                            source.Play();
+                        }
                         if (!smoke.isPlaying)
                         {
                             smoke.Play();
@@ -112,6 +127,7 @@ public class Preparer : KitchenCell {
                         pointer.transform.Rotate(0, 0, -360 * Time.deltaTime / preptime.Value);
                         if (localtimer >= preptime.Value)
                         {
+                            source.Stop();
                             smoke.Stop();
                             preparing = false;
                             pointer.transform.eulerAngles = new Vector3(60, 0, 0);

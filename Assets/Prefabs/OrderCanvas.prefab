@@ -4751,13 +4751,13 @@ MonoBehaviour:
   cutTime: 5
   mashTime: 10
   grateTime: 10
-  cutRedTime: 5
-  mashRedTime: 1.5
-  grateRedTime: 2.5
+  cutRedTime: 3
+  mashRedTime: 1
+  grateRedTime: 2
   cutMinigame: {fileID: 7088542150236244112}
   mashMinigame: {fileID: 7088542148847183869}
   grateMinigame: {fileID: 7088542148502713950}
-  barSpeed: 0.75
+  barSpeed: 0.95
   middleTolerance: 0.125
   additionalSpeed: 0.1
   gradualRegrowth: 3
@@ -18481,6 +18481,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7088542148557077158}
     m_Modifications:
+    - target: {fileID: 1760285745327704, guid: 055e80a1e20f8d54584f44fd474442e0, type: 3}
+      propertyPath: m_Name
+      value: Dialog
+      objectReference: {fileID: 0}
     - target: {fileID: 224425621680687830, guid: 055e80a1e20f8d54584f44fd474442e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18585,10 +18589,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760285745327704, guid: 055e80a1e20f8d54584f44fd474442e0, type: 3}
-      propertyPath: m_Name
-      value: Dialog
       objectReference: {fileID: 0}
     - target: {fileID: 114372140134178782, guid: 055e80a1e20f8d54584f44fd474442e0,
         type: 3}

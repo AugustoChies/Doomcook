@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mole : Monster
 {
     bool underground;
+    public GameObject dustCircle;
     void Awake()
     {
         moving = true;
@@ -49,14 +50,13 @@ public class Mole : Monster
         }
         else if (barred)
         {
-            acounter += 1 * Time.deltaTime;
-            if (acounter > attackspeed)
+            if (inFrontOfMe == null)
             {
-                acounter = 0;
-                anim.SetTrigger("Attack");
-                AttackObstacle();
+                barred = false;
+                moving = true;
             }
         }
+        
 
         iconMaster.transform.rotation = rotation;
 
@@ -92,6 +92,7 @@ public class Mole : Monster
             yield return new WaitForSeconds(Random.Range(1.0f,2.0f));
             moving = false;
             anim.SetTrigger("Dig");
+            Instantiate(dustCircle, this.transform.position + new Vector3(0, -1.063f, 0), Quaternion.Euler(90, 0, 0));
             yield return new WaitForSeconds(2);
             this.transform.position = new Vector3(this.transform.position.x,-0.3f, this.transform.position.z);
             
@@ -102,6 +103,7 @@ public class Mole : Monster
         {
             this.transform.position = new Vector3(this.transform.position.x, 2f, this.transform.position.z);
             anim.SetTrigger("Surface");
+            Instantiate(dustCircle, this.transform.position + new Vector3(0, -1.063f, 0), Quaternion.Euler(90, 0, 0));
             yield return new WaitForSeconds(3);
             underground = false;
         }
@@ -111,7 +113,10 @@ public class Mole : Monster
     {
         if (other.tag == "Table")
         {
-            StartCoroutine(Burrow(false));
+            if (underground)
+            {
+                StartCoroutine(Burrow(false));
+            }
             myTable = other.gameObject;
             atTable = true;
             moving = false;
@@ -138,6 +143,22 @@ public class Mole : Monster
                 }
             }
 
+        }
+
+        else if (other.tag == "MonArea")
+        {
+            Monster token = other.transform.parent.GetComponent<Monster>();
+            if (token.atTable)
+            {
+                if(underground)
+                {
+                    StartCoroutine(Burrow(false));
+                }
+                inFrontOfMe = token;
+                inFrontOfMe.angerMultipier = 1.5f;
+                barred = true;
+                moving = false;
+            }
         }
     }
 }

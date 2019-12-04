@@ -1,9 +1,9 @@
 Hey! This is your friendly tutorial system.
 Here you can learn and practice the basic game mechanics until you feel ready to start.
 Starting with movement. You can move your character with the WASD keys.
-By pressing the J key, you can interact with objects in front of you.
-The purple boxes contain basic ingredients. You can both prepare and cook these ingredients.
-The boxes with symbols on top are preparers. By using them you can slice , mash or grate an ingredient. You can only do this process with one ingredient at a time.
+By pressing the SPACE key, you can interact with objects in front of you.
+The wood crates contain basic ingredients. You can both prepare and cook these ingredients.
+The blue boxes with symbols on top are preparers. By using them you can slice , mash or grate an ingredient. You can only do this process with one ingredient at a time.
 The red boxes are ovens. You can cook ingredients on them, individually or in a group.
 The grey box to the right is just a trash bin.
 Follow the instructions appearing on the upper left side of the screen and deliver dishes to the receiver on the left of the room.

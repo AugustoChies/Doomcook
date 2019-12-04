@@ -12,10 +12,12 @@ public class Oven : KitchenCell{
     public float quickmultiplier, slowmultiplier;
     public GameObject normal, fast, block;
     ParticleSystem fire;
-
+    public AudioClip burning, snuff;
+    AudioSource source;
     // Use this for initialization
     void Start () {
         fire = this.GetComponentInChildren<ParticleSystem>();
+        source = this.GetComponentInChildren<AudioSource>();
         normal = this.transform.Find("Default").gameObject;
         fast = this.transform.Find("Fast").gameObject;
         block = this.transform.Find("Block").gameObject;
@@ -72,6 +74,14 @@ public class Oven : KitchenCell{
                 {
                     fire.Play();
                 }
+                if(source.clip != burning)
+                {
+                    source.clip = burning;
+                }
+                if(!source.isPlaying)
+                {
+                    source.Play();
+                }
             }
 
 
@@ -121,8 +131,9 @@ public class Oven : KitchenCell{
             default:
                 break;
         }
-       
-        
+
+        source.clip = snuff;
+        source.Play();
         preparing = false;
         fire.Stop();
         timer = 0;

@@ -261,6 +261,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mesh_mindflayer 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100112, guid: d9508e6957d7a8c45b7d9a1cd2b75148, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: d9508e6957d7a8c45b7d9a1cd2b75148, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 77f6333d932c855488e70341f5fc46fe, type: 2}
     - target: {fileID: 400112, guid: d9508e6957d7a8c45b7d9a1cd2b75148, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.786242
@@ -305,10 +313,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: d9508e6957d7a8c45b7d9a1cd2b75148, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 77f6333d932c855488e70341f5fc46fe, type: 2}
     - target: {fileID: 13700000, guid: d9508e6957d7a8c45b7d9a1cd2b75148, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -548,12 +552,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: c47a23ed3d69a7f45bac04e83ad9a2fc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: c47a23ed3d69a7f45bac04e83ad9a2fc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e2585af5bf6ef7340997a58cca236c18, type: 2}
     - target: {fileID: 400046, guid: c47a23ed3d69a7f45bac04e83ad9a2fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.786242
@@ -598,6 +598,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: c47a23ed3d69a7f45bac04e83ad9a2fc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2585af5bf6ef7340997a58cca236c18, type: 2}
     - target: {fileID: 13700000, guid: c47a23ed3d69a7f45bac04e83ad9a2fc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
