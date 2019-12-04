@@ -75,12 +75,16 @@ public class Mole : Monster
     IEnumerator WaitAttack()
     {
         yield return new WaitForSeconds(0.8f);
+        source.clip = attack;
+        source.Play();
         life.Value -= power;
     }
 
     IEnumerator WaitAttackObstacle()
     {
         yield return new WaitForSeconds(0.8f);
+        source.clip = attack;
+        source.Play();
         targetedObstacle.life -= power;
     }
 

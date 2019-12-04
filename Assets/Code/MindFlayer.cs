@@ -20,17 +20,21 @@ public class MindFlayer : Monster
 
     IEnumerator WaitAttack()
     {
-        psi.Play();
+        psi.Play();        
         yield return new WaitForSeconds(0.7f);
         psi.Stop();
+        source.clip = attack;
+        source.Play();
         life.Value -= power;
         distManager.Activate();
     }
 
     IEnumerator WaitAttackObstacle()
     {
-        psi.Play();
+        psi.Play();        
         yield return new WaitForSeconds(0.7f);
+        source.clip = attack;
+        source.Play();
         psi.Stop();
         targetedObstacle.life -= power;
     }

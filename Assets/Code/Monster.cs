@@ -21,7 +21,7 @@ public abstract class Monster : MonoBehaviour {
     public int myLane;
     public Animator anim;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool atTable = false;
     public bool moving = true;    
     public bool barred = false;
@@ -41,6 +41,8 @@ public abstract class Monster : MonoBehaviour {
     public float angerMultipier;
     //public bool barredByMonster;
     public GameObject fireCircle;
+    protected AudioSource source;
+    public AudioClip eat, attack;
 
     [SerializeField]
     protected Vector3 angles;
@@ -48,6 +50,7 @@ public abstract class Monster : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        source = this.GetComponent<AudioSource>();
         angerMultipier = 1;
         ShowCarriedMesh();
         rotation = Quaternion.Euler(angles);
@@ -129,19 +132,36 @@ public abstract class Monster : MonoBehaviour {
             }
             else
             {
-                if(inFrontOfMe == null || !inFrontOfMe.barred)
+                if (inFrontOfMe.GetComponent<Mole>())
                 {
-                    barred = false;                   
-                    moving = true;
+                    if (inFrontOfMe == null)
+                    {
+                        barred = false;
+                        moving = true;
+                    }
+                }
+                else
+                {
+                    if (inFrontOfMe == null || !inFrontOfMe.barred)
+                    {
+                        barred = false;
+                        moving = true;
+                    }
                 }
             }
         }
         else if (eatingSnack)
         {
             anim.SetBool("Snacking", true);
+            if (source.clip != eat || !source.isPlaying)
+            {
+                source.clip = eat;
+                source.Play();
+            }
             snackpersonaltime += 1 * Time.deltaTime;
             if (snackpersonaltime >= snackEatingTime)
             {
+                source.Stop();
                 ateSnack = true;
                 moving = true;
                 snacktable.Eat();
@@ -303,6 +323,8 @@ public abstract class Monster : MonoBehaviour {
     IEnumerator Sink()
     {
         anim.SetTrigger("Eat");
+        source.clip = eat;
+        source.Play();
         lanelist.lanes[myLane - 1].Remove(this.gameObject);
         onlist = false;
         yield return new WaitForSeconds(1.5f);

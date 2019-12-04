@@ -21,6 +21,8 @@ public class LoseWinBehavior : MonoBehaviour
     int obtainedstars;
     public short stageIndex;
     public Resources resources;
+    public AudioSource moneySource, starsource;
+    public AudioClip drumroll, drumend;
     // Start is called before the first frame update
     void Start()
     {
@@ -157,6 +159,8 @@ public class LoseWinBehavior : MonoBehaviour
             stars[index].SetActive(true);
             stars[index].transform.localScale = new Vector3(2,2,2);
             float scalevalue = 2;
+            starsource.pitch = 1.0f + 0.25f * index;
+            starsource.Play();
             while (stars[index].transform.localScale.x > 1.2f)
             {
                 scalevalue -= 2 * Time.deltaTime;
@@ -176,12 +180,17 @@ public class LoseWinBehavior : MonoBehaviour
     IEnumerator RiseMoney(int money)
     {
         float rewardText = 0;
+        moneySource.clip = drumroll;
+        moneySource.Play();
         while (rewardText < money)
         {
-            rewardText += 1000 * Time.deltaTime;
+            rewardText += 400 * Time.deltaTime;
             reward.text = "" + (int)(rewardText);
             yield return null;
         }
+        moneySource.Stop();
+        moneySource.clip = drumend;
+        moneySource.Play();
         reward.text = "" + money;
     }
 }

@@ -9,7 +9,14 @@ public class SelfDestruct : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer = Time.deltaTime;
+        if(this.gameObject.name.Contains("DustCircle"))
+        {
+            if(timer < 3)
+            {
+                this.GetComponent<AudioSource>().Stop();
+            }
+        }
+        timer -= Time.deltaTime;
         if(timer <= 0)
         {
             Destroy(this.gameObject);

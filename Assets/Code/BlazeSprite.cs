@@ -20,6 +20,8 @@ public class BlazeSprite : Monster
     IEnumerator WaitAttack()
     {
         fire.Play();
+        source.clip = attack;
+        source.Play();
         yield return new WaitForSeconds(1.0f);
         fire.Stop();
         life.Value -= power;
@@ -50,6 +52,8 @@ public class BlazeSprite : Monster
     IEnumerator WaitAttackObstacle()
     {
         fire.Play();
+        source.clip = attack;
+        source.Play();
         yield return new WaitForSeconds(1.0f);
         fire.Stop();
         targetedObstacle.life -= power;
