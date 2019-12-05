@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c66dc5e33d3ee5a429721ac8250f6687, type: 3}
-  m_Name: Salad
+  m_Name: Dumpling
   m_EditorClassIdentifier: 
   smlist: {fileID: 11400000, guid: dc116c5faa4a23d4c9ab3281191886b2, type: 2}
-  myMesh: {fileID: 4300000, guid: aaf2164196f8d85479afb58cca7fbeb1, type: 3}
+  myMesh: {fileID: 4300000, guid: de7b8a9948f1666449e3f75a1abb6f69, type: 3}
   maxIngcount: 3
-  hasVegetable: 1
-  hasMeat: 0
-  hasFish: 0
-  highestPoint: 1
+  hasVegetable: 0
+  hasMeat: 1
+  hasFish: 1
+  highestPoint: 3

@@ -4,16 +4,18 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c66dc5e33d3ee5a429721ac8250f6687, type: 3}
-  m_Name: Soup
+  m_Name: Pizza
   m_EditorClassIdentifier: 
   smlist: {fileID: 11400000, guid: dc116c5faa4a23d4c9ab3281191886b2, type: 2}
-  myMesh: {fileID: 4300000, guid: 442120c1ba2d6ac4a9caa291dd678060, type: 3}
+  myMesh: {fileID: 4300000, guid: fec52ddeae99a0745bc188805ff2c7c1, type: 3}
   maxIngcount: 3
   hasVegetable: 1
-  hasMeat: 0
-  highestPoint: 4
+  hasMeat: 1
+  hasFish: 1
+  highestPoint: 3
